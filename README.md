@@ -63,12 +63,4 @@ MyVensim/
 # 📜 Licença
 
 Este projeto foi desenvolvido exclusivamente para fins acadêmicos na disciplina BCC322 — Engenharia de Software I da Universidade Federal de Ouro Preto (UFOP).
-
-O código e a documentação foram produzidos com objetivo educacional, visando o estudo de:
-- Engenharia de Software
-- Programação Orientada a Objetos
-- Modelagem UML
-- Testes de Software
-- Versionamento com Git
-
 O uso comercial deste projeto não é permitido sem autorização prévia do autor.
