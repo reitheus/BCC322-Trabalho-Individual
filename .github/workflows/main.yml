@@ -31,13 +31,13 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Build project
-      run: make all
+      run: make
 
   # =========================
-  # TEST
+  # TEST FUNCTIONAL
   # =========================
 
-  test:
+  test_func:
 
     needs: build
 
@@ -48,8 +48,26 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Run tests
-      run: ./bin/teste
+    - name: Run functional tests
+      run: make functional_tests
+
+  # =========================
+  # TEST UNITARY
+  # =========================
+
+  test_unit:
+
+    needs: build
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Run unit tests
+      run: make unit_tests
 
   # =========================
   # STAGING DEPLOY
