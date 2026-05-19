@@ -111,12 +111,3 @@ functional_tests: $(FUNC_TARGET)
 
 unit_tests: $(UNIT_TARGET)
 	./$(UNIT_TARGET)
-
-# =========================
-# CLEAN
-# =========================
-
-clean:
-	rm -f $(TARGET)
-	rm -f $(FUNC_TARGET)
-	rm -f $(UNIT_TARGET)
