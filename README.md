@@ -35,7 +35,7 @@ A simulação é realizada através da interação entre sistemas conectados por
 ---
 
 # 🗂️ Estrutura do Projeto
-``
+````
 MyVensim/
 │
 ├── bin/
@@ -59,7 +59,8 @@ MyVensim/
         ├── main.cpp
         ├── functional_tests.cpp
         └── functional_tests.h
-``# 📜 Licença
+````
+# 📜 Licença
 
 Este projeto foi desenvolvido exclusivamente para fins acadêmicos na disciplina BCC322 — Engenharia de Software I da Universidade Federal de Ouro Preto (UFOP).
 
