@@ -117,9 +117,6 @@ unit_tests: $(UNIT_TARGET)
 # =========================
 
 clean:
-	rm -f $(BIN_DIR)/*.o
-	rm -f $(BIN_DIR)/*.func.o
-	rm -f $(BIN_DIR)/*.unit.o
 	rm -f $(TARGET)
 	rm -f $(FUNC_TARGET)
 	rm -f $(UNIT_TARGET)
