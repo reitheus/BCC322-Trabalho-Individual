@@ -1,5 +1,5 @@
-#include "../include/Flow.h"
-#include "../include/System.h"
+#include "../include/flow.h"
+#include "../include/system.h"
 
 using namespace std;
 
