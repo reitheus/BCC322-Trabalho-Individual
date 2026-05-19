@@ -1,12 +1,15 @@
 CXX = g++
 
-CXXFLAGS = -Wall
+CXXFLAGS = -Wall -std=c++17 -Iinclude
 
 SRC_DIR = src
 BIN_DIR = bin
 TEST_DIR = test/functional
+
+$(shell mkdir -p $(BIN_DIR))
+
 TARGET = $(BIN_DIR)/prog
-TEST_TARGET = $(BIN_DIR)/testeRegressivo.exe
+TEST_TARGET = $(BIN_DIR)/teste
 
 # Source files
 SRC_SRCS = $(wildcard $(SRC_DIR)/*.cpp)
