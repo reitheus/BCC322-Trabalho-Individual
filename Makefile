@@ -1,6 +1,6 @@
 CXX = g++
 
-CXXFLAGS = -Wall -std=c++11 -I$(INCLUDE_DIR)
+CXXFLAGS = -Wall -std=c++17 -I$(INCLUDE_DIR)
 
 SRC_DIR = src
 BIN_DIR = bin
@@ -111,15 +111,3 @@ functional_tests: $(FUNC_TARGET)
 
 unit_tests: $(UNIT_TARGET)
 	./$(UNIT_TARGET)
-
-# =========================
-# CLEAN
-# =========================
-
-clean:
-	rm -f $(BIN_DIR)/*.o
-	rm -f $(BIN_DIR)/*.func.o
-	rm -f $(BIN_DIR)/*.unit.o
-	rm -f $(TARGET)
-	rm -f $(FUNC_TARGET)
-	rm -f $(UNIT_TARGET)

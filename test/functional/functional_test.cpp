@@ -167,38 +167,23 @@ void complexFuncionalTest() {
     model.showModel();
 
     assert(
-        floatingPointComparison(
-            Q1.getValue(),
-            31.8513
-        )
+        floatingPointComparison(Q1.getValue(),31.8513) == true
     );
 
     assert(
-        floatingPointComparison(
-            Q2.getValue(),
-            18.4003
-        )
+        floatingPointComparison(Q2.getValue(), 18.4003) == true
     );
 
     assert(
-        floatingPointComparison(
-            Q3.getValue(),
-            77.1143
-        )
+        floatingPointComparison(Q3.getValue(),77.1143) == true
     );
 
     assert(
-        floatingPointComparison(
-            Q4.getValue(),
-            56.1728
-        )
+        floatingPointComparison(Q4.getValue(),56.1728) == true
     );
 
     assert(
-        floatingPointComparison(
-            Q5.getValue(),
-            16.4612
-        )
+        floatingPointComparison(Q5.getValue(),16.4612) == true
     );
 
 
