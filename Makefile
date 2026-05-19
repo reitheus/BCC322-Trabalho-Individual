@@ -1,6 +1,6 @@
 CXX = g++
 
-CXXFLAGS = -Wall -std=c++11 -I$(INCLUDE_DIR)
+CXXFLAGS = -Wall -std=c++17 -I$(INCLUDE_DIR)
 
 SRC_DIR = src
 BIN_DIR = bin
