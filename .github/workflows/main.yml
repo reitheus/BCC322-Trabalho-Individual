@@ -4,15 +4,15 @@ on:
   push:
     branches:
       - master
-      - develop
       - staging
+      - develop
       - feature/**
   
   pull_request:
     branches:
       - master
-      - develop
       - staging
+      - develop
 
 jobs:
 
@@ -29,8 +29,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    - name: Create bin directory
+      run: mkdir -p bin
+
     - name: Build project
-      run: make
+      run: make all
 
   # =========================
   # TEST
@@ -47,8 +50,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Run functional tests
-      run: make functional_tests
+    - name: Create bin directory
+      run: mkdir -p bin
+
+    - name: Run regression tests
+      run: ./bin/testeRegressivo.exe
 
   # =========================
   # STAGING DEPLOY
@@ -67,7 +73,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Staging deploy
+    - name: Simulate staging deploy
       run: echo "Deploy realizado em staging"
 
   # =========================
@@ -87,5 +93,5 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Production deploy
+    - name: Simulate production deploy
       run: echo "Deploy realizado em produção"
