@@ -1,6 +1,6 @@
 #include "../include/model.h"
 #include "../include/system.h"
-#include "include/flow.h"
+#include "../include/flow.h"
 
 #include <iostream>
 #include <vector>
