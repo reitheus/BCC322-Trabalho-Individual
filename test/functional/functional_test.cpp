@@ -1,3 +1,16 @@
+/*
+  @file functional_tests.cpp
+  @brief Implementação dos testes funcionais do simulador.
+ 
+  Este arquivo contém os testes funcionais:
+  - exponencial
+  - logístico
+  - complexo
+ 
+  Os testes verificam se os resultados produzidos
+  pela simulação estão corretos.
+ */
+
 #include <iostream>
 
 #include "../../include/model.h"
@@ -7,17 +20,33 @@
 
 using namespace std;
 
-bool floatingPointComparison(double a, double b){
+/*
+  @brief Realiza comparação entre números de ponto flutuante.
+ 
+  Utiliza uma margem de erro para evitar problemas
+  de precisão numérica.
+ 
+  @param a Primeiro valor.
+  @param b Segundo valor.
+ 
+  @return true caso os valores sejam aproximadamente iguais.
+  @return false caso os valores sejam diferentes.
+ */
+bool floatingPointComparison(double a, double b) {
     return fabs(a - b) < 0.0001;
 }
 
-//Teste exponencial
-
+/*
+  @brief Executa o teste funcional exponencial.
+ 
+  Verifica o comportamento do modelo exponencial
+  durante a simulação.
+ */
 void exponentialFuncionalTest() {
 
     cout << endl;
     cout << "===== TESTE EXPONENCIAL ====="
-         << endl;
+        << endl;
 
     System pop1("pop1", 100.0);
     System pop2("pop2", 0.0);
@@ -44,18 +73,22 @@ void exponentialFuncionalTest() {
     cout << "DEPOIS:" << endl;
     model.showModel();
 
-    assert (floatingPointComparison(pop1.getValue(), 36.6032) == true);
-    assert (floatingPointComparison(pop2.getValue(), 63.3968) == true);
+    assert(floatingPointComparison(pop1.getValue(), 36.6032) == true);
+    assert(floatingPointComparison(pop2.getValue(), 63.3968) == true);
 }
 
 
-//Logistico
-
+/*
+  @brief Executa o teste funcional logístico.
+ 
+  Verifica o comportamento do modelo logístico
+  durante a simulação.
+ */
 void logisticalFuncionalTest() {
 
     cout << endl;
     cout << "===== TESTE LOGISTICO ====="
-         << endl;
+        << endl;
 
     System pop1("P", 100.0);
     System pop2("Pmax", 10.0);
@@ -82,14 +115,18 @@ void logisticalFuncionalTest() {
     cout << "DEPOIS:" << endl;
     model.showModel();
 
-    assert (floatingPointComparison(pop1.getValue(), 88.2167) == true);
-    assert (floatingPointComparison(pop2.getValue(), 21.7833) == true);
+    assert(floatingPointComparison(pop1.getValue(), 88.2167) == true);
+    assert(floatingPointComparison(pop2.getValue(), 21.7833) == true);
 
 }
 
 
-//Complexo
-
+/*
+  @brief Executa o teste funcional complexo.
+ 
+  Verifica o comportamento do modelo complexo
+  contendo múltiplos sistemas e fluxos.
+ */
 void complexFuncionalTest() {
 
     cout << endl;
@@ -167,39 +204,23 @@ void complexFuncionalTest() {
     model.showModel();
 
     assert(
-        floatingPointComparison(
-            Q1.getValue(),
-            31.8513
-        )
+        floatingPointComparison(Q1.getValue(), 31.8513) == true
     );
 
     assert(
-        floatingPointComparison(
-            Q2.getValue(),
-            18.4003
-        )
+        floatingPointComparison(Q2.getValue(), 18.4003) == true
     );
 
     assert(
-        floatingPointComparison(
-            Q3.getValue(),
-            77.1143
-        )
+        floatingPointComparison(Q3.getValue(), 77.1143) == true
     );
 
     assert(
-        floatingPointComparison(
-            Q4.getValue(),
-            56.1728
-        )
+        floatingPointComparison(Q4.getValue(), 56.1728) == true
     );
 
     assert(
-        floatingPointComparison(
-            Q5.getValue(),
-            16.4612
-        )
+        floatingPointComparison(Q5.getValue(), 16.4612) == true
     );
-
 
 }
