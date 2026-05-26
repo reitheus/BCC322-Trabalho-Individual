@@ -1,0 +1,8 @@
+<map id="FlowLogistico::FlowLogistico" name="FlowLogistico::FlowLogistico">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,195,32"/>
+<area shape="rect" id="Node000002" href="$class_flow.html#ac9975e144e606242748197798e87dd32" title=" " alt="" coords="480,5,565,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,16,465,16,464,21,195,21"/>
+<area shape="rect" id="Node000003" href="$class_flow_logistico.html#a6928a86735be0ce2b0835aa414555da9" title=" " alt="" coords="243,31,432,57"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="195,26,230,32,224,32,195,31"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="432,28,462,27,467,26,432,34"/>
+</map>
