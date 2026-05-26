@@ -1,99 +1,207 @@
-#ifndef SYSTEM_H
-#define SYSTEM_H
+/*
+  @file flows.cpp
+  @brief Implementação dos fluxos do simulador.
+ 
+  Este arquivo contém as implementações dos fluxos:
+  - exponencial
+  - logístico
+  - complexo
+ */
 
-#include <string>
+#include "../../include/flows.h"
+#include "../../include/system.h"
 
-using namespace std;
+ // FlowExponencial
+ 
+ /*
+   @brief Construtor padrão da classe FlowExponencial.
+  */
+FlowExponencial::FlowExponencial() : Flow() {}
 
 /*
-  @brief Classe responsável por representar um sistema.
+  @brief Construtor parametrizado da classe FlowExponencial.
  
-  Um sistema armazena um valor que pode ser alterado
-  durante a execução da simulação.
+  @param name Nome do fluxo.
+  @param source Sistema de origem.
+  @param target Sistema de destino.
  */
-class System {
-private:
+FlowExponencial::FlowExponencial(
+    const string& name,
+    System* source,
+    System* target
+) : Flow(name, source, target) {
+}
 
-    /*
-      @brief Valor armazenado pelo sistema.
-     */
-    double value;
+/*
+  @brief Construtor de cópia da classe FlowExponencial.
+ 
+  @param other Outro objeto FlowExponencial.
+ */
+FlowExponencial::FlowExponencial(
+    const FlowExponencial& other
+) : Flow(other) {
+}
 
-    /*
-      @brief Nome do sistema.
-     */
-    string name;
+/*
+  @brief Destrutor da classe FlowExponencial.
+ */
+FlowExponencial::~FlowExponencial() {}
 
-public:
+/*
+  @brief Operador de atribuição da classe FlowExponencial.
+ 
+  @param other Outro objeto FlowExponencial.
+  @return Referência para o objeto atual.
+ */
+FlowExponencial& FlowExponencial::operator=(
+    const FlowExponencial& other
+    ) {
+    if (this == &other) {
+        return *this;
+    }
 
-    /*
-      @brief Construtor padrão da classe System.
-     */
-    System();
+    Flow::operator=(other);
+    return *this;
+}
 
-    /*
-      @brief Construtor da classe System.
-     
-      @param name Nome do sistema.
-      @param value Valor inicial do sistema.
-     */
-    System(const string& name, double value);
+/*
+  @brief Executa o cálculo do fluxo exponencial.
+ 
+  O valor transferido corresponde a 1% do valor do sistema de origem.
+ 
+  @return Valor calculado do fluxo.
+ */
+double FlowExponencial::execute() {
+    return 0.01 * getSource()->getValue();
+}
 
-    /*
-      @brief Destrutor virtual da classe System.
-     */
-    virtual ~System();
 
-    // Métodos da UML
+// FlowLogistico
+/*
+  @brief Construtor padrão da classe FlowLogistico.
+ */
+FlowLogistico::FlowLogistico() : Flow() {}
 
-    /*
-      @brief Retorna o nome do sistema.
-     
-      @return Nome do sistema.
-     */
-    string getName() const;
+/*
+  @brief Construtor parametrizado da classe FlowLogistico.
+ 
+  @param name Nome do fluxo.
+  @param source Sistema de origem.
+  @param target Sistema de destino.
+ */
+FlowLogistico::FlowLogistico(
+    const string& name,
+    System* source,
+    System* target
+) : Flow(name, source, target) {
+}
 
-    /*
-      @brief Define o nome do sistema.
-     
-      @param name Novo nome do sistema.
-     */
-    void setName(const string& name);
+/*
+  @brief Construtor de cópia da classe FlowLogistico.
+ 
+  @param other Outro objeto FlowLogistico.
+ */
+FowLogistico::FlowLogistico(
+    const FlowLogistico& other
+) : Flow(other) {
+}
 
-    /*
-      @brief Retorna o valor atual do sistema.
-     
-      @return Valor armazenado no sistema.
-     */
-    double getValue() const;
+/*
+  @brief Destrutor da classe FlowLogistico.
+ */
+FlowLogistico::~FlowLogistico() {}
 
-    /*
-      @brief Define o valor do sistema.
-     
-      @param value Novo valor do sistema.
-     */
-    void setValue(double value);
+/*
+  @brief Operador de atribuição da classe FlowLogistico.
+ 
+  @param other Outro objeto FlowLogistico.
+  @return Referência para o objeto atual.
+ */
+FlowLogistico& FlowLogistico::operator=(
+    const FlowLogistico& other
+    ) {
+    if (this == &other) {
+        return *this;
+    }
 
-private:
+    Flow::operator=(other);
+    return *this;
+}
 
-    /*
-      @brief Construtor de cópia privado.
-    
-      Impede cópia da classe System.
-    
-      @param other Outro objeto System.
-     */
-    System(const System& other);
+/*
+  @brief Executa o cálculo do fluxo logístico.
+ 
+  Calcula o crescimento logístico considerando a capacidade limite do sistema.
+ 
+  @return Valor calculado do fluxo.
+ */
+double FlowLogistico::execute() {
+    double p = getTarget()->getValue();
 
-    /*
-      @brief Operador de atribuição privado.
-     
-      Impede atribuição entre objetos System.
-     
-      @param other Outro objeto System.
-      @return Referência para o próprio objeto.
-     */
-    System& operator=(const System& other);
-};
+    return 0.01 * p * (1 - p / 70.0);
+}
 
-#endif
+
+// FlowComplexo
+
+/*
+  @brief Construtor padrão da classe FlowComplexo.
+ */
+FlowComplexo::FlowComplexo() : Flow() {}
+
+/*
+  @brief Construtor parametrizado da classe FlowComplexo.
+ 
+  @param name Nome do fluxo.
+  @param source Sistema de origem.
+  @param target Sistema de destino.
+ */
+FlowComplexo::FlowComplexo(
+    const string& name,
+    System* source,
+    System* target
+) : Flow(name, source, target) {
+}
+
+/*
+  @brief Construtor de cópia da classe FlowComplexo.
+ 
+  @param other Outro objeto FlowComplexo.
+ */
+FlowComplexo::FlowComplexo(
+    const FlowComplexo& other
+) : Flow(other) {
+}
+
+/*
+  @brief Destrutor da classe FlowComplexo.
+ */
+FlowComplexo::~FlowComplexo() {}
+
+/*
+  @brief Operador de atribuição da classe FlowComplexo.
+ 
+  @param other Outro objeto FlowComplexo.
+  @return Referência para o objeto atual.
+ */
+FlowComplexo& FlowComplexo::operator=(
+    const FlowComplexo& other
+    ) {
+    if (this == &other) {
+        return *this;
+    }
+
+    Flow::operator=(other);
+    return *this;
+}
+
+/*
+  @brief Executa o cálculo do fluxo complexo.
+ 
+  Calcula a transferência entre sistemas utilizando o modelo complexo.
+ 
+  @return Valor calculado do fluxo.
+ */
+double FlowComplexo::execute() {
+    return 0.01 * getSource()->getValue();
+}
