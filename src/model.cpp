@@ -21,13 +21,13 @@ using namespace std;
 // Construtores
 // =====================
 
-/**
+/*
  * @brief Construtor padrão da classe Model.
  */
 Model::Model() {}
 
 
-/**
+/*
  * @brief Construtor de cópia da classe Model.
  *
  * @param other Outro objeto Model.
@@ -42,7 +42,7 @@ Model::Model(const Model& other) {
 // Destrutor
 // =====================
 
-/**
+/*
  * @brief Destrutor da classe Model.
  *
  * Remove os elementos armazenados
@@ -58,7 +58,7 @@ Model::~Model() {
 // Operador de atribuição
 // =====================
 
-/**
+/*
  * @brief Operador de atribuição da classe Model.
  *
  * Copia os sistemas e fluxos de outro modelo.
@@ -82,7 +82,7 @@ Model& Model::operator=(const Model& other) {
 // Métodos de adição
 // =====================
 
-/**
+/*
  * @brief Adiciona um sistema ao modelo.
  *
  * @param s Ponteiro para o sistema.
@@ -92,7 +92,7 @@ void Model::add(System* s) {
 }
 
 
-/**
+/*
  * @brief Adiciona um fluxo ao modelo.
  *
  * @param f Ponteiro para o fluxo.
@@ -106,7 +106,7 @@ void Model::add(Flow* f) {
 // Simulação
 // =====================
 
-/**
+/*
  * @brief Executa a simulação do modelo.
  *
  * Percorre o intervalo de tempo especificado,
@@ -161,7 +161,7 @@ bool Model::run(int t_init, int t_final) {
 // Exibição
 // =====================
 
-/**
+/*
  * @brief Exibe os sistemas e fluxos do modelo.
  *
  * Mostra no terminal:

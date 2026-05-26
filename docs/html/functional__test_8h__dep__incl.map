@@ -1,7 +1,7 @@
-<map id="C:/Users/mathe/Documents/ufop/trabalhosEng/gitrepo/BCC322&#45;Trabalho&#45;Individual/include/functional_test.h" name="C:/Users/mathe/Documents/ufop/trabalhosEng/gitrepo/BCC322&#45;Trabalho&#45;Individual/include/functional_test.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="111,5,299,80"/>
-<area shape="rect" id="Node000002" href="$functional__test_8cpp.html" title=" " alt="" coords="5,128,194,219"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,90,138,129,134,126,163,94"/>
-<area shape="rect" id="Node000003" href="$test_2functional_2main_8cpp.html" title=" " alt="" coords="217,136,406,211"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="246,90,284,136,278,135,244,95"/>
+<map id="include/functional_test.h" name="include/functional_test.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="118,5,240,48"/>
+<area shape="rect" id="Node000002" href="$functional__test_8cpp.html" title="Implementação dos testes funcionais do simulador." alt="" coords="5,96,169,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,58,110,98,107,94,144,60"/>
+<area shape="rect" id="Node000003" href="$test_2functional_2main_8cpp.html" title="Arquivo principal dos testes funcionais." alt="" coords="192,104,352,131"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="212,56,262,104,256,103,210,61"/>
 </map>

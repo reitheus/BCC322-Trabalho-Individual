@@ -1,5 +1,5 @@
 <map id="FlowLogistico::FlowLogistico" name="FlowLogistico::FlowLogistico">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,195,32"/>
-<area shape="rect" id="Node000002" href="$class_flow.html#ac9975e144e606242748197798e87dd32" title=" " alt="" coords="243,5,328,32"/>
+<area shape="rect" id="Node000001" title="Construtor parametrizado da classe FlowLogistico." alt="" coords="5,5,195,32"/>
+<area shape="rect" id="Node000002" href="$class_flow.html#ac9975e144e606242748197798e87dd32" title="Construtor padrão da classe Flow." alt="" coords="243,5,328,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,16,230,19,225,19,195,21"/>
 </map>

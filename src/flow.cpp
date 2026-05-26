@@ -16,7 +16,7 @@ using namespace std;
 // Construtores
 // =====================
 
-/**
+/*
  * @brief Construtor padrão da classe Flow.
  *
  * Inicializa:
@@ -32,7 +32,7 @@ Flow::Flow()
 }
 
 
-/**
+/*
  * @brief Construtor parametrizado da classe Flow.
  *
  * @param name Nome do fluxo.
@@ -49,7 +49,7 @@ Flow::Flow(const string& name,
 }
 
 
-/**
+/*
  * @brief Construtor de cópia da classe Flow.
  *
  * @param other Outro objeto Flow.
@@ -66,7 +66,7 @@ Flow::Flow(const Flow& other)
 // Destrutor
 // =====================
 
-/**
+/*
  * @brief Destrutor da classe Flow.
  */
 Flow::~Flow() {}
@@ -76,7 +76,7 @@ Flow::~Flow() {}
 // Operador de atribuição
 // =====================
 
-/**
+/*
  * @brief Operador de atribuição da classe Flow.
  *
  * Copia os atributos de outro fluxo.
@@ -101,7 +101,7 @@ Flow& Flow::operator=(const Flow& other) {
 // Getters e Setters
 // =====================
 
-/**
+/*
  * @brief Retorna o nome do fluxo.
  *
  * @return Nome do fluxo.
@@ -111,7 +111,7 @@ string Flow::getName() const {
 }
 
 
-/**
+/*
  * @brief Define o nome do fluxo.
  *
  * @param name Novo nome do fluxo.
@@ -121,7 +121,7 @@ void Flow::setName(const string& name) {
 }
 
 
-/**
+/*
  * @brief Retorna o sistema de origem.
  *
  * @return Ponteiro para o sistema de origem.
@@ -131,7 +131,7 @@ System* Flow::getSource() const {
 }
 
 
-/**
+/*
  * @brief Define o sistema de origem.
  *
  * @param source Novo sistema de origem.
@@ -141,7 +141,7 @@ void Flow::setSource(System* source) {
 }
 
 
-/**
+/*
  * @brief Retorna o sistema de destino.
  *
  * @return Ponteiro para o sistema de destino.
@@ -151,7 +151,7 @@ System* Flow::getTarget() const {
 }
 
 
-/**
+/*
  * @brief Define o sistema de destino.
  *
  * @param target Novo sistema de destino.

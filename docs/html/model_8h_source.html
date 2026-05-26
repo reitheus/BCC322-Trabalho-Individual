@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MyFlowSim: C:/Users/mathe/Documents/ufop/trabalhosEng/gitrepo/BCC322-Trabalho-Individual/include/model.h Source File</title>
+<title>MyFlowSim: include/model.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -135,91 +135,46 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('model_8h_sourc
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_model.html#ac7dea8829149e597d2671dbc0a538bf7">   25</a></span>    vector&lt;System*&gt; <a class="code hl_variable" href="class_model.html#ac7dea8829149e597d2671dbc0a538bf7">systems</a>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">      @brief Vetor contendo os fluxos do modelo.</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_model.html#aa76c9411f1cf6da6f4c696b2feadcb1a">   30</a></span>    vector&lt;Flow*&gt; <a class="code hl_variable" href="class_model.html#aa76c9411f1cf6da6f4c696b2feadcb1a">flows</a>;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">      @brief Construtor padrão da classe Model.</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_function" href="class_model.html#ae3b375de5f6df4faf74a95d64748e048">Model</a>();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">      @brief Destrutor virtual da classe Model.</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_model.html#ad6ebd2062a0b823db841a0b88baac4c0">~Model</a>();</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="comment">// Métodos da UML</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">      @brief Adiciona um sistema ao modelo.</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">     </span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">      @param s Ponteiro para o sistema a ser adicionado.</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_model.html#a054350312f72e04ef46fe5b14f987735">add</a>(<a class="code hl_class" href="class_system.html">System</a>* s);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">      @brief Adiciona um fluxo ao modelo.</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">     </span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">      @param f Ponteiro para o fluxo a ser adicionado.</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_model.html#a054350312f72e04ef46fe5b14f987735">add</a>(<a class="code hl_class" href="class_flow.html">Flow</a>* f);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">      @brief Executa a simulação do modelo.</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">     </span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">      @param t_init Tempo inicial da simulação.</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">      @param t_final Tempo final da simulação.</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">     </span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">      @return true caso a execução seja concluída com sucesso.</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">      @return false caso ocorra falha na execução.</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">     */</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_model.html#ab7d956f697bdb0a5b7cefdfba96bda6a">run</a>(<span class="keywordtype">int</span> t_init, <span class="keywordtype">int</span> t_final);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">      @brief Exibe informações do modelo.</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">     */</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_model.html#a7a77a44f945f468d9c9a3b7062c76546">showModel</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">      @brief Construtor de cópia privado.</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">     </span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">      Impede cópia da classe Model.</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">     </span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">      @param other Outro objeto Model.</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">     */</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_function" href="class_model.html#ae3b375de5f6df4faf74a95d64748e048">Model</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_model.html#ae3b375de5f6df4faf74a95d64748e048">Model</a>&amp; other);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">      @brief Operador de atribuição privado.</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">     </span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">      Impede atribuição entre objetos Model.</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">     </span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">      @param other Outro objeto Model.</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">      @return Referência para o próprio objeto.</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">     */</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <a class="code hl_function" href="class_model.html#ae3b375de5f6df4faf74a95d64748e048">Model</a>&amp; <a class="code hl_function" href="class_model.html#aaa76b9c72b66fa245f6b7b92d1ecc032">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_model.html#ae3b375de5f6df4faf74a95d64748e048">Model</a>&amp; other);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>};</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_model.html#ab7d956f697bdb0a5b7cefdfba96bda6a">run</a>(<span class="keywordtype">int</span> t_init, <span class="keywordtype">int</span> t_final);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_model.html#a7a77a44f945f468d9c9a3b7062c76546">showModel</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <a class="code hl_function" href="class_model.html#ae3b375de5f6df4faf74a95d64748e048">Model</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_model.html#ae3b375de5f6df4faf74a95d64748e048">Model</a>&amp; other);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <a class="code hl_function" href="class_model.html#ae3b375de5f6df4faf74a95d64748e048">Model</a>&amp; <a class="code hl_function" href="class_model.html#aaa76b9c72b66fa245f6b7b92d1ecc032">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_model.html#ae3b375de5f6df4faf74a95d64748e048">Model</a>&amp; other);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>};</div>
 </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_flow_html"><div class="ttname"><a href="class_flow.html">Flow</a></div><div class="ttdef"><b>Definition</b> flow.h:17</div></div>
-<div class="ttc" id="aclass_model_html_a054350312f72e04ef46fe5b14f987735"><div class="ttname"><a href="class_model.html#a054350312f72e04ef46fe5b14f987735">Model::add</a></div><div class="ttdeci">void add(System *s)</div><div class="ttdef"><b>Definition</b> model.cpp:78</div></div>
-<div class="ttc" id="aclass_model_html_a7a77a44f945f468d9c9a3b7062c76546"><div class="ttname"><a href="class_model.html#a7a77a44f945f468d9c9a3b7062c76546">Model::showModel</a></div><div class="ttdeci">void showModel() const</div><div class="ttdef"><b>Definition</b> model.cpp:152</div></div>
-<div class="ttc" id="aclass_model_html_aa76c9411f1cf6da6f4c696b2feadcb1a"><div class="ttname"><a href="class_model.html#aa76c9411f1cf6da6f4c696b2feadcb1a">Model::flows</a></div><div class="ttdeci">vector&lt; Flow * &gt; flows</div><div class="ttdef"><b>Definition</b> model.h:30</div></div>
-<div class="ttc" id="aclass_model_html_aaa76b9c72b66fa245f6b7b92d1ecc032"><div class="ttname"><a href="class_model.html#aaa76b9c72b66fa245f6b7b92d1ecc032">Model::operator=</a></div><div class="ttdeci">Model &amp; operator=(const Model &amp;other)</div><div class="ttdef"><b>Definition</b> model.cpp:59</div></div>
-<div class="ttc" id="aclass_model_html_ab7d956f697bdb0a5b7cefdfba96bda6a"><div class="ttname"><a href="class_model.html#ab7d956f697bdb0a5b7cefdfba96bda6a">Model::run</a></div><div class="ttdeci">bool run(int t_init, int t_final)</div><div class="ttdef"><b>Definition</b> model.cpp:104</div></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_flow_html"><div class="ttname"><a href="class_flow.html">Flow</a></div><div class="ttdoc">Classe abstrata responsável por representar um fluxo.</div><div class="ttdef"><b>Definition</b> flow.h:17</div></div>
+<div class="ttc" id="aclass_model_html_a054350312f72e04ef46fe5b14f987735"><div class="ttname"><a href="class_model.html#a054350312f72e04ef46fe5b14f987735">Model::add</a></div><div class="ttdeci">void add(System *s)</div><div class="ttdoc">Adiciona um sistema ao modelo.</div><div class="ttdef"><b>Definition</b> model.cpp:90</div></div>
+<div class="ttc" id="aclass_model_html_a7a77a44f945f468d9c9a3b7062c76546"><div class="ttname"><a href="class_model.html#a7a77a44f945f468d9c9a3b7062c76546">Model::showModel</a></div><div class="ttdeci">void showModel() const</div><div class="ttdoc">Exibe informações do modelo.</div><div class="ttdef"><b>Definition</b> model.cpp:172</div></div>
+<div class="ttc" id="aclass_model_html_aa76c9411f1cf6da6f4c696b2feadcb1a"><div class="ttname"><a href="class_model.html#aa76c9411f1cf6da6f4c696b2feadcb1a">Model::flows</a></div><div class="ttdeci">vector&lt; Flow * &gt; flows</div><div class="ttdoc">Vetor contendo os fluxos do modelo.</div><div class="ttdef"><b>Definition</b> model.h:30</div></div>
+<div class="ttc" id="aclass_model_html_aaa76b9c72b66fa245f6b7b92d1ecc032"><div class="ttname"><a href="class_model.html#aaa76b9c72b66fa245f6b7b92d1ecc032">Model::operator=</a></div><div class="ttdeci">Model &amp; operator=(const Model &amp;other)</div><div class="ttdoc">Operador de atribuição privado.</div><div class="ttdef"><b>Definition</b> model.cpp:69</div></div>
+<div class="ttc" id="aclass_model_html_ab7d956f697bdb0a5b7cefdfba96bda6a"><div class="ttname"><a href="class_model.html#ab7d956f697bdb0a5b7cefdfba96bda6a">Model::run</a></div><div class="ttdeci">bool run(int t_init, int t_final)</div><div class="ttdoc">Executa a simulação do modelo.</div><div class="ttdef"><b>Definition</b> model.cpp:121</div></div>
 <div class="ttc" id="aclass_model_html_ac7dea8829149e597d2671dbc0a538bf7"><div class="ttname"><a href="class_model.html#ac7dea8829149e597d2671dbc0a538bf7">Model::systems</a></div><div class="ttdeci">vector&lt; System * &gt; systems</div><div class="ttdoc">Vetor contendo os sistemas do modelo.</div><div class="ttdef"><b>Definition</b> model.h:25</div></div>
-<div class="ttc" id="aclass_model_html_ad6ebd2062a0b823db841a0b88baac4c0"><div class="ttname"><a href="class_model.html#ad6ebd2062a0b823db841a0b88baac4c0">Model::~Model</a></div><div class="ttdeci">virtual ~Model()</div><div class="ttdef"><b>Definition</b> model.cpp:44</div></div>
-<div class="ttc" id="aclass_model_html_ae3b375de5f6df4faf74a95d64748e048"><div class="ttname"><a href="class_model.html#ae3b375de5f6df4faf74a95d64748e048">Model::Model</a></div><div class="ttdeci">Model()</div><div class="ttdef"><b>Definition</b> model.cpp:24</div></div>
-<div class="ttc" id="aclass_system_html"><div class="ttname"><a href="class_system.html">System</a></div><div class="ttdef"><b>Definition</b> system.h:14</div></div>
+<div class="ttc" id="aclass_model_html_ad6ebd2062a0b823db841a0b88baac4c0"><div class="ttname"><a href="class_model.html#ad6ebd2062a0b823db841a0b88baac4c0">Model::~Model</a></div><div class="ttdeci">virtual ~Model()</div><div class="ttdoc">Destrutor virtual da classe Model.</div><div class="ttdef"><b>Definition</b> model.cpp:51</div></div>
+<div class="ttc" id="aclass_model_html_ae3b375de5f6df4faf74a95d64748e048"><div class="ttname"><a href="class_model.html#ae3b375de5f6df4faf74a95d64748e048">Model::Model</a></div><div class="ttdeci">Model()</div><div class="ttdoc">Construtor padrão da classe Model.</div><div class="ttdef"><b>Definition</b> model.cpp:27</div></div>
+<div class="ttc" id="aclass_system_html"><div class="ttname"><a href="class_system.html">System</a></div><div class="ttdoc">Classe responsável por representar um sistema.</div><div class="ttdef"><b>Definition</b> system.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

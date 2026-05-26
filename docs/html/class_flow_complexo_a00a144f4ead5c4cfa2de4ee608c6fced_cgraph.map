@@ -1,8 +1,8 @@
 <map id="FlowComplexo::FlowComplexo" name="FlowComplexo::FlowComplexo">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,209,32"/>
-<area shape="rect" id="Node000002" href="$class_flow.html#ac9975e144e606242748197798e87dd32" title=" " alt="" coords="508,5,593,32"/>
+<area shape="rect" id="Node000001" title="Construtor de cópia da classe FlowComplexo." alt="" coords="5,5,209,32"/>
+<area shape="rect" id="Node000002" href="$class_flow.html#ac9975e144e606242748197798e87dd32" title="Construtor padrão da classe Flow." alt="" coords="508,5,593,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,16,493,16,492,21,209,21"/>
-<area shape="rect" id="Node000003" href="$class_flow_complexo.html#a345f13716a20e08b62a8d523bbacd195" title=" " alt="" coords="257,31,460,57"/>
+<area shape="rect" id="Node000003" href="$class_flow_complexo.html#a345f13716a20e08b62a8d523bbacd195" title="Construtor padrão da classe FlowComplexo." alt="" coords="257,31,460,57"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="209,26,244,32,238,32,209,32"/>
 <area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="460,28,490,26,495,26,461,33"/>
 </map>

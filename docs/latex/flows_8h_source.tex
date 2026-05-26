@@ -1,0 +1,86 @@
+\doxysection{flows.\+h}
+\hypertarget{flows_8h_source}{}\label{flows_8h_source}\index{C:/Users/mathe/Documents/ufop/trabalhosEng/gitrepo/BCC322-\/Trabalho-\/Individual/include/flows.h@{C:/Users/mathe/Documents/ufop/trabalhosEng/gitrepo/BCC322-\/Trabalho-\/Individual/include/flows.h}}
+\doxymbox{\hyperlink{flows_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ FLOWS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ FLOWS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{flow_8h}{flow.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_flow_exponencial_adcfa957b23dd248a40e2dbb8d061a975}{FlowExponencial}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_flow_ac9975e144e606242748197798e87dd32}{Flow}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00018\ \ \ \ \ \doxymbox{\hyperlink{class_flow_exponencial_adcfa957b23dd248a40e2dbb8d061a975}{FlowExponencial}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00027\ \ \ \ \ \doxymbox{\hyperlink{class_flow_exponencial_adcfa957b23dd248a40e2dbb8d061a975}{FlowExponencial}}(}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \doxymbox{\hyperlink{class_flow_a8801d2ed91a9d96003d4bc8024451551}{name}},}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_system}{System}}*\ \doxymbox{\hyperlink{class_flow_a963ca162995d112f0f30322e2bb9de63}{source}},}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_system}{System}}*\ \doxymbox{\hyperlink{class_flow_a87be88d9bae4e927b29205faabeaf387}{target}}}
+\DoxyCodeLine{00031\ \ \ \ \ );}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \ \ \ \ \doxymbox{\hyperlink{class_flow_exponencial_adcfa957b23dd248a40e2dbb8d061a975}{FlowExponencial}}(}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_flow_exponencial_adcfa957b23dd248a40e2dbb8d061a975}{FlowExponencial}}\&\ other}
+\DoxyCodeLine{00040\ \ \ \ \ );}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{class_flow_exponencial_a7718731955602a499112c9c6cdc11431}{\string~FlowExponencial}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00053\ \ \ \ \ \doxymbox{\hyperlink{class_flow_exponencial_adcfa957b23dd248a40e2dbb8d061a975}{FlowExponencial}}\&\ \doxymbox{\hyperlink{class_flow_exponencial_a7d19d03afdafc0f34ee2f94545037433}{operator=}}(}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_flow_exponencial_adcfa957b23dd248a40e2dbb8d061a975}{FlowExponencial}}\&\ other}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_flow_exponencial_ae68b39789d77bb7474b883d659c9552c}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_flow_logistico_a6928a86735be0ce2b0835aa414555da9}{FlowLogistico}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_flow_ac9975e144e606242748197798e87dd32}{Flow}}\ \{}
+\DoxyCodeLine{00073\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00078\ \ \ \ \ \doxymbox{\hyperlink{class_flow_logistico_a6928a86735be0ce2b0835aa414555da9}{FlowLogistico}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00087\ \ \ \ \ \doxymbox{\hyperlink{class_flow_logistico_a6928a86735be0ce2b0835aa414555da9}{FlowLogistico}}(}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \doxymbox{\hyperlink{class_flow_a8801d2ed91a9d96003d4bc8024451551}{name}},}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_system}{System}}*\ \doxymbox{\hyperlink{class_flow_a963ca162995d112f0f30322e2bb9de63}{source}},}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_system}{System}}*\ \doxymbox{\hyperlink{class_flow_a87be88d9bae4e927b29205faabeaf387}{target}}}
+\DoxyCodeLine{00091\ \ \ \ \ );}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00098\ \ \ \ \ \doxymbox{\hyperlink{class_flow_logistico_a6928a86735be0ce2b0835aa414555da9}{FlowLogistico}}(}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_flow_logistico_a6928a86735be0ce2b0835aa414555da9}{FlowLogistico}}\&\ other}
+\DoxyCodeLine{00100\ \ \ \ \ );}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{class_flow_logistico_adbce93be76ce5c1a4c60f9b8283c0d79}{\string~FlowLogistico}}();}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00113\ \ \ \ \ \doxymbox{\hyperlink{class_flow_logistico_a6928a86735be0ce2b0835aa414555da9}{FlowLogistico}}\&\ \doxymbox{\hyperlink{class_flow_logistico_a433ce3fc5adfc9a06720f254b3596b16}{operator=}}(}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_flow_logistico_a6928a86735be0ce2b0835aa414555da9}{FlowLogistico}}\&\ other}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_flow_logistico_a2ec9c21f4febf0c72a0afbe1ef62ac4f}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00123\ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00132\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_flow_complexo_a345f13716a20e08b62a8d523bbacd195}{FlowComplexo}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_flow_ac9975e144e606242748197798e87dd32}{Flow}}\ \{}
+\DoxyCodeLine{00133\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00138\ \ \ \ \ \doxymbox{\hyperlink{class_flow_complexo_a345f13716a20e08b62a8d523bbacd195}{FlowComplexo}}();}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00147\ \ \ \ \ \doxymbox{\hyperlink{class_flow_complexo_a345f13716a20e08b62a8d523bbacd195}{FlowComplexo}}(}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \doxymbox{\hyperlink{class_flow_a8801d2ed91a9d96003d4bc8024451551}{name}},}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_system}{System}}*\ \doxymbox{\hyperlink{class_flow_a963ca162995d112f0f30322e2bb9de63}{source}},}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_system}{System}}*\ \doxymbox{\hyperlink{class_flow_a87be88d9bae4e927b29205faabeaf387}{target}}}
+\DoxyCodeLine{00151\ \ \ \ \ );}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00158\ \ \ \ \ \doxymbox{\hyperlink{class_flow_complexo_a345f13716a20e08b62a8d523bbacd195}{FlowComplexo}}(}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_flow_complexo_a345f13716a20e08b62a8d523bbacd195}{FlowComplexo}}\&\ other}
+\DoxyCodeLine{00160\ \ \ \ \ );}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{class_flow_complexo_a22a145aa272595d3dcf3743d0eaf59ac}{\string~FlowComplexo}}();}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00173\ \ \ \ \ \doxymbox{\hyperlink{class_flow_complexo_a345f13716a20e08b62a8d523bbacd195}{FlowComplexo}}\&\ \doxymbox{\hyperlink{class_flow_complexo_a557386c5bd006f0057d4cb0d92f3453a}{operator=}}(}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_flow_complexo_a345f13716a20e08b62a8d523bbacd195}{FlowComplexo}}\&\ other}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_flow_complexo_a33e4e9805c669d04099be544494171c1}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00183\ \};}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

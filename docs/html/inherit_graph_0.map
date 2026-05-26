@@ -1,9 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$class_flow.html" title=" " alt="" coords="5,56,55,83"/>
-<area shape="rect" id="Node000001" href="$class_flow_complexo.html" title=" " alt="" coords="109,5,217,32"/>
+<area shape="rect" id="Node000000" href="$class_flow.html" title="Classe abstrata responsável por representar um fluxo." alt="" coords="5,56,55,83"/>
+<area shape="rect" id="Node000001" href="$class_flow_complexo.html" title="Classe responsável pelo fluxo complexo." alt="" coords="109,5,217,32"/>
 <area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="68,52,128,30,124,35,71,57"/>
-<area shape="rect" id="Node000002" href="$class_flow_exponencial.html" title=" " alt="" coords="103,56,223,83"/>
+<area shape="rect" id="Node000002" href="$class_flow_exponencial.html" title="Classe responsável pelo fluxo exponencial." alt="" coords="103,56,223,83"/>
 <area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="70,67,104,68,100,71,71,72"/>
-<area shape="rect" id="Node000003" href="$class_flow_logistico.html" title=" " alt="" coords="112,107,214,133"/>
+<area shape="rect" id="Node000003" href="$class_flow_logistico.html" title="Classe responsável pelo fluxo logístico." alt="" coords="112,107,214,133"/>
 <area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="70,81,128,105,124,108,69,87"/>
 </map>
