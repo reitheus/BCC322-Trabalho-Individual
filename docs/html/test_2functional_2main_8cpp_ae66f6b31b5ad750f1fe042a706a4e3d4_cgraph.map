@@ -1,23 +1,23 @@
 <map id="main" name="main">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,137,55,164"/>
-<area shape="rect" id="Node000002" href="$functional__test_8cpp.html#a943dfe0c597a01c9760c140715fed527" title=" " alt="" coords="111,188,262,214"/>
+<area shape="rect" id="Node000001" title="Função principal dos testes funcionais." alt="" coords="5,137,55,164"/>
+<area shape="rect" id="Node000002" href="$functional__test_8cpp.html#a943dfe0c597a01c9760c140715fed527" title="Executa o teste funcional do modelo complexo." alt="" coords="111,188,262,214"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,157,104,173,126,182,121,184,102,178,55,162"/>
-<area shape="rect" id="Node000009" href="$functional__test_8cpp.html#a2c448ffaffdff4b03c825a01dffa6f27" title=" " alt="" coords="103,86,271,113"/>
+<area shape="rect" id="Node000009" href="$functional__test_8cpp.html#a2c448ffaffdff4b03c825a01dffa6f27" title="Executa o teste funcional do modelo exponencial." alt="" coords="103,86,271,113"/>
 <area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="53,140,102,123,126,117,122,120,104,128,57,144"/>
-<area shape="rect" id="Node000010" href="$functional__test_8cpp.html#a60914db64bde71b56d69320797266c29" title=" " alt="" coords="110,137,264,164"/>
+<area shape="rect" id="Node000010" href="$functional__test_8cpp.html#a60914db64bde71b56d69320797266c29" title="Executa o teste funcional do modelo logístico." alt="" coords="110,137,264,164"/>
 <area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="54,148,96,149,92,152,56,153"/>
-<area shape="rect" id="Node000003" href="$class_model.html#a054350312f72e04ef46fe5b14f987735" title=" " alt="" coords="358,137,443,164"/>
+<area shape="rect" id="Node000003" href="$class_model.html#a054350312f72e04ef46fe5b14f987735" title="Adiciona um sistema ao modelo." alt="" coords="358,137,443,164"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="246,185,346,163,341,165,247,190"/>
-<area shape="rect" id="Node000004" href="$functional__test_8cpp.html#a24d8f8b71ca522e705ac479fb0500849" title=" " alt="" coords="319,238,482,265"/>
+<area shape="rect" id="Node000004" href="$functional__test_8cpp.html#a24d8f8b71ca522e705ac479fb0500849" title="Realiza comparação entre números de ponto flutuante." alt="" coords="319,238,482,265"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="247,212,329,234,324,235,246,218"/>
-<area shape="rect" id="Node000005" href="$class_system.html#aa7d17369d1034e7d8643a63f69d1901d" title=" " alt="" coords="530,86,655,113"/>
+<area shape="rect" id="Node000005" href="$class_system.html#aa7d17369d1034e7d8643a63f69d1901d" title="Retorna o valor atual do sistema." alt="" coords="530,86,655,113"/>
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="206,212,255,246,287,262,320,275,366,287,403,295,439,292,481,275,501,261,518,244,547,205,568,163,581,129,586,126,573,165,552,207,523,248,504,265,484,279,441,297,403,300,365,293,318,280,285,267,253,251,204,217"/>
-<area shape="rect" id="Node000006" href="$class_model.html#ab7d956f697bdb0a5b7cefdfba96bda6a" title=" " alt="" coords="360,36,442,62"/>
+<area shape="rect" id="Node000006" href="$class_model.html#ab7d956f697bdb0a5b7cefdfba96bda6a" title="Executa a simulação do modelo." alt="" coords="360,36,442,62"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="246,185,270,174,285,162,295,151,317,123,371,75,375,72,321,127,299,154,288,166,272,178,248,190"/>
-<area shape="rect" id="Node000008" href="$class_model.html#a7a77a44f945f468d9c9a3b7062c76546" title=" " alt="" coords="336,188,466,214"/>
+<area shape="rect" id="Node000008" href="$class_model.html#a7a77a44f945f468d9c9a3b7062c76546" title="Exibe informações do modelo." alt="" coords="336,188,466,214"/>
 <area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="262,198,323,201,318,202,263,204"/>
 <area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="442,57,527,82,522,82,442,63"/>
-<area shape="rect" id="Node000007" href="$class_system.html#a5343de0a45485edd88bc87f338fe9a19" title=" " alt="" coords="530,36,655,62"/>
+<area shape="rect" id="Node000007" href="$class_system.html#a5343de0a45485edd88bc87f338fe9a19" title="Define o valor do sistema." alt="" coords="530,36,655,62"/>
 <area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="442,47,517,48,512,50,443,52"/>
 <area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="246,111,346,136,341,138,247,116"/>
 <area shape="poly" id="edge11_Node000009_Node000004" title=" " alt="" coords="253,111,273,123,285,136,292,149,298,175,303,200,310,212,321,224,327,231,322,230,317,228,306,216,298,202,292,176,287,151,280,139,269,127,253,116"/>

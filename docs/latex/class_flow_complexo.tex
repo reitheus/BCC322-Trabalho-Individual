@@ -1,0 +1,232 @@
+\doxysection{Flow\+Complexo Class Reference}
+\hypertarget{class_flow_complexo}{}\label{class_flow_complexo}\index{FlowComplexo@{FlowComplexo}}
+
+
+Classe responsável pelo fluxo complexo.  
+
+
+
+
+{\ttfamily \+\#include $<$flows.\+h$>$}
+
+
+
+Inheritance diagram for Flow\+Complexo:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_flow_complexo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Flow\+Complexo:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_flow_complexo__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_flow_complexo_a345f13716a20e08b62a8d523bbacd195}{Flow\+Complexo}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão da classe \doxylink{class_flow_complexo}{Flow\+Complexo}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_flow_complexo_a9a2a2bc580e52d4ea3f976837b3f2cde}{Flow\+Complexo}} (const string \&name, \doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*}source, \doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*}target)
+\begin{DoxyCompactList}\small\item\em Construtor parametrizado da classe \doxylink{class_flow_complexo}{Flow\+Complexo}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_flow_complexo_a00a144f4ead5c4cfa2de4ee608c6fced}{Flow\+Complexo}} (const \doxymbox{\hyperlink{class_flow_complexo}{Flow\+Complexo}} \&other)
+\begin{DoxyCompactList}\small\item\em Construtor de cópia da classe \doxylink{class_flow_complexo}{Flow\+Complexo}. \end{DoxyCompactList}\item 
+virtual \doxymbox{\hyperlink{class_flow_complexo_a22a145aa272595d3dcf3743d0eaf59ac}{\texorpdfstring{$\sim$}{\string~}\+Flow\+Complexo}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor virtual da classe \doxylink{class_flow_complexo}{Flow\+Complexo}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_flow_complexo}{Flow\+Complexo}} \& \doxymbox{\hyperlink{class_flow_complexo_a557386c5bd006f0057d4cb0d92f3453a}{operator=}} (const \doxymbox{\hyperlink{class_flow_complexo}{Flow\+Complexo}} \&other)
+\begin{DoxyCompactList}\small\item\em Operador de atribuição da classe \doxylink{class_flow_complexo}{Flow\+Complexo}. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_flow_complexo_a33e4e9805c669d04099be544494171c1}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Executa o cálculo do fluxo complexo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_flow}{Flow}}}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_flow_ac9975e144e606242748197798e87dd32}{Flow}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão da classe \doxylink{class_flow}{Flow}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_flow_a0948e89afd13e5e8d36298d085597e85}{Flow}} (const string \&name, \doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*}source, \doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*}target)
+\begin{DoxyCompactList}\small\item\em Construtor parametrizado da classe \doxylink{class_flow}{Flow}. \end{DoxyCompactList}\item 
+virtual \doxymbox{\hyperlink{class_flow_a5991efa6e8cf88c4ef2125cc727db333}{\texorpdfstring{$\sim$}{\string~}\+Flow}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor virtual da classe \doxylink{class_flow}{Flow}. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{class_flow_a62bbc54ff95eeb0795511519edf32077}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o nome do fluxo. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_flow_a4c91090c6e9e22fceb78cf459844327b}{set\+Name}} (const string \&name)
+\begin{DoxyCompactList}\small\item\em Define o nome do fluxo. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_flow_a1f3858f90d141807377c2640fb5dd0fc}{get\+Source}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o sistema de origem. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_flow_a250fc53158862fc0db77b323a33e48a3}{set\+Source}} (\doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*}source)
+\begin{DoxyCompactList}\small\item\em Define o sistema de origem. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_flow_aff8a0f8ca8dc50d37c92ab7556e172b5}{get\+Target}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o sistema de destino. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_flow_ab69903880174e5bcdc0d815b5de7b3e0}{set\+Target}} (\doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*}target)
+\begin{DoxyCompactList}\small\item\em Define o sistema de destino. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \doxymbox{\hyperlink{class_flow}{Flow}}}
+\begin{DoxyCompactItemize}
+\item 
+string \doxymbox{\hyperlink{class_flow_a8801d2ed91a9d96003d4bc8024451551}{name}}
+\begin{DoxyCompactList}\small\item\em Nome do fluxo. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_flow_a963ca162995d112f0f30322e2bb9de63}{source}}
+\begin{DoxyCompactList}\small\item\em Sistema de origem do fluxo. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_flow_a87be88d9bae4e927b29205faabeaf387}{target}}
+\begin{DoxyCompactList}\small\item\em Sistema de destino do fluxo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe responsável pelo fluxo complexo. 
+
+Implementa um fluxo com múltiplas interações entre sistemas. 
+
+\label{class_flow_complexo_doc-constructors}
+\Hypertarget{class_flow_complexo_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_flow_complexo_a345f13716a20e08b62a8d523bbacd195}\index{FlowComplexo@{FlowComplexo}!FlowComplexo@{FlowComplexo}}
+\index{FlowComplexo@{FlowComplexo}!FlowComplexo@{FlowComplexo}}
+\doxysubsubsection{\texorpdfstring{FlowComplexo()}{FlowComplexo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_flow_complexo_a345f13716a20e08b62a8d523bbacd195} 
+Flow\+Complexo::\+\+Flow\+Complexo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Construtor padrão da classe \doxylink{class_flow_complexo}{Flow\+Complexo}. 
+
+Here is the call graph for this function:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_flow_complexo_a345f13716a20e08b62a8d523bbacd195_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_flow_complexo_a345f13716a20e08b62a8d523bbacd195_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_flow_complexo_a9a2a2bc580e52d4ea3f976837b3f2cde}\index{FlowComplexo@{FlowComplexo}!FlowComplexo@{FlowComplexo}}
+\index{FlowComplexo@{FlowComplexo}!FlowComplexo@{FlowComplexo}}
+\doxysubsubsection{\texorpdfstring{FlowComplexo()}{FlowComplexo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_flow_complexo_a9a2a2bc580e52d4ea3f976837b3f2cde} 
+Flow\+Complexo::\+\+Flow\+Complexo (\begin{DoxyParamCaption}\item[{const string \&}]{name}{, }\item[{\doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*}}]{source}{, }\item[{\doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*}}]{target}{}\end{DoxyParamCaption})}
+
+
+
+Construtor parametrizado da classe \doxylink{class_flow_complexo}{Flow\+Complexo}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nome do fluxo. \\
+\hline
+{\em source} & Sistema de origem. \\
+\hline
+{\em target} & Sistema de destino. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_flow_complexo_a9a2a2bc580e52d4ea3f976837b3f2cde_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_flow_complexo_a00a144f4ead5c4cfa2de4ee608c6fced}\index{FlowComplexo@{FlowComplexo}!FlowComplexo@{FlowComplexo}}
+\index{FlowComplexo@{FlowComplexo}!FlowComplexo@{FlowComplexo}}
+\doxysubsubsection{\texorpdfstring{FlowComplexo()}{FlowComplexo()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_flow_complexo_a00a144f4ead5c4cfa2de4ee608c6fced} 
+Flow\+Complexo::\+\+Flow\+Complexo (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_flow_complexo}{Flow\+Complexo}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Construtor de cópia da classe \doxylink{class_flow_complexo}{Flow\+Complexo}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Outro objeto \doxylink{class_flow_complexo}{Flow\+Complexo}. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_flow_complexo_a00a144f4ead5c4cfa2de4ee608c6fced_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_flow_complexo_a22a145aa272595d3dcf3743d0eaf59ac}\index{FlowComplexo@{FlowComplexo}!````~FlowComplexo@{\texorpdfstring{$\sim$}{\string~}FlowComplexo}}
+\index{````~FlowComplexo@{\texorpdfstring{$\sim$}{\string~}FlowComplexo}!FlowComplexo@{FlowComplexo}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}FlowComplexo()}{\string~FlowComplexo()}}
+{\footnotesize\ttfamily \label{class_flow_complexo_a22a145aa272595d3dcf3743d0eaf59ac} 
+Flow\+Complexo::\+\texorpdfstring{$\sim$}{\string~}\+Flow\+Complexo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destrutor virtual da classe \doxylink{class_flow_complexo}{Flow\+Complexo}. 
+
+Destrutor da classe \doxylink{class_flow_complexo}{Flow\+Complexo}. 
+
+\label{class_flow_complexo_doc-func-members}
+\Hypertarget{class_flow_complexo_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_flow_complexo_a33e4e9805c669d04099be544494171c1}\index{FlowComplexo@{FlowComplexo}!execute@{execute}}
+\index{execute@{execute}!FlowComplexo@{FlowComplexo}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{class_flow_complexo_a33e4e9805c669d04099be544494171c1} 
+double Flow\+Complexo::\+execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executa o cálculo do fluxo complexo. 
+
+\begin{DoxyReturn}{Returns}
+Valor calculado pelo fluxo.
+\end{DoxyReturn}
+Calcula a transferência entre sistemas utilizando o modelo complexo.
+
+\begin{DoxyReturn}{Returns}
+Valor calculado do fluxo. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{class_flow_a619be0b590c78202127bc6ac7fb04029}{Flow}}.
+
+Here is the call graph for this function:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_flow_complexo_a33e4e9805c669d04099be544494171c1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_flow_complexo_a557386c5bd006f0057d4cb0d92f3453a}\index{FlowComplexo@{FlowComplexo}!operator=@{operator=}}
+\index{operator=@{operator=}!FlowComplexo@{FlowComplexo}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_flow_complexo_a557386c5bd006f0057d4cb0d92f3453a} 
+\doxymbox{\hyperlink{class_flow_complexo}{Flow\+Complexo}} \& Flow\+Complexo::\+operator= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_flow_complexo}{Flow\+Complexo}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Operador de atribuição da classe \doxylink{class_flow_complexo}{Flow\+Complexo}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Outro objeto \doxylink{class_flow_complexo}{Flow\+Complexo}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referência para o objeto atual. 
+\end{DoxyReturn}
+Here is the call graph for this function:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_flow_complexo_a557386c5bd006f0057d4cb0d92f3453a_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+C:\+/\+\+Users/\+mathe/\+\+Documents/\+ufop/\+trabalhos\+Eng/\+gitrepo/\+\+BCC322-\/\+Trabalho-\/\+Individual/\+include/\+\doxymbox{\hyperlink{flows_8h}{flows.\+h}}\item 
+C:\+/\+\+Users/\+mathe/\+\+Documents/\+ufop/\+trabalhos\+Eng/\+gitrepo/\+\+BCC322-\/\+Trabalho-\/\+Individual/\+test/\+functional/\+\doxymbox{\hyperlink{flows_8cpp}{flows.\+cpp}}\end{DoxyCompactItemize}

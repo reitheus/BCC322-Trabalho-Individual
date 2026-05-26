@@ -1,0 +1,232 @@
+\doxysection{Flow\+Logistico Class Reference}
+\hypertarget{class_flow_logistico}{}\label{class_flow_logistico}\index{FlowLogistico@{FlowLogistico}}
+
+
+Classe responsável pelo fluxo logístico.  
+
+
+
+
+{\ttfamily \+\#include $<$flows.\+h$>$}
+
+
+
+Inheritance diagram for Flow\+Logistico:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{class_flow_logistico__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Flow\+Logistico:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_flow_logistico__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_flow_logistico_a6928a86735be0ce2b0835aa414555da9}{Flow\+Logistico}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão da classe \doxylink{class_flow_logistico}{Flow\+Logistico}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_flow_logistico_ab5fe30a17c0bc5e24fe10171bc85b68d}{Flow\+Logistico}} (const string \&name, \doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*}source, \doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*}target)
+\begin{DoxyCompactList}\small\item\em Construtor parametrizado da classe \doxylink{class_flow_logistico}{Flow\+Logistico}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_flow_logistico_aaccda8be28072d044842a03a8dc17327}{Flow\+Logistico}} (const \doxymbox{\hyperlink{class_flow_logistico}{Flow\+Logistico}} \&other)
+\begin{DoxyCompactList}\small\item\em Construtor de cópia da classe \doxylink{class_flow_logistico}{Flow\+Logistico}. \end{DoxyCompactList}\item 
+virtual \doxymbox{\hyperlink{class_flow_logistico_adbce93be76ce5c1a4c60f9b8283c0d79}{\texorpdfstring{$\sim$}{\string~}\+Flow\+Logistico}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor virtual da classe \doxylink{class_flow_logistico}{Flow\+Logistico}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_flow_logistico}{Flow\+Logistico}} \& \doxymbox{\hyperlink{class_flow_logistico_a433ce3fc5adfc9a06720f254b3596b16}{operator=}} (const \doxymbox{\hyperlink{class_flow_logistico}{Flow\+Logistico}} \&other)
+\begin{DoxyCompactList}\small\item\em Operador de atribuição da classe \doxylink{class_flow_logistico}{Flow\+Logistico}. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_flow_logistico_a2ec9c21f4febf0c72a0afbe1ef62ac4f}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Executa o cálculo do fluxo logístico. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_flow}{Flow}}}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_flow_ac9975e144e606242748197798e87dd32}{Flow}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão da classe \doxylink{class_flow}{Flow}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_flow_a0948e89afd13e5e8d36298d085597e85}{Flow}} (const string \&name, \doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*}source, \doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*}target)
+\begin{DoxyCompactList}\small\item\em Construtor parametrizado da classe \doxylink{class_flow}{Flow}. \end{DoxyCompactList}\item 
+virtual \doxymbox{\hyperlink{class_flow_a5991efa6e8cf88c4ef2125cc727db333}{\texorpdfstring{$\sim$}{\string~}\+Flow}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor virtual da classe \doxylink{class_flow}{Flow}. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{class_flow_a62bbc54ff95eeb0795511519edf32077}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o nome do fluxo. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_flow_a4c91090c6e9e22fceb78cf459844327b}{set\+Name}} (const string \&name)
+\begin{DoxyCompactList}\small\item\em Define o nome do fluxo. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_flow_a1f3858f90d141807377c2640fb5dd0fc}{get\+Source}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o sistema de origem. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_flow_a250fc53158862fc0db77b323a33e48a3}{set\+Source}} (\doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*}source)
+\begin{DoxyCompactList}\small\item\em Define o sistema de origem. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_flow_aff8a0f8ca8dc50d37c92ab7556e172b5}{get\+Target}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o sistema de destino. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_flow_ab69903880174e5bcdc0d815b5de7b3e0}{set\+Target}} (\doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*}target)
+\begin{DoxyCompactList}\small\item\em Define o sistema de destino. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \doxymbox{\hyperlink{class_flow}{Flow}}}
+\begin{DoxyCompactItemize}
+\item 
+string \doxymbox{\hyperlink{class_flow_a8801d2ed91a9d96003d4bc8024451551}{name}}
+\begin{DoxyCompactList}\small\item\em Nome do fluxo. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_flow_a963ca162995d112f0f30322e2bb9de63}{source}}
+\begin{DoxyCompactList}\small\item\em Sistema de origem do fluxo. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_flow_a87be88d9bae4e927b29205faabeaf387}{target}}
+\begin{DoxyCompactList}\small\item\em Sistema de destino do fluxo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe responsável pelo fluxo logístico. 
+
+Implementa um fluxo baseado em crescimento logístico entre sistemas. 
+
+\label{class_flow_logistico_doc-constructors}
+\Hypertarget{class_flow_logistico_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_flow_logistico_a6928a86735be0ce2b0835aa414555da9}\index{FlowLogistico@{FlowLogistico}!FlowLogistico@{FlowLogistico}}
+\index{FlowLogistico@{FlowLogistico}!FlowLogistico@{FlowLogistico}}
+\doxysubsubsection{\texorpdfstring{FlowLogistico()}{FlowLogistico()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_flow_logistico_a6928a86735be0ce2b0835aa414555da9} 
+Flow\+Logistico::\+\+Flow\+Logistico (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Construtor padrão da classe \doxylink{class_flow_logistico}{Flow\+Logistico}. 
+
+Here is the call graph for this function:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_flow_logistico_a6928a86735be0ce2b0835aa414555da9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_flow_logistico_a6928a86735be0ce2b0835aa414555da9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_flow_logistico_ab5fe30a17c0bc5e24fe10171bc85b68d}\index{FlowLogistico@{FlowLogistico}!FlowLogistico@{FlowLogistico}}
+\index{FlowLogistico@{FlowLogistico}!FlowLogistico@{FlowLogistico}}
+\doxysubsubsection{\texorpdfstring{FlowLogistico()}{FlowLogistico()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_flow_logistico_ab5fe30a17c0bc5e24fe10171bc85b68d} 
+Flow\+Logistico::\+\+Flow\+Logistico (\begin{DoxyParamCaption}\item[{const string \&}]{name}{, }\item[{\doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*}}]{source}{, }\item[{\doxymbox{\hyperlink{class_system}{System}} \texorpdfstring{$\ast$}{*}}]{target}{}\end{DoxyParamCaption})}
+
+
+
+Construtor parametrizado da classe \doxylink{class_flow_logistico}{Flow\+Logistico}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Nome do fluxo. \\
+\hline
+{\em source} & Sistema de origem. \\
+\hline
+{\em target} & Sistema de destino. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_flow_logistico_ab5fe30a17c0bc5e24fe10171bc85b68d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_flow_logistico_aaccda8be28072d044842a03a8dc17327}\index{FlowLogistico@{FlowLogistico}!FlowLogistico@{FlowLogistico}}
+\index{FlowLogistico@{FlowLogistico}!FlowLogistico@{FlowLogistico}}
+\doxysubsubsection{\texorpdfstring{FlowLogistico()}{FlowLogistico()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_flow_logistico_aaccda8be28072d044842a03a8dc17327} 
+Flow\+Logistico::\+\+Flow\+Logistico (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_flow_logistico}{Flow\+Logistico}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Construtor de cópia da classe \doxylink{class_flow_logistico}{Flow\+Logistico}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Outro objeto \doxylink{class_flow_logistico}{Flow\+Logistico}. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_flow_logistico_aaccda8be28072d044842a03a8dc17327_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_flow_logistico_adbce93be76ce5c1a4c60f9b8283c0d79}\index{FlowLogistico@{FlowLogistico}!````~FlowLogistico@{\texorpdfstring{$\sim$}{\string~}FlowLogistico}}
+\index{````~FlowLogistico@{\texorpdfstring{$\sim$}{\string~}FlowLogistico}!FlowLogistico@{FlowLogistico}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}FlowLogistico()}{\string~FlowLogistico()}}
+{\footnotesize\ttfamily \label{class_flow_logistico_adbce93be76ce5c1a4c60f9b8283c0d79} 
+Flow\+Logistico::\+\texorpdfstring{$\sim$}{\string~}\+Flow\+Logistico (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destrutor virtual da classe \doxylink{class_flow_logistico}{Flow\+Logistico}. 
+
+Destrutor da classe \doxylink{class_flow_logistico}{Flow\+Logistico}. 
+
+\label{class_flow_logistico_doc-func-members}
+\Hypertarget{class_flow_logistico_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_flow_logistico_a2ec9c21f4febf0c72a0afbe1ef62ac4f}\index{FlowLogistico@{FlowLogistico}!execute@{execute}}
+\index{execute@{execute}!FlowLogistico@{FlowLogistico}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{class_flow_logistico_a2ec9c21f4febf0c72a0afbe1ef62ac4f} 
+double Flow\+Logistico::\+execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executa o cálculo do fluxo logístico. 
+
+\begin{DoxyReturn}{Returns}
+Valor calculado pelo fluxo.
+\end{DoxyReturn}
+Calcula o crescimento logístico considerando a capacidade limite do sistema.
+
+\begin{DoxyReturn}{Returns}
+Valor calculado do fluxo. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{class_flow_a619be0b590c78202127bc6ac7fb04029}{Flow}}.
+
+Here is the call graph for this function:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{class_flow_logistico_a2ec9c21f4febf0c72a0afbe1ef62ac4f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_flow_logistico_a433ce3fc5adfc9a06720f254b3596b16}\index{FlowLogistico@{FlowLogistico}!operator=@{operator=}}
+\index{operator=@{operator=}!FlowLogistico@{FlowLogistico}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_flow_logistico_a433ce3fc5adfc9a06720f254b3596b16} 
+\doxymbox{\hyperlink{class_flow_logistico}{Flow\+Logistico}} \& Flow\+Logistico::\+operator= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_flow_logistico}{Flow\+Logistico}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Operador de atribuição da classe \doxylink{class_flow_logistico}{Flow\+Logistico}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Outro objeto \doxylink{class_flow_logistico}{Flow\+Logistico}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referência para o objeto atual. 
+\end{DoxyReturn}
+Here is the call graph for this function:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_flow_logistico_a433ce3fc5adfc9a06720f254b3596b16_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+C:\+/\+\+Users/\+mathe/\+\+Documents/\+ufop/\+trabalhos\+Eng/\+gitrepo/\+\+BCC322-\/\+Trabalho-\/\+Individual/\+include/\+\doxymbox{\hyperlink{flows_8h}{flows.\+h}}\item 
+C:\+/\+\+Users/\+mathe/\+\+Documents/\+ufop/\+trabalhos\+Eng/\+gitrepo/\+\+BCC322-\/\+Trabalho-\/\+Individual/\+test/\+functional/\+\doxymbox{\hyperlink{flows_8cpp}{flows.\+cpp}}\end{DoxyCompactItemize}

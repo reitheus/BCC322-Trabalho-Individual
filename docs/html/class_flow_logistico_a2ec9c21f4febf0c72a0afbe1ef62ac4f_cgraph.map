@@ -1,7 +1,7 @@
 <map id="FlowLogistico::execute" name="FlowLogistico::execute">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,161,57"/>
-<area shape="rect" id="Node000002" href="$class_flow.html#aff8a0f8ca8dc50d37c92ab7556e172b5" title=" " alt="" coords="215,5,326,32"/>
+<area shape="rect" id="Node000001" title="Executa o cálculo do fluxo logístico." alt="" coords="5,31,161,57"/>
+<area shape="rect" id="Node000002" href="$class_flow.html#aff8a0f8ca8dc50d37c92ab7556e172b5" title="Retorna o sistema de destino." alt="" coords="215,5,326,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,31,202,28,197,29,162,36"/>
-<area shape="rect" id="Node000003" href="$class_system.html#aa7d17369d1034e7d8643a63f69d1901d" title=" " alt="" coords="209,56,333,83"/>
+<area shape="rect" id="Node000003" href="$class_system.html#aa7d17369d1034e7d8643a63f69d1901d" title="Retorna o valor atual do sistema." alt="" coords="209,56,333,83"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="161,52,196,59,191,59,161,57"/>
 </map>

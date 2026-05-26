@@ -120,18 +120,21 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_flow.htm
 </div><!--header-->
 <div class="contents">
 
+<p>Classe abstrata responsável por representar um fluxo.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="flow_8h_source.html">flow.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Flow:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_flow__inherit__graph.png" border="0" usemap="#a_flow_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="a_flow_inherit__map" id="a_flow_inherit__map">
-<area shape="rect" title=" " alt="" coords="181,5,272,352"/>
-<area shape="rect" href="class_flow_complexo.html" title=" " alt="" coords="5,400,132,576"/>
+<area shape="rect" title="Classe abstrata responsável por representar um fluxo." alt="" coords="181,5,272,352"/>
+<area shape="rect" href="class_flow_complexo.html" title="Classe responsável pelo fluxo complexo." alt="" coords="5,400,132,576"/>
 <area shape="poly" title=" " alt="" coords="175,279,116,401,111,399,173,284"/>
-<area shape="rect" href="class_flow_exponencial.html" title=" " alt="" coords="157,400,296,576"/>
+<area shape="rect" href="class_flow_exponencial.html" title="Classe responsável pelo fluxo exponencial." alt="" coords="157,400,296,576"/>
 <area shape="poly" title=" " alt="" coords="227,365,229,401,224,399,225,369"/>
-<area shape="rect" href="class_flow_logistico.html" title=" " alt="" coords="320,400,440,576"/>
+<area shape="rect" href="class_flow_logistico.html" title="Classe responsável pelo fluxo logístico." alt="" coords="320,400,440,576"/>
 <area shape="poly" title=" " alt="" coords="280,282,339,400,334,400,277,287"/>
 </map>
 </div>
@@ -140,8 +143,8 @@ Collaboration diagram for Flow:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_flow__coll__graph.png" border="0" usemap="#a_flow_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_flow_coll__map" id="a_flow_coll__map">
-<area shape="rect" title=" " alt="" coords="5,360,96,664"/>
-<area shape="rect" href="class_system.html" title=" " alt="" coords="7,5,94,267"/>
+<area shape="rect" title="Classe abstrata responsável por representar um fluxo." alt="" coords="5,360,96,664"/>
+<area shape="rect" href="class_system.html" title="Classe responsável por representar um sistema." alt="" coords="7,5,94,267"/>
 <area shape="poly" title=" " alt="" coords="51,264,53,343,48,343,51,269"/>
 </map>
 </div>
@@ -149,28 +152,46 @@ Collaboration diagram for Flow:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac9975e144e606242748197798e87dd32" id="r_ac9975e144e606242748197798e87dd32"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ac9975e144e606242748197798e87dd32">Flow</a> ()</td></tr>
+<tr class="memdesc:ac9975e144e606242748197798e87dd32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor padrão da classe <a class="el" href="class_flow.html" title="Classe abstrata responsável por representar um fluxo.">Flow</a>.  <br /></td></tr>
 <tr class="memitem:a0948e89afd13e5e8d36298d085597e85" id="r_a0948e89afd13e5e8d36298d085597e85"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a0948e89afd13e5e8d36298d085597e85">Flow</a> (const string &amp;name, <a class="el" href="class_system.html">System</a> *source, <a class="el" href="class_system.html">System</a> *target)</td></tr>
+<tr class="memdesc:a0948e89afd13e5e8d36298d085597e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor parametrizado da classe <a class="el" href="class_flow.html" title="Classe abstrata responsável por representar um fluxo.">Flow</a>.  <br /></td></tr>
 <tr class="memitem:a5991efa6e8cf88c4ef2125cc727db333" id="r_a5991efa6e8cf88c4ef2125cc727db333"><td class="memItemLeft">virtual&#160;</td><td class="memItemRight"><a class="el" href="#a5991efa6e8cf88c4ef2125cc727db333">~Flow</a> ()</td></tr>
+<tr class="memdesc:a5991efa6e8cf88c4ef2125cc727db333"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destrutor virtual da classe <a class="el" href="class_flow.html" title="Classe abstrata responsável por representar um fluxo.">Flow</a>.  <br /></td></tr>
 <tr class="memitem:a62bbc54ff95eeb0795511519edf32077" id="r_a62bbc54ff95eeb0795511519edf32077"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#a62bbc54ff95eeb0795511519edf32077">getName</a> () const</td></tr>
+<tr class="memdesc:a62bbc54ff95eeb0795511519edf32077"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o nome do fluxo.  <br /></td></tr>
 <tr class="memitem:a4c91090c6e9e22fceb78cf459844327b" id="r_a4c91090c6e9e22fceb78cf459844327b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4c91090c6e9e22fceb78cf459844327b">setName</a> (const string &amp;name)</td></tr>
+<tr class="memdesc:a4c91090c6e9e22fceb78cf459844327b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o nome do fluxo.  <br /></td></tr>
 <tr class="memitem:a1f3858f90d141807377c2640fb5dd0fc" id="r_a1f3858f90d141807377c2640fb5dd0fc"><td class="memItemLeft"><a class="el" href="class_system.html">System</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a1f3858f90d141807377c2640fb5dd0fc">getSource</a> () const</td></tr>
+<tr class="memdesc:a1f3858f90d141807377c2640fb5dd0fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o sistema de origem.  <br /></td></tr>
 <tr class="memitem:a250fc53158862fc0db77b323a33e48a3" id="r_a250fc53158862fc0db77b323a33e48a3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a250fc53158862fc0db77b323a33e48a3">setSource</a> (<a class="el" href="class_system.html">System</a> *source)</td></tr>
+<tr class="memdesc:a250fc53158862fc0db77b323a33e48a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o sistema de origem.  <br /></td></tr>
 <tr class="memitem:aff8a0f8ca8dc50d37c92ab7556e172b5" id="r_aff8a0f8ca8dc50d37c92ab7556e172b5"><td class="memItemLeft"><a class="el" href="class_system.html">System</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aff8a0f8ca8dc50d37c92ab7556e172b5">getTarget</a> () const</td></tr>
+<tr class="memdesc:aff8a0f8ca8dc50d37c92ab7556e172b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o sistema de destino.  <br /></td></tr>
 <tr class="memitem:ab69903880174e5bcdc0d815b5de7b3e0" id="r_ab69903880174e5bcdc0d815b5de7b3e0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab69903880174e5bcdc0d815b5de7b3e0">setTarget</a> (<a class="el" href="class_system.html">System</a> *target)</td></tr>
+<tr class="memdesc:ab69903880174e5bcdc0d815b5de7b3e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o sistema de destino.  <br /></td></tr>
 <tr class="memitem:a619be0b590c78202127bc6ac7fb04029" id="r_a619be0b590c78202127bc6ac7fb04029"><td class="memItemLeft">virtual double&#160;</td><td class="memItemRight"><a class="el" href="#a619be0b590c78202127bc6ac7fb04029">execute</a> ()=0</td></tr>
+<tr class="memdesc:a619be0b590c78202127bc6ac7fb04029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa o cálculo do fluxo.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a8801d2ed91a9d96003d4bc8024451551" id="r_a8801d2ed91a9d96003d4bc8024451551"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#a8801d2ed91a9d96003d4bc8024451551">name</a></td></tr>
+<tr class="memdesc:a8801d2ed91a9d96003d4bc8024451551"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nome do fluxo.  <br /></td></tr>
 <tr class="memitem:a963ca162995d112f0f30322e2bb9de63" id="r_a963ca162995d112f0f30322e2bb9de63"><td class="memItemLeft"><a class="el" href="class_system.html">System</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a963ca162995d112f0f30322e2bb9de63">source</a></td></tr>
+<tr class="memdesc:a963ca162995d112f0f30322e2bb9de63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sistema de origem do fluxo.  <br /></td></tr>
 <tr class="memitem:a87be88d9bae4e927b29205faabeaf387" id="r_a87be88d9bae4e927b29205faabeaf387"><td class="memItemLeft"><a class="el" href="class_system.html">System</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a87be88d9bae4e927b29205faabeaf387">target</a></td></tr>
+<tr class="memdesc:a87be88d9bae4e927b29205faabeaf387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sistema de destino do fluxo.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a5a65e36c874c5cd5283ac32a33eb0a8b" id="r_a5a65e36c874c5cd5283ac32a33eb0a8b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5a65e36c874c5cd5283ac32a33eb0a8b">Flow</a> (const <a class="el" href="class_flow.html">Flow</a> &amp;other)</td></tr>
 <tr class="memitem:a5f7550e37445bb6ae955beffd1fa857a" id="r_a5f7550e37445bb6ae955beffd1fa857a"><td class="memItemLeft"><a class="el" href="class_flow.html">Flow</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a5f7550e37445bb6ae955beffd1fa857a">operator=</a> (const <a class="el" href="class_flow.html">Flow</a> &amp;other)</td></tr>
+<tr class="memdesc:a5f7550e37445bb6ae955beffd1fa857a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operador de atribuição privado.  <br /></td></tr>
+<tr class="memitem:a5a65e36c874c5cd5283ac32a33eb0a8b" id="r_a5a65e36c874c5cd5283ac32a33eb0a8b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a5a65e36c874c5cd5283ac32a33eb0a8b">Flow</a> (const <a class="el" href="class_flow.html">Flow</a> &amp;other)</td></tr>
+<tr class="memdesc:a5a65e36c874c5cd5283ac32a33eb0a8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor de cópia privado.  <br /></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Classe abstrata responsável por representar um fluxo. </p>
+<p>A classe <a class="el" href="class_flow.html" title="Classe abstrata responsável por representar um fluxo.">Flow</a> define a estrutura básica de um fluxo em um modelo de dinâmica de sistemas, conectando um sistema de origem a um sistema de destino. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac9975e144e606242748197798e87dd32" name="ac9975e144e606242748197798e87dd32"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac9975e144e606242748197798e87dd32">&#9670;&#160;</a></span>Flow() <span class="overload">[1/3]</span></h2>
 
@@ -185,44 +206,46 @@ Private Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Construtor padrão da classe <a class="el" href="class_flow.html" title="Classe abstrata responsável por representar um fluxo.">Flow</a>. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_flow_ac9975e144e606242748197798e87dd32_icgraph.png" border="0" usemap="#aclass_flow_ac9975e144e606242748197798e87dd32_icgraph" loading="lazy" alt=""/></div>
 <map name="aclass_flow_ac9975e144e606242748197798e87dd32_icgraph" id="aclass_flow_ac9975e144e606242748197798e87dd32_icgraph">
-<area shape="rect" title=" " alt="" coords="556,284,641,311"/>
-<area shape="rect" href="class_flow.html#a619be0b590c78202127bc6ac7fb04029" title=" " alt="" coords="343,5,446,32"/>
+<area shape="rect" title="Construtor padrão da classe Flow." alt="" coords="556,284,641,311"/>
+<area shape="rect" href="class_flow.html#a619be0b590c78202127bc6ac7fb04029" title="Executa o cálculo do fluxo." alt="" coords="343,5,446,32"/>
 <area shape="poly" title=" " alt="" coords="593,268,587,220,573,160,547,98,529,70,506,46,478,30,447,22,446,17,480,25,510,42,533,67,552,96,578,158,592,219,598,270"/>
-<area shape="rect" href="class_flow.html#a5a65e36c874c5cd5283ac32a33eb0a8b" title=" " alt="" coords="352,56,437,83"/>
+<area shape="rect" href="class_flow.html#a5a65e36c874c5cd5283ac32a33eb0a8b" title="Construtor de cópia privado." alt="" coords="352,56,437,83"/>
 <area shape="poly" title=" " alt="" coords="590,268,580,232,564,187,539,142,506,103,473,85,438,75,437,70,475,80,510,99,544,139,568,185,585,230,595,270"/>
-<area shape="rect" href="class_flow_complexo.html#a345f13716a20e08b62a8d523bbacd195" title=" " alt="" coords="293,157,496,184"/>
+<area shape="rect" href="class_flow_complexo.html#a345f13716a20e08b62a8d523bbacd195" title="Construtor padrão da classe FlowComplexo." alt="" coords="293,157,496,184"/>
 <area shape="poly" title=" " alt="" coords="578,271,548,233,529,214,507,198,483,187,483,182,509,194,532,210,552,230,584,271"/>
-<area shape="rect" href="class_flow_complexo.html#a00a144f4ead5c4cfa2de4ee608c6fced" title=" " alt="" coords="17,132,221,159"/>
+<area shape="rect" href="class_flow_complexo.html#a00a144f4ead5c4cfa2de4ee608c6fced" title="Construtor de cópia da classe FlowComplexo." alt="" coords="17,132,221,159"/>
 <area shape="poly" title=" " alt="" coords="587,268,577,239,560,205,537,173,507,148,464,129,419,117,372,111,326,110,238,119,169,134,166,129,237,114,326,105,373,106,420,111,466,124,509,143,541,169,565,202,582,237,593,270"/>
-<area shape="rect" href="class_flow_complexo.html#a9a2a2bc580e52d4ea3f976837b3f2cde" title=" " alt="" coords="293,461,496,488"/>
+<area shape="rect" href="class_flow_complexo.html#a9a2a2bc580e52d4ea3f976837b3f2cde" title="Construtor parametrizado da classe FlowComplexo." alt="" coords="293,461,496,488"/>
 <area shape="poly" title=" " alt="" coords="589,324,560,387,537,418,510,445,475,463,473,458,506,441,533,414,555,384,585,327"/>
-<area shape="rect" href="class_flow_exponencial.html#adcfa957b23dd248a40e2dbb8d061a975" title=" " alt="" coords="281,259,508,285"/>
+<area shape="rect" href="class_flow_exponencial.html#adcfa957b23dd248a40e2dbb8d061a975" title="Construtor padrão da classe FlowExponencial." alt="" coords="281,259,508,285"/>
 <area shape="poly" title=" " alt="" coords="538,291,507,289,506,283,543,290"/>
-<area shape="rect" href="class_flow_exponencial.html#a42d9475dd4728fdb03711bf43c429f6d" title=" " alt="" coords="5,284,233,311"/>
+<area shape="rect" href="class_flow_exponencial.html#a42d9475dd4728fdb03711bf43c429f6d" title="Construtor de cópia da classe FlowExponencial." alt="" coords="5,284,233,311"/>
 <area shape="poly" title=" " alt="" coords="539,299,234,300,233,295,542,295"/>
-<area shape="rect" href="class_flow_exponencial.html#ae21b68d9134907774dd95a510181b947" title=" " alt="" coords="281,512,508,539"/>
+<area shape="rect" href="class_flow_exponencial.html#ae21b68d9134907774dd95a510181b947" title="Construtor parametrizado da classe FlowExponencial." alt="" coords="281,512,508,539"/>
 <area shape="poly" title=" " alt="" coords="595,324,586,366,570,414,545,462,529,483,510,502,491,514,489,509,506,498,525,480,541,459,565,412,581,365,591,328"/>
-<area shape="rect" href="class_flow_logistico.html#a6928a86735be0ce2b0835aa414555da9" title=" " alt="" coords="300,360,489,387"/>
+<area shape="rect" href="class_flow_logistico.html#a6928a86735be0ce2b0835aa414555da9" title="Construtor padrão da classe FlowLogistico." alt="" coords="300,360,489,387"/>
 <area shape="poly" title=" " alt="" coords="556,319,509,344,453,362,451,357,507,339,561,317"/>
-<area shape="rect" href="class_flow_logistico.html#aaccda8be28072d044842a03a8dc17327" title=" " alt="" coords="24,385,214,412"/>
+<area shape="rect" href="class_flow_logistico.html#aaccda8be28072d044842a03a8dc17327" title="Construtor de cópia da classe FlowLogistico." alt="" coords="24,385,214,412"/>
 <area shape="poly" title=" " alt="" coords="585,323,554,367,533,386,509,401,466,417,422,426,376,432,331,433,246,427,177,415,176,410,246,422,331,427,376,426,421,421,465,411,507,396,530,382,550,363,581,326"/>
-<area shape="rect" href="class_flow_logistico.html#ab5fe30a17c0bc5e24fe10171bc85b68d" title=" " alt="" coords="300,563,489,589"/>
+<area shape="rect" href="class_flow_logistico.html#ab5fe30a17c0bc5e24fe10171bc85b68d" title="Construtor parametrizado da classe FlowLogistico." alt="" coords="300,563,489,589"/>
 <area shape="poly" title=" " alt="" coords="598,324,592,375,578,437,552,499,533,528,510,553,490,565,489,560,506,549,529,524,547,497,573,435,587,374,594,328"/>
-<area shape="rect" href="class_flow.html#a5f7550e37445bb6ae955beffd1fa857a" title=" " alt="" coords="338,208,450,235"/>
+<area shape="rect" href="class_flow.html#a5f7550e37445bb6ae955beffd1fa857a" title="Operador de atribuição privado." alt="" coords="338,208,450,235"/>
 <area shape="poly" title=" " alt="" coords="562,276,507,249,451,233,451,228,509,244,567,275"/>
 <area shape="poly" title=" " alt="" coords="275,161,222,157,220,152,280,158"/>
-<area shape="rect" href="class_flow_complexo.html#a557386c5bd006f0057d4cb0d92f3453a" title=" " alt="" coords="33,183,205,209"/>
+<area shape="rect" href="class_flow_complexo.html#a557386c5bd006f0057d4cb0d92f3453a" title="Operador de atribuição da classe FlowComplexo." alt="" coords="33,183,205,209"/>
 <area shape="poly" title=" " alt="" coords="275,183,206,190,204,186,279,180"/>
 <area shape="poly" title=" " alt="" coords="263,285,234,289,232,284,267,283"/>
-<area shape="rect" href="class_flow_exponencial.html#a7d19d03afdafc0f34ee2f94545037433" title=" " alt="" coords="27,233,211,260"/>
+<area shape="rect" href="class_flow_exponencial.html#a7d19d03afdafc0f34ee2f94545037433" title="Operador de atribuição da classe FlowExponencial." alt="" coords="27,233,211,260"/>
 <area shape="poly" title=" " alt="" coords="263,261,212,258,210,253,267,259"/>
 <area shape="poly" title=" " alt="" coords="282,385,215,393,213,387,286,382"/>
-<area shape="rect" href="class_flow_logistico.html#a433ce3fc5adfc9a06720f254b3596b16" title=" " alt="" coords="37,335,201,361"/>
+<area shape="rect" href="class_flow_logistico.html#a433ce3fc5adfc9a06720f254b3596b16" title="Operador de atribuição da classe FlowLogistico." alt="" coords="37,335,201,361"/>
 <area shape="poly" title=" " alt="" coords="282,365,202,358,201,353,286,362"/>
 <area shape="poly" title=" " alt="" coords="321,216,206,206,204,201,325,213"/>
 <area shape="poly" title=" " alt="" coords="321,230,212,241,210,236,325,226"/>
@@ -256,6 +279,16 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Construtor parametrizado da classe <a class="el" href="class_flow.html" title="Classe abstrata responsável por representar um fluxo.">Flow</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Nome do fluxo. </td></tr>
+    <tr><td class="paramname">source</td><td>Sistema de origem. </td></tr>
+    <tr><td class="paramname">target</td><td>Sistema de destino. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a5991efa6e8cf88c4ef2125cc727db333" name="a5991efa6e8cf88c4ef2125cc727db333"></a>
@@ -281,6 +314,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Destrutor virtual da classe <a class="el" href="class_flow.html" title="Classe abstrata responsável por representar um fluxo.">Flow</a>. </p>
+
 </div>
 </div>
 <a id="a5a65e36c874c5cd5283ac32a33eb0a8b" name="a5a65e36c874c5cd5283ac32a33eb0a8b"></a>
@@ -305,13 +340,22 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Construtor de cópia privado. </p>
+<p>Impede cópia da classe <a class="el" href="class_flow.html" title="Classe abstrata responsável por representar um fluxo.">Flow</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Outro objeto <a class="el" href="class_flow.html" title="Classe abstrata responsável por representar um fluxo.">Flow</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_flow_a5a65e36c874c5cd5283ac32a33eb0a8b_cgraph.png" border="0" usemap="#aclass_flow_a5a65e36c874c5cd5283ac32a33eb0a8b_cgraph" loading="lazy" alt=""/></div>
 <map name="aclass_flow_a5a65e36c874c5cd5283ac32a33eb0a8b_cgraph" id="aclass_flow_a5a65e36c874c5cd5283ac32a33eb0a8b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,91,32"/>
-<area shape="rect" href="class_flow.html#ac9975e144e606242748197798e87dd32" title=" " alt="" coords="139,5,224,32"/>
+<area shape="rect" title="Construtor de cópia privado." alt="" coords="5,5,91,32"/>
+<area shape="rect" href="class_flow.html#ac9975e144e606242748197798e87dd32" title="Construtor padrão da classe Flow." alt="" coords="139,5,224,32"/>
 <area shape="poly" title=" " alt="" coords="91,16,126,18,120,19,91,21"/>
 </map>
 </div>
@@ -342,14 +386,18 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Executa o cálculo do fluxo. </p>
+<p>Método abstrato implementado pelas subclasses.</p>
+<dl class="section return"><dt>Returns</dt><dd>Valor calculado pelo fluxo. </dd></dl>
+
 <p>Implemented in <a class="el" href="class_flow_complexo.html#a33e4e9805c669d04099be544494171c1">FlowComplexo</a>, <a class="el" href="class_flow_exponencial.html#ae68b39789d77bb7474b883d659c9552c">FlowExponencial</a>, and <a class="el" href="class_flow_logistico.html#a2ec9c21f4febf0c72a0afbe1ef62ac4f">FlowLogistico</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_flow_a619be0b590c78202127bc6ac7fb04029_cgraph.png" border="0" usemap="#aclass_flow_a619be0b590c78202127bc6ac7fb04029_cgraph" loading="lazy" alt=""/></div>
 <map name="aclass_flow_a619be0b590c78202127bc6ac7fb04029_cgraph" id="aclass_flow_a619be0b590c78202127bc6ac7fb04029_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,109,32"/>
-<area shape="rect" href="class_flow.html#ac9975e144e606242748197798e87dd32" title=" " alt="" coords="157,5,242,32"/>
+<area shape="rect" title="Executa o cálculo do fluxo." alt="" coords="5,5,109,32"/>
+<area shape="rect" href="class_flow.html#ac9975e144e606242748197798e87dd32" title="Construtor padrão da classe Flow." alt="" coords="157,5,242,32"/>
 <area shape="poly" title=" " alt="" coords="109,16,144,18,138,19,109,21"/>
 </map>
 </div>
@@ -371,6 +419,9 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Retorna o nome do fluxo. </p>
+<dl class="section return"><dt>Returns</dt><dd>Nome do fluxo. </dd></dl>
+
 </div>
 </div>
 <a id="a1f3858f90d141807377c2640fb5dd0fc" name="a1f3858f90d141807377c2640fb5dd0fc"></a>
@@ -387,15 +438,18 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Retorna o sistema de origem. </p>
+<dl class="section return"><dt>Returns</dt><dd>Ponteiro para o sistema de origem. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_flow_a1f3858f90d141807377c2640fb5dd0fc_icgraph.png" border="0" usemap="#aclass_flow_a1f3858f90d141807377c2640fb5dd0fc_icgraph" loading="lazy" alt=""/></div>
 <map name="aclass_flow_a1f3858f90d141807377c2640fb5dd0fc_icgraph" id="aclass_flow_a1f3858f90d141807377c2640fb5dd0fc_icgraph">
-<area shape="rect" title=" " alt="" coords="228,31,344,57"/>
-<area shape="rect" href="class_flow_complexo.html#a33e4e9805c669d04099be544494171c1" title=" " alt="" coords="11,5,174,32"/>
+<area shape="rect" title="Retorna o sistema de origem." alt="" coords="228,31,344,57"/>
+<area shape="rect" href="class_flow_complexo.html#a33e4e9805c669d04099be544494171c1" title="Executa o cálculo do fluxo complexo." alt="" coords="11,5,174,32"/>
 <area shape="poly" title=" " alt="" coords="210,35,174,32,174,27,215,34"/>
-<area shape="rect" href="class_flow_exponencial.html#ae68b39789d77bb7474b883d659c9552c" title=" " alt="" coords="5,56,180,83"/>
+<area shape="rect" href="class_flow_exponencial.html#ae68b39789d77bb7474b883d659c9552c" title="Executa o cálculo do fluxo exponencial." alt="" coords="5,56,180,83"/>
 <area shape="poly" title=" " alt="" coords="210,54,181,60,180,55,215,53"/>
 </map>
 </div>
@@ -416,13 +470,16 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Retorna o sistema de destino. </p>
+<dl class="section return"><dt>Returns</dt><dd>Ponteiro para o sistema de destino. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_flow_aff8a0f8ca8dc50d37c92ab7556e172b5_icgraph.png" border="0" usemap="#aclass_flow_aff8a0f8ca8dc50d37c92ab7556e172b5_icgraph" loading="lazy" alt=""/></div>
 <map name="aclass_flow_aff8a0f8ca8dc50d37c92ab7556e172b5_icgraph" id="aclass_flow_aff8a0f8ca8dc50d37c92ab7556e172b5_icgraph">
-<area shape="rect" title=" " alt="" coords="209,5,320,32"/>
-<area shape="rect" href="class_flow_logistico.html#a2ec9c21f4febf0c72a0afbe1ef62ac4f" title=" " alt="" coords="5,5,161,32"/>
+<area shape="rect" title="Retorna o sistema de destino." alt="" coords="209,5,320,32"/>
+<area shape="rect" href="class_flow_logistico.html#a2ec9c21f4febf0c72a0afbe1ef62ac4f" title="Executa o cálculo do fluxo logístico." alt="" coords="5,5,161,32"/>
 <area shape="poly" title=" " alt="" coords="191,19,161,21,161,16,196,19"/>
 </map>
 </div>
@@ -451,13 +508,23 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Operador de atribuição privado. </p>
+<p>Impede atribuição entre objetos <a class="el" href="class_flow.html" title="Classe abstrata responsável por representar um fluxo.">Flow</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Outro objeto <a class="el" href="class_flow.html" title="Classe abstrata responsável por representar um fluxo.">Flow</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Referência para o objeto atual. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_flow_a5f7550e37445bb6ae955beffd1fa857a_cgraph.png" border="0" usemap="#aclass_flow_a5f7550e37445bb6ae955beffd1fa857a_cgraph" loading="lazy" alt=""/></div>
 <map name="aclass_flow_a5f7550e37445bb6ae955beffd1fa857a_cgraph" id="aclass_flow_a5f7550e37445bb6ae955beffd1fa857a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,118,32"/>
-<area shape="rect" href="class_flow.html#ac9975e144e606242748197798e87dd32" title=" " alt="" coords="166,5,251,32"/>
+<area shape="rect" title="Operador de atribuição privado." alt="" coords="5,5,118,32"/>
+<area shape="rect" href="class_flow.html#ac9975e144e606242748197798e87dd32" title="Construtor padrão da classe Flow." alt="" coords="166,5,251,32"/>
 <area shape="poly" title=" " alt="" coords="118,16,152,18,147,19,118,21"/>
 </map>
 </div>
@@ -466,12 +533,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_flow_a5f7550e37445bb6ae955beffd1fa857a_icgraph.png" border="0" usemap="#aclass_flow_a5f7550e37445bb6ae955beffd1fa857a_icgraph" loading="lazy" alt=""/></div>
 <map name="aclass_flow_a5f7550e37445bb6ae955beffd1fa857a_icgraph" id="aclass_flow_a5f7550e37445bb6ae955beffd1fa857a_icgraph">
-<area shape="rect" title=" " alt="" coords="237,56,349,83"/>
-<area shape="rect" href="class_flow_complexo.html#a557386c5bd006f0057d4cb0d92f3453a" title=" " alt="" coords="11,5,183,32"/>
+<area shape="rect" title="Operador de atribuição privado." alt="" coords="237,56,349,83"/>
+<area shape="rect" href="class_flow_complexo.html#a557386c5bd006f0057d4cb0d92f3453a" title="Operador de atribuição da classe FlowComplexo." alt="" coords="11,5,183,32"/>
 <area shape="poly" title=" " alt="" coords="221,52,151,35,152,30,226,51"/>
-<area shape="rect" href="class_flow_exponencial.html#a7d19d03afdafc0f34ee2f94545037433" title=" " alt="" coords="5,56,189,83"/>
+<area shape="rect" href="class_flow_exponencial.html#a7d19d03afdafc0f34ee2f94545037433" title="Operador de atribuição da classe FlowExponencial." alt="" coords="5,56,189,83"/>
 <area shape="poly" title=" " alt="" coords="218,70,189,72,189,67,223,69"/>
-<area shape="rect" href="class_flow_logistico.html#a433ce3fc5adfc9a06720f254b3596b16" title=" " alt="" coords="15,107,179,133"/>
+<area shape="rect" href="class_flow_logistico.html#a433ce3fc5adfc9a06720f254b3596b16" title="Operador de atribuição da classe FlowLogistico." alt="" coords="15,107,179,133"/>
 <area shape="poly" title=" " alt="" coords="226,87,152,109,151,103,221,88"/>
 </map>
 </div>
@@ -493,6 +560,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Define o nome do fluxo. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Novo nome do fluxo. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a250fc53158862fc0db77b323a33e48a3" name="a250fc53158862fc0db77b323a33e48a3"></a>
@@ -510,6 +585,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Define o sistema de origem. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>Novo sistema de origem. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ab69903880174e5bcdc0d815b5de7b3e0" name="ab69903880174e5bcdc0d815b5de7b3e0"></a>
@@ -526,6 +609,14 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Define o sistema de destino. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>Novo sistema de destino. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -550,6 +641,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Nome do fluxo. </p>
+
 </div>
 </div>
 <a id="a963ca162995d112f0f30322e2bb9de63" name="a963ca162995d112f0f30322e2bb9de63"></a>
@@ -571,6 +664,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sistema de origem do fluxo. </p>
 
 </div>
 </div>
@@ -594,11 +689,13 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Sistema de destino do fluxo. </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/mathe/Documents/ufop/trabalhosEng/gitrepo/BCC322-Trabalho-Individual/include/<a class="el" href="flow_8h_source.html">flow.h</a></li>
-<li>C:/Users/mathe/Documents/ufop/trabalhosEng/gitrepo/BCC322-Trabalho-Individual/src/<a class="el" href="flow_8cpp.html">flow.cpp</a></li>
+<li>include/<a class="el" href="flow_8h_source.html">flow.h</a></li>
+<li>src/<a class="el" href="flow_8cpp.html">flow.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

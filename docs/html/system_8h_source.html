@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MyFlowSim: C:/Users/mathe/Documents/ufop/trabalhosEng/gitrepo/BCC322-Trabalho-Individual/include/system.h Source File</title>
+<title>MyFlowSim: include/system.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -125,109 +125,51 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('system_8h_sour
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using namespace </span>std;</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  @brief Classe responsável por representar um sistema.</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"></span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  Um sistema armazena um valor que pode ser alterado</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">  durante a execução da simulação.</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
 <div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_system.html">   14</a></span><span class="keyword">class </span><a class="code hl_function" href="class_system.html#ae317936c9bcf1374d61745572e0f2f8a">System</a> {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">      @brief Valor armazenado pelo sistema.</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_system.html#a879687b1125ef20757c2a61345fedd00">   20</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="class_system.html#a879687b1125ef20757c2a61345fedd00">value</a>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">      @brief Nome do sistema.</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_system.html#a29fe2868c0d56fdebc67f1bef5d5cca3">   25</a></span>    <span class="keywordtype">string</span> <a class="code hl_variable" href="class_system.html#a29fe2868c0d56fdebc67f1bef5d5cca3">name</a>;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">      @brief Construtor padrão da classe System.</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">     */</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="class_system.html#ae317936c9bcf1374d61745572e0f2f8a">System</a>();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">        @brief Construtor de cópia privado.</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"></span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">        Impede cópia da classe System.</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"></span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">        @param other Outro objeto System.</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_function" href="class_system.html#ae317936c9bcf1374d61745572e0f2f8a">System</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_system.html#ae317936c9bcf1374d61745572e0f2f8a">System</a>&amp; other);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">      @brief Construtor da classe System.</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">     </span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">      @param name Nome do sistema.</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">      @param value Valor inicial do sistema.</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">     */</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_function" href="class_system.html#ae317936c9bcf1374d61745572e0f2f8a">System</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code hl_variable" href="class_system.html#a29fe2868c0d56fdebc67f1bef5d5cca3">name</a>, <span class="keywordtype">double</span> <a class="code hl_variable" href="class_system.html#a879687b1125ef20757c2a61345fedd00">value</a>);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">      @brief Destrutor virtual da classe System.</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">     */</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_system.html#a3be70bb338e3f062f821173fd15680d0">~System</a>();</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">// Métodos da UML</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">      @brief Retorna o nome do sistema.</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">     </span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">      @return Nome do sistema.</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">     */</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="class_system.html#a47ece132a04247cd74aea11537830bd4">getName</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">      @brief Define o nome do sistema.</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">     </span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">      @param name Novo nome do sistema.</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">     */</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_system.html#aecfa79ded6c6a08f69ebaf55e758e5b4">setName</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code hl_variable" href="class_system.html#a29fe2868c0d56fdebc67f1bef5d5cca3">name</a>);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">      @brief Retorna o valor atual do sistema.</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">     </span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">      @return Valor armazenado no sistema.</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">     */</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_system.html#aa7d17369d1034e7d8643a63f69d1901d">getValue</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">      @brief Define o valor do sistema.</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">     </span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">      @param value Novo valor do sistema.</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">     */</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_system.html#a5343de0a45485edd88bc87f338fe9a19">setValue</a>(<span class="keywordtype">double</span> <a class="code hl_variable" href="class_system.html#a879687b1125ef20757c2a61345fedd00">value</a>);</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">      @brief Operador de atribuição privado.</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">     </span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">      Impede atribuição entre objetos System.</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">     </span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">      @param other Outro objeto System.</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">      @return Referência para o próprio objeto.</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">     */</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_function" href="class_system.html#ae317936c9bcf1374d61745572e0f2f8a">System</a>&amp; <a class="code hl_function" href="class_system.html#ac6422081d08c3ac145a6d7c6d9f5bae7">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_system.html#ae317936c9bcf1374d61745572e0f2f8a">System</a>&amp; other);</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>};</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_function" href="class_system.html#ae317936c9bcf1374d61745572e0f2f8a">System</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code hl_variable" href="class_system.html#a29fe2868c0d56fdebc67f1bef5d5cca3">name</a>, <span class="keywordtype">double</span> <a class="code hl_variable" href="class_system.html#a879687b1125ef20757c2a61345fedd00">value</a>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_system.html#a3be70bb338e3f062f821173fd15680d0">~System</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">// Métodos da UML</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="class_system.html#a47ece132a04247cd74aea11537830bd4">getName</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_system.html#aecfa79ded6c6a08f69ebaf55e758e5b4">setName</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code hl_variable" href="class_system.html#a29fe2868c0d56fdebc67f1bef5d5cca3">name</a>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">double</span> <a class="code hl_function" href="class_system.html#aa7d17369d1034e7d8643a63f69d1901d">getValue</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_system.html#a5343de0a45485edd88bc87f338fe9a19">setValue</a>(<span class="keywordtype">double</span> <a class="code hl_variable" href="class_system.html#a879687b1125ef20757c2a61345fedd00">value</a>);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_function" href="class_system.html#ae317936c9bcf1374d61745572e0f2f8a">System</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_system.html#ae317936c9bcf1374d61745572e0f2f8a">System</a>&amp; other);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <a class="code hl_function" href="class_system.html#ae317936c9bcf1374d61745572e0f2f8a">System</a>&amp; <a class="code hl_function" href="class_system.html#ac6422081d08c3ac145a6d7c6d9f5bae7">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_system.html#ae317936c9bcf1374d61745572e0f2f8a">System</a>&amp; other);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>};</div>
 </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_system_html_a29fe2868c0d56fdebc67f1bef5d5cca3"><div class="ttname"><a href="class_system.html#a29fe2868c0d56fdebc67f1bef5d5cca3">System::name</a></div><div class="ttdeci">string name</div><div class="ttdef"><b>Definition</b> system.h:25</div></div>
-<div class="ttc" id="aclass_system_html_a3be70bb338e3f062f821173fd15680d0"><div class="ttname"><a href="class_system.html#a3be70bb338e3f062f821173fd15680d0">System::~System</a></div><div class="ttdeci">virtual ~System()</div><div class="ttdef"><b>Definition</b> system.cpp:47</div></div>
-<div class="ttc" id="aclass_system_html_a47ece132a04247cd74aea11537830bd4"><div class="ttname"><a href="class_system.html#a47ece132a04247cd74aea11537830bd4">System::getName</a></div><div class="ttdeci">string getName() const</div><div class="ttdef"><b>Definition</b> system.cpp:77</div></div>
-<div class="ttc" id="aclass_system_html_a5343de0a45485edd88bc87f338fe9a19"><div class="ttname"><a href="class_system.html#a5343de0a45485edd88bc87f338fe9a19">System::setValue</a></div><div class="ttdeci">void setValue(double value)</div><div class="ttdef"><b>Definition</b> system.cpp:104</div></div>
-<div class="ttc" id="aclass_system_html_a879687b1125ef20757c2a61345fedd00"><div class="ttname"><a href="class_system.html#a879687b1125ef20757c2a61345fedd00">System::value</a></div><div class="ttdeci">double value</div><div class="ttdef"><b>Definition</b> system.h:20</div></div>
-<div class="ttc" id="aclass_system_html_aa7d17369d1034e7d8643a63f69d1901d"><div class="ttname"><a href="class_system.html#aa7d17369d1034e7d8643a63f69d1901d">System::getValue</a></div><div class="ttdeci">double getValue() const</div><div class="ttdef"><b>Definition</b> system.cpp:95</div></div>
-<div class="ttc" id="aclass_system_html_ac6422081d08c3ac145a6d7c6d9f5bae7"><div class="ttname"><a href="class_system.html#ac6422081d08c3ac145a6d7c6d9f5bae7">System::operator=</a></div><div class="ttdeci">System &amp; operator=(const System &amp;other)</div><div class="ttdef"><b>Definition</b> system.cpp:59</div></div>
-<div class="ttc" id="aclass_system_html_ae317936c9bcf1374d61745572e0f2f8a"><div class="ttname"><a href="class_system.html#ae317936c9bcf1374d61745572e0f2f8a">System::System</a></div><div class="ttdeci">System()</div><div class="ttdef"><b>Definition</b> system.cpp:21</div></div>
-<div class="ttc" id="aclass_system_html_aecfa79ded6c6a08f69ebaf55e758e5b4"><div class="ttname"><a href="class_system.html#aecfa79ded6c6a08f69ebaf55e758e5b4">System::setName</a></div><div class="ttdeci">void setName(const string &amp;name)</div><div class="ttdef"><b>Definition</b> system.cpp:86</div></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_system_html_a29fe2868c0d56fdebc67f1bef5d5cca3"><div class="ttname"><a href="class_system.html#a29fe2868c0d56fdebc67f1bef5d5cca3">System::name</a></div><div class="ttdeci">string name</div><div class="ttdoc">Nome do sistema.</div><div class="ttdef"><b>Definition</b> system.h:25</div></div>
+<div class="ttc" id="aclass_system_html_a3be70bb338e3f062f821173fd15680d0"><div class="ttname"><a href="class_system.html#a3be70bb338e3f062f821173fd15680d0">System::~System</a></div><div class="ttdeci">virtual ~System()</div><div class="ttdoc">Destrutor virtual da classe System.</div><div class="ttdef"><b>Definition</b> system.cpp:53</div></div>
+<div class="ttc" id="aclass_system_html_a47ece132a04247cd74aea11537830bd4"><div class="ttname"><a href="class_system.html#a47ece132a04247cd74aea11537830bd4">System::getName</a></div><div class="ttdeci">string getName() const</div><div class="ttdoc">Retorna o nome do sistema.</div><div class="ttdef"><b>Definition</b> system.cpp:87</div></div>
+<div class="ttc" id="aclass_system_html_a5343de0a45485edd88bc87f338fe9a19"><div class="ttname"><a href="class_system.html#a5343de0a45485edd88bc87f338fe9a19">System::setValue</a></div><div class="ttdeci">void setValue(double value)</div><div class="ttdoc">Define o valor do sistema.</div><div class="ttdef"><b>Definition</b> system.cpp:114</div></div>
+<div class="ttc" id="aclass_system_html_a879687b1125ef20757c2a61345fedd00"><div class="ttname"><a href="class_system.html#a879687b1125ef20757c2a61345fedd00">System::value</a></div><div class="ttdeci">double value</div><div class="ttdoc">Valor armazenado pelo sistema.</div><div class="ttdef"><b>Definition</b> system.h:20</div></div>
+<div class="ttc" id="aclass_system_html_aa7d17369d1034e7d8643a63f69d1901d"><div class="ttname"><a href="class_system.html#aa7d17369d1034e7d8643a63f69d1901d">System::getValue</a></div><div class="ttdeci">double getValue() const</div><div class="ttdoc">Retorna o valor atual do sistema.</div><div class="ttdef"><b>Definition</b> system.cpp:105</div></div>
+<div class="ttc" id="aclass_system_html_ac6422081d08c3ac145a6d7c6d9f5bae7"><div class="ttname"><a href="class_system.html#ac6422081d08c3ac145a6d7c6d9f5bae7">System::operator=</a></div><div class="ttdeci">System &amp; operator=(const System &amp;other)</div><div class="ttdoc">Operador de atribuição privado.</div><div class="ttdef"><b>Definition</b> system.cpp:67</div></div>
+<div class="ttc" id="aclass_system_html_ae317936c9bcf1374d61745572e0f2f8a"><div class="ttname"><a href="class_system.html#ae317936c9bcf1374d61745572e0f2f8a">System::System</a></div><div class="ttdeci">System()</div><div class="ttdoc">Construtor padrão da classe System.</div><div class="ttdef"><b>Definition</b> system.cpp:25</div></div>
+<div class="ttc" id="aclass_system_html_aecfa79ded6c6a08f69ebaf55e758e5b4"><div class="ttname"><a href="class_system.html#aecfa79ded6c6a08f69ebaf55e758e5b4">System::setName</a></div><div class="ttdeci">void setName(const string &amp;name)</div><div class="ttdoc">Define o nome do sistema.</div><div class="ttdef"><b>Definition</b> system.cpp:96</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

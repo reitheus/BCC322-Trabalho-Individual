@@ -1,5 +1,5 @@
 /**
- * @file functional_tests.cpp
+ * @file functional_test.cpp
  * @brief Implementação dos testes funcionais do simulador.
  *
  * Este arquivo contém os testes funcionais:

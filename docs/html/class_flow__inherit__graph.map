@@ -1,9 +1,9 @@
 <map id="Flow" name="Flow">
-<area shape="rect" id="Node000001" title=" " alt="" coords="181,5,272,352"/>
-<area shape="rect" id="Node000002" href="$class_flow_complexo.html" title=" " alt="" coords="5,400,132,576"/>
+<area shape="rect" id="Node000001" title="Classe abstrata responsável por representar um fluxo." alt="" coords="181,5,272,352"/>
+<area shape="rect" id="Node000002" href="$class_flow_complexo.html" title="Classe responsável pelo fluxo complexo." alt="" coords="5,400,132,576"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,279,116,401,111,399,173,284"/>
-<area shape="rect" id="Node000003" href="$class_flow_exponencial.html" title=" " alt="" coords="157,400,296,576"/>
+<area shape="rect" id="Node000003" href="$class_flow_exponencial.html" title="Classe responsável pelo fluxo exponencial." alt="" coords="157,400,296,576"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="227,365,229,401,224,399,225,369"/>
-<area shape="rect" id="Node000004" href="$class_flow_logistico.html" title=" " alt="" coords="320,400,440,576"/>
+<area shape="rect" id="Node000004" href="$class_flow_logistico.html" title="Classe responsável pelo fluxo logístico." alt="" coords="320,400,440,576"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="280,282,339,400,334,400,277,287"/>
 </map>

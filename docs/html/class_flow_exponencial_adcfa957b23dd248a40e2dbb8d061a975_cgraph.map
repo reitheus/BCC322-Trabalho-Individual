@@ -1,5 +1,5 @@
 <map id="FlowExponencial::FlowExponencial" name="FlowExponencial::FlowExponencial">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,233,32"/>
-<area shape="rect" id="Node000002" href="$class_flow.html#ac9975e144e606242748197798e87dd32" title=" " alt="" coords="281,5,366,32"/>
+<area shape="rect" id="Node000001" title="Construtor padrão da classe FlowExponencial." alt="" coords="5,5,233,32"/>
+<area shape="rect" id="Node000002" href="$class_flow.html#ac9975e144e606242748197798e87dd32" title="Construtor padrão da classe Flow." alt="" coords="281,5,366,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,16,268,19,262,19,233,21"/>
 </map>

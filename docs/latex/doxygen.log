@@ -1,0 +1,396 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.11)  26 MAY 2026 16:12
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**doxygen.sty
+(./doxygen.sty
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+
+LaTeX Warning: You have requested file `',
+               but the file provides `doxygen'.
+
+Package: doxygen 
+(c:/texlive/2025/texmf-dist/tex/latex/base/alltt.sty
+Package: alltt 2024/07/07 v2.0g defines alltt environment
+)
+(c:/texlive/2025/texmf-dist/tex/latex/tools/array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen148
+\ar@mcellbox=\box53
+\extrarowheight=\dimen149
+\NC@list=\toks17
+\extratabsurround=\skip49
+\backup@length=\skip50
+\ar@cellbox=\box54
+)
+(c:/texlive/2025/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count275
+\calc@Bcount=\count276
+\calc@Adimen=\dimen150
+\calc@Bdimen=\dimen151
+\calc@Askip=\skip51
+\calc@Bskip=\skip52
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count277
+\calc@Cskip=\skip53
+)
+(c:/texlive/2025/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count278
+\float@exts=\toks18
+\float@box=\box55
+\@float@everytoks=\toks19
+\@floatcapt=\box56
+)
+(c:/texlive/2025/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+(c:/texlive/2025/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks20
+\verbatim@line=\toks21
+\verbatim@in@stream=\read2
+)
+(c:/texlive/2025/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box57
+\sift@deathcycles=\count279
+\@vwid@loff=\dimen152
+\@vwid@roff=\dimen153
+)
+==> First Aid for varwidth.sty applied!
+(c:/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(c:/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(c:/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+)
+(c:/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+(c:/texlive/2025/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
+\everycr=\toks22
+\minrowclearance=\skip54
+\rownum=\count280
+)
+(c:/texlive/2025/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
+\LTleft=\skip55
+\LTright=\skip56
+\LTpre=\skip57
+\LTpost=\skip58
+\LTchunksize=\count281
+\LTcapwidth=\dimen154
+\LT@head=\box58
+\LT@firsthead=\box59
+\LT@foot=\box60
+\LT@lastfoot=\box61
+\LT@gbox=\box62
+\LT@cols=\count282
+\LT@rows=\count283
+\c@LT@tables=\count284
+\c@LT@chunks=\count285
+\c@table=\count286
+\LT@p@ftn=\toks23
+)
+(c:/texlive/2025/texmf-dist/tex/latex/xltabular/xltabular.sty
+Package: xltabular 2025/02/28 v0.2i `xltabular' package (hv,RN)
+
+(c:/texlive/2025/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+\TX@col@width=\dimen155
+\TX@old@table=\dimen156
+\TX@old@col=\dimen157
+\TX@target=\dimen158
+\TX@delta=\dimen159
+\TX@cols=\count287
+\TX@ftn=\toks24
+)
+(c:/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count288
+)
+(c:/texlive/2025/texmf-dist/tex/latex/ltablex/ltablex.sty
+Package: ltablex 2014/08/13 v1.1 Modified tabularx
+))
+(c:/texlive/2025/texmf-dist/tex/latex/tabularray/tabularray.sty
+Package: tabularray 2025-11-27 v2025C Typeset tabulars and arrays with LaTeX3
+
+(c:/texlive/2025/texmf-dist/tex/latex/ninecolors/ninecolors.sty
+Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
+
+(c:/texlive/2025/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(c:/texlive/2025/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2026-01-19 L3 programming layer (loader) 
+
+(c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count289
+))
+Package: xparse 2025-10-09 L3 Experimental document command parser
+))
+\g__tblr_nohyper_int=\count290
+\l__tblr_a_int=\count291
+\l__tblr_c_int=\count292
+\l__tblr_r_int=\count293
+\l__tblr_d_dim=\dimen160
+\l__tblr_h_dim=\dimen161
+\l__tblr_o_dim=\dimen162
+\l__tblr_p_dim=\dimen163
+\l__tblr_q_dim=\dimen164
+\l__tblr_r_dim=\dimen165
+\l__tblr_s_dim=\dimen166
+\l__tblr_t_dim=\dimen167
+\l__tblr_v_dim=\dimen168
+\l__tblr_w_dim=\dimen169
+\l__tblr_a_box=\box63
+\l__tblr_b_box=\box64
+\l__tblr_c_box=\box65
+\l__tblr_d_box=\box66
+\c@tblrcount=\count294
+\c@colnum=\count295
+\c@rowcount=\count296
+\c@colcount=\count297
+\abovesep=\dimen170
+\belowsep=\dimen171
+\leftsep=\dimen172
+\rightsep=\dimen173
+\gTblrLevelInt=\count298
+\g__tblr_data_row_key_count_int=\count299
+\g__tblr_data_column_key_count_int=\count300
+\g__tblr_data_cell_key_count_int=\count301
+\g__tblr_array_int=\count302
+\l__tblr_key_count_int=\count303
+\l__tblr_key_quotient_int=\count304
+\l__tblr_key_quotient_two_int=\count305
+\l__tblr_key_remainder_int=\count306
+\g__tblr_data_str_value_count_int=\count307
+\lTblrChildTotalInt=\count308
+\lTblrChildHtotalInt=\count309
+\lTblrChildVtotalInt=\count310
+\l__child_diff_h_int=\count311
+\l__child_diff_v_int=\count312
+\l__child_sign_h_int=\count313
+\l__child_sign_v_int=\count314
+\l__child_step_int=\count315
+\lTblrDefaultHruleWidthDim=\dimen174
+\lTblrDefaultVruleWidthDim=\dimen175
+\l__tblr_split_balance_int=\count316
+\l__tblr_strut_dp_dim=\dimen176
+\l__tblr_strut_ht_dim=\dimen177
+\g__tblr_cell_wd_dim=\dimen178
+\g__tblr_cell_ht_dim=\dimen179
+\g__tblr_cell_head_dim=\dimen180
+\g__tblr_cell_foot_dim=\dimen181
+\l__tblr_measured_cell_box=\box67
+\g__tblr_last_box=\box68
+\l__tblr_temp_box=\box69
+\l__tblr_column_target_dim=\dimen182
+\l__tblr_hfuzz_dim=\dimen183
+\l__tblr_caption_box=\box70
+\l__tblr_caption_left_box=\box71
+\lTblrRowHeadInt=\count317
+\lTblrRowFootInt=\count318
+\l__tblr_row_head_box=\box72
+\l__tblr_row_foot_box=\box73
+\l__tblr_row_head_foot_dim=\dimen184
+\lTblrTableWidthDim=\dimen185
+\l__tblr_table_firsthead_box=\box74
+\l__tblr_table_middlehead_box=\box75
+\l__tblr_table_lasthead_box=\box76
+\l__tblr_table_firstfoot_box=\box77
+\l__tblr_table_middlefoot_box=\box78
+\l__tblr_table_lastfoot_box=\box79
+\l__tblr_remain_height_dim=\dimen186
+\l__tblr_next_rows_dim=\dimen187
+\l__tblr_page_overfill_dim=\dimen188
+\l__tblr_long_from_int=\count319
+\l__tblr_long_to_int=\count320
+\l__tblr_curr_i_int=\count321
+\l__tblr_prev_i_int=\count322
+\lTblrTablePageInt=\count323
+\l__tblr_table_head_box=\box80
+\l__tblr_table_foot_box=\box81
+\l__tblr_table_head_foot_dim=\dimen189
+\l__tblr_table_head_body_foot_dim=\dimen190
+\l__tblr_table_box=\box82
+\lTblrRowFirstInt=\count324
+\lTblrRowLastInt=\count325
+\l__tblr_cover_box_a_dim=\dimen191
+\l__tblr_cover_box_b_dim=\dimen192
+\l__tblr_table_hlines_box=\box83
+\l__tblr_hline_box=\box84
+\l__tblr_row_box=\box85
+\l__tblr_col_o_wd_dim=\dimen193
+\l__tblr_col_b_wd_dim=\dimen194
+\l__tblr_hline_leftskip_dim=\dimen195
+\l__tblr_hline_rightskip_dim=\dimen196
+\l__tblr_row_ht_dim=\dimen197
+\l__tblr_row_dp_dim=\dimen198
+\l__tblr_row_abovesep_dim=\dimen199
+\l__tblr_row_belowsep_dim=\dimen256
+\l__tblr_row_vlines_box=\box86
+\l__tblr_vline_box=\box87
+\l__tblr_cell_box=\box88
+\l__tblr_row_upper_dim=\dimen257
+\l__tblr_row_lower_dim=\dimen258
+\l__tblr_row_vpace_dim=\dimen259
+\l__tblr_vline_aboveskip_dim=\dimen260
+\l__tblr_vline_belowskip_dim=\dimen261
+\lTblrCellRowSpanInt=\count326
+\lTblrCellColSpanInt=\count327
+\l__tblr_cell_wd_dim=\dimen262
+\l__tblr_cell_ht_dim=\dimen263
+\lTblrCellAboveBorderWidthDim=\dimen264
+\lTblrCellBelowBorderWidthDim=\dimen265
+\lTblrCellLeftBorderWidthDim=\dimen266
+\lTblrCellRightBorderWidthDim=\dimen267
+\l__tblr_diag_box=\box89
+\l__tblr_cell_inner_wd_dim=\dimen268
+\l__tblr_cell_inner_dp_dim=\dimen269
+\l__tblr_cell_hanchor_dim=\dimen270
+\l__tblr_last_cell_table_ht_dim=\dimen271
+\l__tblr_last_cell_table_dp_dim=\dimen272
+\l__tblr_last_vline_wd_dim=\dimen273
+\l__tblr_tikz_node_box=\box90
+)
+\g__doxy_nohyper_int=\count328
+\doxytablewidth=\dimen274
+
+(c:/texlive/2025/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2025/07/28 4.6 verbatim text (tvz,hv)
+
+(c:/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks25
+)
+\FV@CodeLineNo=\count329
+\FV@InFile=\read3
+\FV@TabBox=\box91
+\c@FancyVerbLine=\count330
+\FV@StepNumber=\count331
+\FV@OutFile=\write3
+)
+(c:/texlive/2025/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
+\c@tracingmulticols=\count332
+\mult@box=\box92
+\multicol@leftmargin=\dimen275
+\c@unbalance=\count333
+\c@collectmore=\count334
+\doublecol@number=\count335
+\multicoltolerance=\count336
+\multicolpretolerance=\count337
+\full@width=\dimen276
+\page@free=\dimen277
+\premulticols=\dimen278
+\postmulticols=\dimen279
+\multicolsep=\skip59
+\multicolbaselineskip=\skip60
+\partial@page=\box93
+\last@line=\box94
+\mc@boxedresult=\box95
+\maxbalancingoverflow=\dimen280
+\mult@rightbox=\box96
+\mult@grightbox=\box97
+\mult@firstbox=\box98
+\mult@gfirstbox=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\@tempa=\box110
+\@tempa=\box111
+\@tempa=\box112
+\@tempa=\box113
+\@tempa=\box114
+\@tempa=\box115
+\@tempa=\box116
+\@tempa=\box117
+\@tempa=\box118
+\@tempa=\box119
+\@tempa=\box120
+\@tempa=\box121
+\@tempa=\box122
+\@tempa=\box123
+\@tempa=\box124
+\@tempa=\box125
+\@tempa=\box126
+\@tempa=\box127
+\@tempa=\box128
+\@tempa=\box129
+\@tempa=\box130
+\@tempa=\box131
+\@tempa=\box132
+\@tempa=\box133
+\@tempa=\box134
+\@tempa=\box135
+\c@minrows=\count338
+\c@columnbadness=\count339
+\c@finalcolumnbadness=\count340
+\last@try=\dimen281
+\multicolovershoot=\dimen282
+\multicolundershoot=\dimen283
+\mult@nat@firstbox=\box136
+\colbreak@box=\box137
+\mc@col@check@num=\count341
+\g__mc_curr_col_int=\count342
+)
+(c:/texlive/2025/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip61
+\multirow@cntb=\count343
+\multirow@dima=\skip62
+\bigstrutjot=\dimen284
+)
+(c:/texlive/2025/texmf-dist/tex/latex/hanging/hanging.sty
+Package: hanging 2009/09/02 v1.2b hanging paragraphs and punctuation
+\h@ngcommawd=\skip63
+
+Missing character: There is no , in font nullfont!
+\h@ngfstopwd=\skip64
+Missing character: There is no . in font nullfont!
+\h@ngquotewd=\skip65
+Missing character: There is no ` in font nullfont!
+\h@ngdquotewd=\skip66
+Missing character: There is no ` in font nullfont!
+Missing character: There is no ` in font nullfont!
+\h@ngquerywd=\skip67
+Missing character: There is no ? in font nullfont!
+\h@ngexclwd=\skip68
+Missing character: There is no ! in font nullfont!
+\h@ngcolonwd=\skip69
+Missing character: There is no : in font nullfont!
+\h@ngscolonwd=\skip70
+Missing character: There is no ; in font nullfont!
+) (c:/texlive/2025/texmf-dist/tex/generic/iftex/ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+
+(c:/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+(c:/texlive/2025/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2025/

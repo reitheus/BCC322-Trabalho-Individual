@@ -1,8 +1,8 @@
 <map id="FlowExponencial::FlowExponencial" name="FlowExponencial::FlowExponencial">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,233,32"/>
-<area shape="rect" id="Node000002" href="$class_flow.html#ac9975e144e606242748197798e87dd32" title=" " alt="" coords="556,5,641,32"/>
+<area shape="rect" id="Node000001" title="Construtor de cópia da classe FlowExponencial." alt="" coords="5,5,233,32"/>
+<area shape="rect" id="Node000002" href="$class_flow.html#ac9975e144e606242748197798e87dd32" title="Construtor padrão da classe Flow." alt="" coords="556,5,641,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,16,541,16,540,21,233,21"/>
-<area shape="rect" id="Node000003" href="$class_flow_exponencial.html#adcfa957b23dd248a40e2dbb8d061a975" title=" " alt="" coords="281,31,508,57"/>
+<area shape="rect" id="Node000003" href="$class_flow_exponencial.html#adcfa957b23dd248a40e2dbb8d061a975" title="Construtor padrão da classe FlowExponencial." alt="" coords="281,31,508,57"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="233,26,268,32,263,32,233,32"/>
 <area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="506,27,538,26,543,26,507,33"/>
 </map>
