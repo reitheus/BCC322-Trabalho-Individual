@@ -30,6 +30,14 @@ public:
       @brief Construtor padrão da classe System.
      */
     System();
+    /*
+        @brief Construtor de cópia privado.
+
+        Impede cópia da classe System.
+
+        @param other Outro objeto System.
+    */
+    System(const System& other);
 
     /*
       @brief Construtor da classe System.
@@ -75,15 +83,6 @@ public:
     void setValue(double value);
 
 private:
-
-    /*
-      @brief Construtor de cópia privado.
-     
-      Impede cópia da classe System.
-     
-      @param other Outro objeto System.
-     */
-    System(const System& other);
 
     /*
       @brief Operador de atribuição privado.

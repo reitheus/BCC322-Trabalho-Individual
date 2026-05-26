@@ -113,6 +113,14 @@ public:
 private:
 
     /*
+      @brief Construtor de cópia privado.
+     
+      Impede cópia da classe Flow.
+     
+      @param other Outro objeto Flow.
+     */
+    Flow(const Flow& other);
+    /*
       @brief Operador de atribuição privado.
      
       Impede atribuição entre objetos Flow.
@@ -122,14 +130,6 @@ private:
      */
     Flow& operator=(const Flow& other);
 
-    /*
-      @brief Construtor de cópia privado.
-     
-      Impede cópia da classe Flow.
-     
-      @param other Outro objeto Flow.
-     */
-    Flow(const Flow& other);
 };
 
 #endif
