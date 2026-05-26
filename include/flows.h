@@ -1,207 +1,185 @@
-/*
-  @file flows.cpp
-  @brief Implementação dos fluxos do simulador.
- 
-  Este arquivo contém as implementações dos fluxos:
-  - exponencial
-  - logístico
-  - complexo
- */
+#ifndef FLOWS_H
+#define FLOWS_H
 
 #include "flow.h"
-#include "system.h"
 
- // FlowExponencial
+/**
+ * @brief Classe responsável pelo fluxo exponencial.
+ *
+ * Implementa um fluxo baseado em crescimento exponencial
+ * entre sistemas.
+ */
+class FlowExponencial : public Flow {
+public:
+
+    /**
+     * @brief Construtor padrão da classe FlowExponencial.
+     */
+    FlowExponencial();
+
+    /**
+     * @brief Construtor parametrizado da classe FlowExponencial.
+     *
+     * @param name Nome do fluxo.
+     * @param source Sistema de origem.
+     * @param target Sistema de destino.
+     */
+    FlowExponencial(
+        const string& name,
+        System* source,
+        System* target
+    );
+
+    /**
+     * @brief Construtor de cópia da classe FlowExponencial.
+     *
+     * @param other Outro objeto FlowExponencial.
+     */
+    FlowExponencial(
+        const FlowExponencial& other
+    );
+
+    /**
+     * @brief Destrutor virtual da classe FlowExponencial.
+     */
+    virtual ~FlowExponencial();
+
+    /**
+     * @brief Operador de atribuição da classe FlowExponencial.
+     *
+     * @param other Outro objeto FlowExponencial.
+     * @return Referência para o objeto atual.
+     */
+    FlowExponencial& operator=(
+        const FlowExponencial& other
+        );
+
+    /**
+     * @brief Executa o cálculo do fluxo exponencial.
+     *
+     * @return Valor calculado pelo fluxo.
+     */
+    double execute() override;
+};
+
+
+/**
+ * @brief Classe responsável pelo fluxo logístico.
+ *
+ * Implementa um fluxo baseado em crescimento logístico
+ * entre sistemas.
+ */
+class FlowLogistico : public Flow {
+public:
+
+    /**
+     * @brief Construtor padrão da classe FlowLogistico.
+     */
+    FlowLogistico();
+
+    /**
+     * @brief Construtor parametrizado da classe FlowLogistico.
+     *
+     * @param name Nome do fluxo.
+     * @param source Sistema de origem.
+     * @param target Sistema de destino.
+     */
+    FlowLogistico(
+        const string& name,
+        System* source,
+        System* target
+    );
+
+    /**
+     * @brief Construtor de cópia da classe FlowLogistico.
+     *
+     * @param other Outro objeto FlowLogistico.
+     */
+    FlowLogistico(
+        const FlowLogistico& other
+    );
+
+    /**
+     * @brief Destrutor virtual da classe FlowLogistico.
+     */
+    virtual ~FlowLogistico();
+
+    /**
+     * @brief Operador de atribuição da classe FlowLogistico.
+     *
+     * @param other Outro objeto FlowLogistico.
+     * @return Referência para o objeto atual.
+     */
+    FlowLogistico& operator=(
+        const FlowLogistico& other
+        );
+
+    /**
+     * @brief Executa o cálculo do fluxo logístico.
+     *
+     * @return Valor calculado pelo fluxo.
+     */
+    double execute() override;
+};
+
+
+/*
+  @brief Classe responsável pelo fluxo complexo.
  
- /*
-   @brief Construtor padrão da classe FlowExponencial.
-  */
-FlowExponencial::FlowExponencial() : Flow() {}
-
-/*
-  @brief Construtor parametrizado da classe FlowExponencial.
- 
-  @param name Nome do fluxo.
-  @param source Sistema de origem.
-  @param target Sistema de destino.
+  Implementa um fluxo com múltiplas interações
+  entre sistemas.
  */
-FlowExponencial::FlowExponencial(
-    const string& name,
-    System* source,
-    System* target
-) : Flow(name, source, target) {
-}
+class FlowComplexo : public Flow {
+public:
 
-/*
-  @brief Construtor de cópia da classe FlowExponencial.
- 
-  @param other Outro objeto FlowExponencial.
- */
-FlowExponencial::FlowExponencial(
-    const FlowExponencial& other
-) : Flow(other) {
-}
+    /*
+      @brief Construtor padrão da classe FlowComplexo.
+     */
+    FlowComplexo();
 
-/*
-  @brief Destrutor da classe FlowExponencial.
- */
-FlowExponencial::~FlowExponencial() {}
+    /*
+      @brief Construtor parametrizado da classe FlowComplexo.
+     
+      @param name Nome do fluxo.
+      @param source Sistema de origem.
+      @param target Sistema de destino.
+     */
+    FlowComplexo(
+        const string& name,
+        System* source,
+        System* target
+    );
 
-/*
-  @brief Operador de atribuição da classe FlowExponencial.
- 
-  @param other Outro objeto FlowExponencial.
-  @return Referência para o objeto atual.
- */
-FlowExponencial& FlowExponencial::operator=(
-    const FlowExponencial& other
-    ) {
-    if (this == &other) {
-        return *this;
-    }
+    /*
+      @brief Construtor de cópia da classe FlowComplexo.
+     
+      @param other Outro objeto FlowComplexo.
+     */
+    FlowComplexo(
+        const FlowComplexo& other
+    );
 
-    Flow::operator=(other);
-    return *this;
-}
+    /*
+      @brief Destrutor virtual da classe FlowComplexo.
+     */
+    virtual ~FlowComplexo();
 
-/*
-  @brief Executa o cálculo do fluxo exponencial.
- 
-  O valor transferido corresponde a 1% do valor do sistema de origem.
- 
-  @return Valor calculado do fluxo.
- */
-double FlowExponencial::execute() {
-    return 0.01 * getSource()->getValue();
-}
+    /*
+      @brief Operador de atribuição da classe FlowComplexo.
+     
+      @param other Outro objeto FlowComplexo.
+      @return Referência para o objeto atual.
+     */
+    FlowComplexo& operator=(
+        const FlowComplexo& other
+        );
 
+    /*
+      @brief Executa o cálculo do fluxo complexo.
+     
+      @return Valor calculado pelo fluxo.
+     */
+    double execute() override;
+};
 
-// FlowLogistico
-/*
-  @brief Construtor padrão da classe FlowLogistico.
- */
-FlowLogistico::FlowLogistico() : Flow() {}
-
-/*
-  @brief Construtor parametrizado da classe FlowLogistico.
- 
-  @param name Nome do fluxo.
-  @param source Sistema de origem.
-  @param target Sistema de destino.
- */
-FlowLogistico::FlowLogistico(
-    const string& name,
-    System* source,
-    System* target
-) : Flow(name, source, target) {
-}
-
-/*
-  @brief Construtor de cópia da classe FlowLogistico.
- 
-  @param other Outro objeto FlowLogistico.
- */
-FowLogistico::FlowLogistico(
-    const FlowLogistico& other
-) : Flow(other) {
-}
-
-/*
-  @brief Destrutor da classe FlowLogistico.
- */
-FlowLogistico::~FlowLogistico() {}
-
-/*
-  @brief Operador de atribuição da classe FlowLogistico.
- 
-  @param other Outro objeto FlowLogistico.
-  @return Referência para o objeto atual.
- */
-FlowLogistico& FlowLogistico::operator=(
-    const FlowLogistico& other
-    ) {
-    if (this == &other) {
-        return *this;
-    }
-
-    Flow::operator=(other);
-    return *this;
-}
-
-/*
-  @brief Executa o cálculo do fluxo logístico.
- 
-  Calcula o crescimento logístico considerando a capacidade limite do sistema.
- 
-  @return Valor calculado do fluxo.
- */
-double FlowLogistico::execute() {
-    double p = getTarget()->getValue();
-
-    return 0.01 * p * (1 - p / 70.0);
-}
-
-
-// FlowComplexo
-
-/*
-  @brief Construtor padrão da classe FlowComplexo.
- */
-FlowComplexo::FlowComplexo() : Flow() {}
-
-/*
-  @brief Construtor parametrizado da classe FlowComplexo.
- 
-  @param name Nome do fluxo.
-  @param source Sistema de origem.
-  @param target Sistema de destino.
- */
-FlowComplexo::FlowComplexo(
-    const string& name,
-    System* source,
-    System* target
-) : Flow(name, source, target) {
-}
-
-/*
-  @brief Construtor de cópia da classe FlowComplexo.
- 
-  @param other Outro objeto FlowComplexo.
- */
-FlowComplexo::FlowComplexo(
-    const FlowComplexo& other
-) : Flow(other) {
-}
-
-/*
-  @brief Destrutor da classe FlowComplexo.
- */
-FlowComplexo::~FlowComplexo() {}
-
-/*
-  @brief Operador de atribuição da classe FlowComplexo.
- 
-  @param other Outro objeto FlowComplexo.
-  @return Referência para o objeto atual.
- */
-FlowComplexo& FlowComplexo::operator=(
-    const FlowComplexo& other
-    ) {
-    if (this == &other) {
-        return *this;
-    }
-
-    Flow::operator=(other);
-    return *this;
-}
-
-/*
-  @brief Executa o cálculo do fluxo complexo.
- 
-  Calcula a transferência entre sistemas utilizando o modelo complexo.
- 
-  @return Valor calculado do fluxo.
- */
-double FlowComplexo::execute() {
-    return 0.01 * getSource()->getValue();
-}
+#endif
