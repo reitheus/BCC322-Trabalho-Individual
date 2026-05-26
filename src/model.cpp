@@ -1,10 +1,10 @@
-/*
-  @file model.cpp
-  @brief Implementação da classe Model.
- 
-  Este arquivo contém os métodos responsáveis
-  pela manipulação e execução dos modelos
-  de simulação do sistema dinâmico.
+/**
+ * @file model.cpp
+ * @brief Implementação da classe Model.
+ *
+ * Este arquivo contém os métodos responsáveis
+ * pela manipulação e execução dos modelos
+ * de simulação do sistema dinâmico.
  */
 
 #include "../include/model.h"
@@ -16,45 +16,55 @@
 
 using namespace std;
 
-// Construtores
 
-/*
- @brief Construtor padrão da classe Model.
+// =====================
+// Construtores
+// =====================
+
+/**
+ * @brief Construtor padrão da classe Model.
  */
 Model::Model() {}
 
 
-/*
-  @brief Construtor de cópia da classe Model.
- 
-  @param other Outro objeto Model.
+/**
+ * @brief Construtor de cópia da classe Model.
+ *
+ * @param other Outro objeto Model.
  */
 Model::Model(const Model& other) {
     systems = other.systems;
     flows = other.flows;
 }
 
-// Destrutor
 
-/*
-  @brief Destrutor da classe Model.
- 
-  Remove os elementos armazenados nos vetores de sistemas e fluxos.
+// =====================
+// Destrutor
+// =====================
+
+/**
+ * @brief Destrutor da classe Model.
+ *
+ * Remove os elementos armazenados
+ * nos vetores de sistemas e fluxos.
  */
 Model::~Model() {
     systems.clear();
     flows.clear();
 }
 
-// Operador de atribuição
 
-/*
-  @brief Operador de atribuição da classe Model.
- 
-  Copia os sistemas e fluxos de outro modelo.
- 
-  @param other Outro objeto Model.
-  @return Referência para o objeto atual.
+// =====================
+// Operador de atribuição
+// =====================
+
+/**
+ * @brief Operador de atribuição da classe Model.
+ *
+ * Copia os sistemas e fluxos de outro modelo.
+ *
+ * @param other Outro objeto Model.
+ * @return Referência para o objeto atual.
  */
 Model& Model::operator=(const Model& other) {
 
@@ -68,38 +78,45 @@ Model& Model::operator=(const Model& other) {
 }
 
 
+// =====================
 // Métodos de adição
+// =====================
 
-/*
-  @brief Adiciona um sistema ao modelo.
- 
-  @param s Ponteiro para o sistema.
+/**
+ * @brief Adiciona um sistema ao modelo.
+ *
+ * @param s Ponteiro para o sistema.
  */
 void Model::add(System* s) {
     systems.push_back(s);
 }
 
 
-/*
-  @brief Adiciona um fluxo ao modelo.
- 
-  @param f Ponteiro para o fluxo.
+/**
+ * @brief Adiciona um fluxo ao modelo.
+ *
+ * @param f Ponteiro para o fluxo.
  */
 void Model::add(Flow* f) {
     flows.push_back(f);
 }
 
-// Simulação
 
-/*
-  @brief Executa a simulação do modelo.
- 
-  Percorre o intervalo de tempo especificado, executando os fluxos e atualizando os valores dos sistemas envolvidos.
- 
-  @param t_init Tempo inicial da simulação.
-  @param t_final Tempo final da simulação.
- 
-  @return true caso a execução ocorra corretamente.
+// =====================
+// Simulação
+// =====================
+
+/**
+ * @brief Executa a simulação do modelo.
+ *
+ * Percorre o intervalo de tempo especificado,
+ * executando os fluxos e atualizando os valores
+ * dos sistemas envolvidos.
+ *
+ * @param t_init Tempo inicial da simulação.
+ * @param t_final Tempo final da simulação.
+ *
+ * @return true caso a execução ocorra corretamente.
  */
 bool Model::run(int t_init, int t_final) {
 
@@ -139,15 +156,18 @@ bool Model::run(int t_init, int t_final) {
     return true;
 }
 
-// Exibição
 
-/*
-  @brief Exibe os sistemas e fluxos do modelo.
- 
-  Mostra no terminal:
-  - sistemas cadastrados
-  - valores atuais
-  - conexões entre fluxos
+// =====================
+// Exibição
+// =====================
+
+/**
+ * @brief Exibe os sistemas e fluxos do modelo.
+ *
+ * Mostra no terminal:
+ * - sistemas cadastrados
+ * - valores atuais
+ * - conexões entre fluxos
  */
 void Model::showModel() const {
 

@@ -1,14 +1,13 @@
-/*
-  @file functional_tests.cpp
-  @brief Implementação dos testes funcionais do simulador.
- 
-  Este arquivo contém os testes funcionais:
-  - exponencial
-  - logístico
-  - complexo
- 
-  Os testes verificam se os resultados produzidos
-  pela simulação estão corretos.
+/**
+ * @file functional_tests.cpp
+ * @brief Implementação dos testes funcionais do simulador.
+ *
+ * Este arquivo contém os testes funcionais:
+ * - exponencial
+ * - logístico
+ * - complexo
+ *
+ * Os testes verificam se os resultados produzidos pela simulação estão corretos.
  */
 
 #include <iostream>
@@ -20,27 +19,25 @@
 
 using namespace std;
 
-/*
-  @brief Realiza comparação entre números de ponto flutuante.
- 
-  Utiliza uma margem de erro para evitar problemas
-  de precisão numérica.
- 
-  @param a Primeiro valor.
-  @param b Segundo valor.
- 
-  @return true caso os valores sejam aproximadamente iguais.
-  @return false caso os valores sejam diferentes.
+/**
+ * @brief Realiza comparação entre números de ponto flutuante.
+ *
+ * Utiliza uma margem de erro para evitar problemas de precisão numérica.
+ *
+ * @param a Primeiro valor.
+ * @param b Segundo valor.
+ *
+ * @return true caso os valores sejam aproximadamente iguais.
+ * @return false caso os valores sejam diferentes.
  */
 bool floatingPointComparison(double a, double b) {
     return fabs(a - b) < 0.0001;
 }
 
-/*
-  @brief Executa o teste funcional exponencial.
- 
-  Verifica o comportamento do modelo exponencial
-  durante a simulação.
+/**
+ * @brief Executa o teste funcional exponencial.
+ *
+ * Verifica o comportamento do modelo exponencial durante a simulação.
  */
 void exponentialFuncionalTest() {
 
@@ -78,11 +75,10 @@ void exponentialFuncionalTest() {
 }
 
 
-/*
-  @brief Executa o teste funcional logístico.
- 
-  Verifica o comportamento do modelo logístico
-  durante a simulação.
+/**
+ * @brief Executa o teste funcional logístico.
+ *
+ * Verifica o comportamento do modelo logístico durante a simulação.
  */
 void logisticalFuncionalTest() {
 
@@ -121,11 +117,10 @@ void logisticalFuncionalTest() {
 }
 
 
-/*
-  @brief Executa o teste funcional complexo.
- 
-  Verifica o comportamento do modelo complexo
-  contendo múltiplos sistemas e fluxos.
+/**
+ * @brief Executa o teste funcional complexo.
+ *
+ * Verifica o comportamento do modelo complexo contendo múltiplos sistemas e fluxos.
  */
 void complexFuncionalTest() {
 
