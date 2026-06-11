@@ -1,14 +1,14 @@
 #ifndef  MAIN_FUNCIONAL_TESTS
 
-#define MAIN_FUNCIONA_TESTS
+#define MAIN_FUNCIONAL_TESTS
 
-#include "funcional_tests.h"
+#include "../../include/functional_test.h"
 
-#include "..\..\src\model.h"
+#include "../../include/model.h"
 
-#include "..\..\src\system.h"
+#include "../../include/system.h"
 
-#include "..\..\src\flow.h"
+#include "../../include/flow.h"
 
 int main() {
 
