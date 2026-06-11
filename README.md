@@ -1,66 +1,95 @@
 # MyVensim
 
-Framework desenvolvido em C++ para construção e execução de modelos de simulação baseados na Dinâmica de Sistemas.
+Framework em C++ para construção e execução de modelos de simulação baseados em Dinâmica de Sistemas.
 
-## 📚 Disciplina
-
-BCC322 — Engenharia de Software I
-
-## 👨‍🏫 Professor
-
-Tiago Garcia de Senna Carneiro
+**Disciplina:** BCC322 — Engenharia de Software I · UFOP  
+**Professor:** Tiago Garcia de Senna Carneiro
 
 ---
 
-# 📖 Descrição
+## Descrição
 
-O projeto consiste no desenvolvimento de uma API em C++ inspirada na linguagem DYNAMO e no simulador Vensim, permitindo a modelagem e execução de sistemas dinâmicos baseados em:
-
-- Sistemas (estoques)
-- Fluxos
-- Modelos
-
-A simulação é realizada através da interação entre sistemas conectados por fluxos que transferem valores ao longo do tempo.
+API inspirada na linguagem DYNAMO e no simulador Vensim. Permite modelar e executar sistemas dinâmicos compostos por **sistemas** (estoques), **fluxos** (equações de transferência) e **modelos** (orquestradores da simulação).
 
 ---
 
-# 🎯 Objetivos
+## Estrutura do Projeto
 
-- Desenvolver uma API orientada a objetos em C++
-- Aplicar conceitos de Engenharia de Software
-- Utilizar UML para modelagem
-- Implementar testes funcionais e unitários
-- Aplicar Git Flow e versionamento
-
----
-
-# 🗂️ Estrutura do Projeto
-````
+```
 MyVensim/
-│
-├── bin/
+├── include/
+│   ├── flow.h
+│   ├── flow_impl.h
+│   ├── flows.h
+│   ├── functional_test.h
+│   ├── model.h
+│   ├── model_impl.h
+│   ├── system.h
+│   └── system_impl.h
 │
 ├── src/
 │   ├── main.cpp
-│   ├── model.cpp
-│   ├── model.h
-│   ├── system.cpp
-│   ├── system.h
-│   ├── flow.cpp
-│   └── flow.h
+│   ├── flow_impl.cpp
+│   ├── flows.cpp
+│   ├── model_impl.cpp
+│   └── system_impl.cpp
 │
-└── test/
-    ├── unit/
-    │   ├── main.cpp
-    │   ├── unit_tests.cpp
-    │   └── unit_tests.h
-    │
-    └── functional/
-        ├── main.cpp
-        ├── functional_tests.cpp
-        └── functional_tests.h
-````
-# 📜 Licença
+├── test/
+│   ├── functional/
+│   │   ├── main.cpp
+│   │   └── functional_test.cpp
+│   └── unit/
+│       ├── main.cpp
+│       ├── unit_tests.h
+│       ├── unit_tests.cpp
+│       ├── unit_flow.h
+│       ├── unit_flow.cpp
+│       ├── unit_model.h
+│       ├── unit_model.cpp
+│       ├── unit_system.h
+│       └── unit_system.cpp
+│
+├── bin/
+├── Makefile
+└── README.md
+```
 
-Este projeto foi desenvolvido exclusivamente para fins acadêmicos na disciplina BCC322 — Engenharia de Software I da Universidade Federal de Ouro Preto (UFOP).
-O uso comercial deste projeto não é permitido sem autorização prévia do autor.
+---
+
+## Compilação e Execução
+
+> Requer `g++` com suporte a C++17.
+
+| Comando | Descrição |
+|---|---|
+| `make` | Compila tudo (simulador + testes) |
+| `make unit_tests` | Compila e executa os testes unitários |
+| `make functional_tests` | Compila e executa os testes funcionais |
+| `make run` | Executa testes unitários e funcionais |
+| `make clean` | Remove binários e objetos gerados |
+
+---
+
+## Testes
+
+### Unitários
+Verificam individualmente os métodos de `System`, `Flow` e `Model`.  
+Executável: `bin/progTestUnit`
+
+### Funcionais
+Verificam a simulação completa contra valores analíticos esperados para três modelos:
+
+| Modelo | Descrição |
+|---|---|
+| Exponencial | Crescimento proporcional ao estoque de origem (taxa 1%) |
+| Logístico | Crescimento com capacidade limite de 70 |
+| Complexo | Rede com 5 sistemas e 6 fluxos interligados |
+
+Executável: `bin/progTestFuncional`
+
+---
+
+## Licença
+
+Desenvolvido exclusivamente para fins acadêmicos na disciplina BCC322 — UFOP.  
+Uso comercial não permitido sem autorização prévia do autor.

@@ -5,26 +5,41 @@
 #include <math.h>
 
 /**
- * @brief Executa o teste funcional do modelo exponencial.
+ * @file functional_test.h
+ * @brief Declaração dos testes funcionais dos modelos de simulação.
  *
- * Verifica se o comportamento do fluxo exponencial
- * produz os resultados esperados durante a simulação.
+ * Este arquivo contém os protótipos das funções de teste funcional
+ * responsáveis por verificar o comportamento esperado dos modelos
+ * exponencial, logístico e complexo após a execução da simulação.
  */
+
+ /**
+  * @brief Executa o teste funcional do modelo exponencial.
+  *
+  * Cria um modelo com dois sistemas e um fluxo exponencial,
+  * executa a simulação por um intervalo de tempo pré-definido
+  * e verifica, via assert, se os valores finais dos sistemas
+  * correspondem aos resultados esperados analiticamente.
+  */
 void exponentialFuncionalTest();
 
 /**
  * @brief Executa o teste funcional do modelo logístico.
  *
- * Verifica se o comportamento do fluxo logístico
- * produz os resultados esperados durante a simulação.
+ * Cria um modelo com dois sistemas e um fluxo logístico,
+ * executa a simulação por um intervalo de tempo pré-definido
+ * e verifica, via assert, se os valores finais dos sistemas
+ * correspondem aos resultados esperados analiticamente.
  */
 void logisticalFuncionalTest();
 
 /**
  * @brief Executa o teste funcional do modelo complexo.
  *
- * Verifica se o comportamento do modelo complexo
- * produz os resultados esperados durante a simulação.
+ * Cria um modelo com múltiplos sistemas e fluxos interligados,
+ * executa a simulação por um intervalo de tempo pré-definido
+ * e verifica, via assert, se os valores finais de cada sistema
+ * correspondem aos resultados esperados.
  */
 void complexFuncionalTest();
 

@@ -6,94 +6,53 @@
 using namespace std;
 
 /**
- * @brief Classe responsável por representar um sistema.
- *
- * Um sistema armazena um valor que pode ser alterado
- * durante a execução da simulação.
+ * @file system.h
+ * @brief Declaração da interface abstrata System.
  */
+
+ /**
+  * @brief Interface abstrata que representa um sistema em um modelo de simulação.
+  *
+  * A classe System define a interface para os compartimentos (estoques) de um
+  * modelo de dinâmica de sistemas. Um sistema armazena um valor numérico que
+  * é modificado ao longo do tempo pelos fluxos conectados a ele. Subclasses
+  * devem fornecer implementação concreta para todos os métodos virtuais puros.
+  */
 class System {
-private:
-
-    /**
-     * @brief Valor armazenado pelo sistema.
-     */
-    double value;
-
-    /**
-     * @brief Nome do sistema.
-     */
-    string name;
-
 public:
-
-    /**
-     * @brief Construtor padrão da classe System.
-     */
-    System();
-
-    /**
-     * @brief Construtor da classe System.
-     *
-     * @param name Nome do sistema.
-     * @param value Valor inicial do sistema.
-     */
-    System(const string& name, double value);
 
     /**
      * @brief Destrutor virtual da classe System.
      */
-    virtual ~System();
-
-    // Métodos da UML
+    virtual ~System() = default;
 
     /**
      * @brief Retorna o nome do sistema.
      *
      * @return Nome do sistema.
      */
-    string getName() const;
+    virtual string getName() const = 0;
 
     /**
      * @brief Define o nome do sistema.
      *
      * @param name Novo nome do sistema.
      */
-    void setName(const string& name);
+    virtual void setName(const string& name) = 0;
 
     /**
-     * @brief Retorna o valor atual do sistema.
+     * @brief Retorna o valor atual armazenado no sistema.
      *
-     * @return Valor armazenado no sistema.
+     * @return Valor do sistema.
      */
-    double getValue() const;
+    virtual double getValue() const = 0;
 
     /**
-     * @brief Define o valor do sistema.
+     * @brief Define o valor armazenado no sistema.
      *
      * @param value Novo valor do sistema.
      */
-    void setValue(double value);
-
-private:
-
-    /**
-     * @brief Construtor de cópia privado.
-     *
-     * Impede cópia da classe System.
-     *
-     * @param other Outro objeto System.
-     */
-    System(const System& other);
-
-    /**
-     * @brief Operador de atribuição privado.
-     *
-     * Impede atribuição entre objetos System.
-     *
-     * @param other Outro objeto System.
-     * @return Referência para o próprio objeto.
-     */
-    System& operator=(const System& other);
+    virtual void setValue(double value) = 0;
 };
 
 #endif

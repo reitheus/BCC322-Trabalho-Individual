@@ -8,130 +8,78 @@ using namespace std;
 class System;
 
 /**
- * @brief Classe abstrata responsável por representar um fluxo.
- *
- * A classe Flow define a estrutura básica de um fluxo
- * em um modelo de dinâmica de sistemas, conectando
- * um sistema de origem a um sistema de destino.
+ * @file flow.h
+ * @brief Declaração da interface abstrata Flow.
  */
+
+ /**
+  * @brief Interface abstrata que representa um fluxo entre dois sistemas.
+  *
+  * A classe Flow define a interface para os fluxos de um modelo de
+  * dinâmica de sistemas. Um fluxo conecta dois sistemas (origem e destino)
+  * e define uma equação que determina a quantidade transferida por unidade
+  * de tempo. Subclasses devem implementar o método execute().
+  */
 class Flow {
-protected:
-
-    /**
-     * @brief Nome do fluxo.
-     */
-    string name;
-
-    /**
-     * @brief Sistema de origem do fluxo.
-     */
-    System* source;
-
-    /**
-     * @brief Sistema de destino do fluxo.
-     */
-    System* target;
-
 public:
-
-    // Forma canônica
-
-    /**
-     * @brief Construtor padrão da classe Flow.
-     */
-    Flow();
-
-    /**
-     * @brief Construtor parametrizado da classe Flow.
-     *
-     * @param name Nome do fluxo.
-     * @param source Sistema de origem.
-     * @param target Sistema de destino.
-     */
-    Flow(const string& name,
-        System* source,
-        System* target);
 
     /**
      * @brief Destrutor virtual da classe Flow.
      */
-    virtual ~Flow();
-
-
-    // Getters e setters
+    virtual ~Flow() = default;
 
     /**
      * @brief Retorna o nome do fluxo.
      *
      * @return Nome do fluxo.
      */
-    string getName() const;
+    virtual string getName() const = 0;
 
     /**
      * @brief Define o nome do fluxo.
      *
      * @param name Novo nome do fluxo.
      */
-    void setName(const string& name);
+    virtual void setName(const string& name) = 0;
 
     /**
-     * @brief Retorna o sistema de origem.
+     * @brief Retorna o sistema de origem do fluxo.
      *
      * @return Ponteiro para o sistema de origem.
      */
-    System* getSource() const;
+    virtual System* getSource() const = 0;
 
     /**
-     * @brief Define o sistema de origem.
+     * @brief Define o sistema de origem do fluxo.
      *
-     * @param source Novo sistema de origem.
+     * @param source Ponteiro para o novo sistema de origem.
      */
-    void setSource(System* source);
+    virtual void setSource(System* source) = 0;
 
     /**
-     * @brief Retorna o sistema de destino.
+     * @brief Retorna o sistema de destino do fluxo.
      *
      * @return Ponteiro para o sistema de destino.
      */
-    System* getTarget() const;
+    virtual System* getTarget() const = 0;
 
     /**
-     * @brief Define o sistema de destino.
+     * @brief Define o sistema de destino do fluxo.
      *
-     * @param target Novo sistema de destino.
+     * @param target Ponteiro para o novo sistema de destino.
      */
-    void setTarget(System* target);
-
+    virtual void setTarget(System* target) = 0;
 
     /**
-     * @brief Executa o cálculo do fluxo.
+     * @brief Executa o cálculo do fluxo para um instante de tempo.
      *
-     * Método abstrato implementado pelas subclasses.
+     * Método puramente virtual implementado pelas subclasses. Calcula
+     * a quantidade a ser transferida do sistema de origem para o sistema
+     * de destino com base na equação específica do fluxo.
      *
      * @return Valor calculado pelo fluxo.
      */
     virtual double execute() = 0;
-
-private:
-
-    /**
-     * @brief Operador de atribuição privado.
-     *
-     * Impede atribuição entre objetos Flow.
-     *
-     * @param other Outro objeto Flow.
-     * @return Referência para o objeto atual.
-     */
-    Flow& operator=(const Flow& other);
-
-    /**
-     * @brief Construtor de cópia privado.
-     *
-     * Impede cópia da classe Flow.
-     *
-     * @param other Outro objeto Flow.
-     */
-    Flow(const Flow& other);
 };
 
 #endif
