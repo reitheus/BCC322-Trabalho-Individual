@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #ifndef FUNCTIONAL_TESTS_H
 #define FUNCTIONAL_TESTS_H
 
@@ -28,4 +29,14 @@ void logisticalFuncionalTest();
  */
 void complexFuncionalTest();
 
+=======
+#ifndef FUNCTIONAL_TESTS_H
+#define FUNCTIONAL_TESTS_H
+#include <assert.h>
+#include <math.h>
+void exponentialFuncionalTest();
+void logisticalFuncionalTest();
+void complexFuncionalTest();
+
+>>>>>>> develop
 #endif

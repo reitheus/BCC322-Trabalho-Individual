@@ -1,15 +1,15 @@
 #ifndef FLOWS_H
 #define FLOWS_H
 
-#include "flow.h"
+#include "flow_impl.h"
 
 /**
- * @brief Classe responsável pelo fluxo exponencial.
- *
- * Implementa um fluxo baseado em crescimento exponencial
- * entre sistemas.
- */
-class FlowExponencial : public Flow {
+    * @brief Classe responsável pelo fluxo exponencial.
+    *
+    * Implementa um fluxo baseado em crescimento exponencial
+    * entre sistemas.
+    */
+class FlowExponencial : public Flow_Impl {
 public:
 
     /**
@@ -52,7 +52,7 @@ public:
      */
     FlowExponencial& operator=(
         const FlowExponencial& other
-        );
+    );
 
     /**
      * @brief Executa o cálculo do fluxo exponencial.
@@ -62,14 +62,13 @@ public:
     double execute() override;
 };
 
-
 /**
  * @brief Classe responsável pelo fluxo logístico.
  *
  * Implementa um fluxo baseado em crescimento logístico
  * entre sistemas.
  */
-class FlowLogistico : public Flow {
+class FlowLogistico : public Flow_Impl {
 public:
 
     /**
@@ -112,7 +111,7 @@ public:
      */
     FlowLogistico& operator=(
         const FlowLogistico& other
-        );
+    );
 
     /**
      * @brief Executa o cálculo do fluxo logístico.
@@ -122,14 +121,13 @@ public:
     double execute() override;
 };
 
-
 /**
  * @brief Classe responsável pelo fluxo complexo.
  *
  * Implementa um fluxo com múltiplas interações
  * entre sistemas.
  */
-class FlowComplexo : public Flow {
+class FlowComplexo : public Flow_Impl {
 public:
 
     /**
@@ -172,7 +170,7 @@ public:
      */
     FlowComplexo& operator=(
         const FlowComplexo& other
-        );
+    );
 
     /**
      * @brief Executa o cálculo do fluxo complexo.
@@ -181,5 +179,4 @@ public:
      */
     double execute() override;
 };
-
 #endif
