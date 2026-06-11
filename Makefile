@@ -1,44 +1,148 @@
 CXX = g++
 
-CXXFLAGS = -Wall -std=c++17 -Iinclude
-
 SRC_DIR = src
 BIN_DIR = bin
-TEST_DIR = test/functional
+INCLUDE_DIR = include
+
+FUNC_TEST_DIR = test/functional
+UNIT_TEST_DIR = test/unit
+
+CXXFLAGS = -Wall -Wextra -std=c++17 -I$(INCLUDE_DIR)
+
+# =====================================
+# CRIA PASTA BIN SE NÃO EXISTIR
+# =====================================
 
 $(shell mkdir -p $(BIN_DIR))
 
-TARGET = $(BIN_DIR)/prog
-TEST_TARGET = $(BIN_DIR)/teste
+# =====================================
+# EXECUTÁVEIS
+# =====================================
 
-# Source files
+TARGET = $(BIN_DIR)/prog
+
+FUNC_TARGET = $(BIN_DIR)/progTestFuncional
+
+UNIT_TARGET = $(BIN_DIR)/progTestUnit
+
+# =====================================
+# SOURCE FILES
+# =====================================
+
 SRC_SRCS = $(wildcard $(SRC_DIR)/*.cpp)
-# Exclude main.cpp from library objects
+
+# Remove main.cpp do src
 LIB_SRCS = $(filter-out $(SRC_DIR)/main.cpp,$(SRC_SRCS))
+
 LIB_OBJS = $(patsubst $(SRC_DIR)/%.cpp,$(BIN_DIR)/%.o,$(LIB_SRCS))
 
-TEST_SRCS = $(wildcard $(TEST_DIR)/*.cpp)
-TEST_OBJS = $(patsubst $(TEST_DIR)/%.cpp,$(BIN_DIR)/%.test.o,$(TEST_SRCS))
+# =====================================
+# TESTES FUNCIONAIS
+# =====================================
 
-.PHONY: all clean
+FUNC_TEST_SRCS = $(wildcard $(FUNC_TEST_DIR)/*.cpp)
 
-all: $(TARGET) $(TEST_TARGET)
+FUNC_TEST_OBJS = $(patsubst $(FUNC_TEST_DIR)/%.cpp,$(BIN_DIR)/%.func.o,$(FUNC_TEST_SRCS))
 
-# Compilar objetos da biblioteca
+# =====================================
+# TESTES UNITÁRIOS
+# =====================================
+
+UNIT_TEST_SRCS = $(wildcard $(UNIT_TEST_DIR)/*.cpp)
+
+UNIT_MAIN = $(UNIT_TEST_DIR)/main.cpp
+
+UNIT_LIB_SRCS = $(filter-out $(UNIT_MAIN),$(UNIT_TEST_SRCS))
+
+UNIT_TEST_OBJS = $(patsubst $(UNIT_TEST_DIR)/%.cpp,$(BIN_DIR)/%.unit.o,$(UNIT_LIB_SRCS))
+
+UNIT_MAIN_OBJ = $(BIN_DIR)/main.unit.o
+
+# =====================================
+# PHONY
+# =====================================
+
+.PHONY: all clean functional_tests unit_tests run
+
+# =====================================
+# BUILD ALL
+# =====================================
+
+all: $(TARGET) $(FUNC_TARGET) $(UNIT_TARGET)
+
+# =====================================
+# COMPILAR OBJETOS SRC
+# =====================================
+
 $(BIN_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Compilar objetos de teste
-$(BIN_DIR)/%.test.o: $(TEST_DIR)/%.cpp
+# =====================================
+# COMPILAR TESTES FUNCIONAIS
+# =====================================
+
+$(BIN_DIR)/%.func.o: $(FUNC_TEST_DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Gerar executável principal
+# =====================================
+# COMPILAR TESTES UNITÁRIOS
+# =====================================
+
+$(BIN_DIR)/%.unit.o: $(UNIT_TEST_DIR)/%.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# =====================================
+# EXECUTÁVEL PRINCIPAL
+# =====================================
+
 $(TARGET): $(SRC_DIR)/main.cpp $(LIB_OBJS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-# Gerar executável de teste
-$(TEST_TARGET): $(LIB_OBJS) $(TEST_OBJS)
+# =====================================
+# EXECUTÁVEL TESTES FUNCIONAIS
+# =====================================
+
+$(FUNC_TARGET): $(LIB_OBJS) $(FUNC_TEST_OBJS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
+# =====================================
+# EXECUTÁVEL TESTES UNITÁRIOS
+# =====================================
+
+$(UNIT_MAIN_OBJ): $(UNIT_MAIN)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(UNIT_TARGET): $(LIB_OBJS) $(UNIT_TEST_OBJS) $(UNIT_MAIN_OBJ)
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
+# =====================================
+# EXECUTAR TESTES FUNCIONAIS
+# =====================================
+
+functional_tests: $(FUNC_TARGET)
+	./$(FUNC_TARGET)
+
+# =====================================
+# EXECUTAR TESTES UNITÁRIOS
+# =====================================
+
+unit_tests: $(UNIT_TARGET)
+	./$(UNIT_TARGET)
+
+# =====================================
+# EXECUTAR TODOS OS TESTES
+# =====================================
+
+run: functional_tests unit_tests
+
+# =====================================
+# LIMPAR ARQUIVOS GERADOS
+# =====================================
+
 clean:
-	rm -f $(BIN_DIR)/*.o $(BIN_DIR)/*.test.o $(TARGET) $(TEST_TARGET)
+	rm -f $(BIN_DIR)/*.o
+	rm -f $(BIN_DIR)/*.func.o
+	rm -f $(BIN_DIR)/*.unit.o
+	rm -f $(TARGET)
+	rm -f $(FUNC_TARGET)
+	rm -f $(UNIT_TARGET)
