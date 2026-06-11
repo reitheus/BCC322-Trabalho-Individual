@@ -1,0 +1,13 @@
+#include "..\..\include\system_impl.h"
+//-----------------
+/// Arquivo unit_System.h"
+#ifndef UNIT_SYSTEM
+#define UNIT_SYSTEM
+
+
+
+        void unit_System_constructor( void);
+        void unit_System_destructor( void);
+        void unit_System_setValue( void);
+        void run_unit_tests_System( void );
+#endif
