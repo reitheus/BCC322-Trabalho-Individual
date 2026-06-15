@@ -2,8 +2,8 @@
 #define FLOW_IMPL_H
 
 #include <string>
-#include "flow.h"
-#include "../include/system_impl.h"
+#include "../include/flow.h"
+#include "system_impl.h"
 using namespace std;
 
 class System;
@@ -106,5 +106,5 @@ public:
      */
     virtual double execute() = 0;
 
-    };
+};
 #endif

@@ -2,7 +2,7 @@
 #define SYSTEM_IMPL_H
 
 #include <string>
-#include "system.h"
+#include "../include/system.h"
 
 using namespace std;
 
@@ -12,7 +12,7 @@ using namespace std;
  * Um sistema armazena um valor que pode ser alterado
  * durante a execução da simulação.
  */
-class System_Impl : public System{
+class System_Impl : public System {
 private:
 
     /**
@@ -92,6 +92,9 @@ public:
      * @param value Novo valor do sistema.
      */
     void setValue(double value);
+public:
+    string id_;
+
 };
 
 #endif

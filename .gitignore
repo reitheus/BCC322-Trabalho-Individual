@@ -1,5 +1,7 @@
 .vs/
 *.vcxproj.user
+docs/html/
+docs/latex/
 
 *.exe
 *.out

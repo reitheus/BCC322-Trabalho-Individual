@@ -1,5 +1,11 @@
-//-----------------
-/// Arquivo unit_Model.cpp
+/**
+ * @file unit_Model.cpp
+ * @brief Implementação dos testes unitários da classe Model.
+ *
+ * Contém uma classe de fluxo concreta auxiliar (FlowTest) utilizada
+ * exclusivamente nos testes, além das implementações de cada função
+ * de teste unitário declarada em unit_Model.h.
+ */
 
 #include "unit_Model.h"
 
@@ -9,20 +15,39 @@
 #include "../../include/system_impl.h"
 #include "../../include/flow_impl.h"
 
-
+ /**
+  * @brief Implementação concreta de Flow_Impl utilizada nos testes do Model.
+  *
+  * Classe auxiliar de teste que herda de Flow_Impl e fornece uma
+  * implementação trivial de execute(), retornando sempre 1.0.
+  * Permite testar a lógica de execução do Model sem depender de
+  * uma equação de fluxo real.
+  */
 class FlowTest : public Flow_Impl {
 public:
-    FlowTest()
-        : Flow_Impl() {}
+    /**
+     * @brief Construtor padrão de FlowTest.
+     */
+    FlowTest() : Flow_Impl() {}
 
-    FlowTest(string name, System* source, System* target)
-        : Flow_Impl(name, source, target) {}
+    /**
+     * @brief Construtor parametrizado de FlowTest.
+     *
+     * @param name Nome do fluxo.
+     * @param source Ponteiro para o sistema de origem.
+     * @param target Ponteiro para o sistema de destino.
+     */
+    FlowTest(string name, System* source, System* target) : Flow_Impl(name, source, target) {}
 
+    /**
+     * @brief Implementação trivial de execute() para fins de teste.
+     *
+     * @return Sempre retorna 1.0.
+     */
     double execute() override {
         return 1.0;
     }
 };
-
 
 void unit_Model_constructor(void) {
     Model_Impl model;
@@ -42,9 +67,7 @@ void unit_Model_constructor(void) {
     assert(s2.getValue() == 1.0);
 }
 
-
-void unit_Model_destructor(void) { }
-
+void unit_Model_destructor(void) {}
 
 void unit_Model_addSystem(void) {
     Model_Impl model;
@@ -63,7 +86,6 @@ void unit_Model_addSystem(void) {
     assert(s1.getValue() == 99.0);
     assert(s2.getValue() == 1.0);
 }
-
 
 void unit_Model_addFlow(void) {
     Model_Impl model;
@@ -89,7 +111,6 @@ void unit_Model_addFlow(void) {
     assert(s2.getValue() == 1.0);
 }
 
-
 void unit_Model_run(void) {
     Model_Impl model;
 
@@ -108,7 +129,6 @@ void unit_Model_run(void) {
     assert(s2.getValue() == 10.0);
 }
 
-
 void unit_Model_showModel(void) {
     Model_Impl model;
 
@@ -125,7 +145,6 @@ void unit_Model_showModel(void) {
 
     assert(true);
 }
-
 
 void run_unit_tests_Model(void) {
     unit_Model_constructor();
