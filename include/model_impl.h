@@ -28,7 +28,7 @@ private:
      * @brief Vetor contendo os fluxos do modelo.
      */
     vector<Flow*> flows;
-    
+
 public:
 
     // Forma canônica
@@ -36,7 +36,7 @@ public:
      * @brief Construtor padrão da classe Model.
      */
     Model_Impl();
-    
+
     /**
      * @brief Destrutor virtual da classe Model.
      */

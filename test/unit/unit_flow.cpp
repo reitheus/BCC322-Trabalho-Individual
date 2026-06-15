@@ -1,5 +1,11 @@
-//-----------------
-/// Arquivo unit_Flow.cpp
+/**
+ * @file unit_Flow.cpp
+ * @brief Implementação dos testes unitários da classe Flow.
+ *
+ * Contém uma classe de fluxo concreta auxiliar (Flow_Test) utilizada
+ * exclusivamente nos testes, além das implementações de cada função
+ * de teste unitário declarada em unit_Flow.h.
+ */
 
 #include "unit_Flow.h"
 
@@ -7,13 +13,37 @@
 #include "../../include/system_impl.h"
 #include "../../include/flow_impl.h"
 
+ /**
+  * @brief Implementação concreta de Flow_Impl utilizada nos testes unitários.
+  *
+  * Classe auxiliar de teste que herda de Flow_Impl e fornece uma
+  * implementação trivial de execute(), retornando sempre 1.0.
+  * Permite testar os métodos de Flow_Impl sem depender de uma
+  * equação de fluxo real.
+  */
 class Flow_Test : public Flow_Impl {
 public:
+    /**
+     * @brief Construtor padrão de Flow_Test.
+     */
     Flow_Test() : Flow_Impl() {}
 
+    /**
+     * @brief Construtor parametrizado de Flow_Test.
+     *
+     * @param name Nome do fluxo.
+     * @param source Ponteiro para o sistema de origem.
+     * @param target Ponteiro para o sistema de destino.
+     */
     Flow_Test(string name, System* source, System* target)
-        : Flow_Impl(name, source, target) {}
+        : Flow_Impl(name, source, target) {
+    }
 
+    /**
+     * @brief Implementação trivial de execute() para fins de teste.
+     *
+     * @return Sempre retorna 1.0.
+     */
     double execute() override {
         return 1.0;
     }
@@ -30,7 +60,7 @@ void unit_Flow_constructor(void) {
     assert(f1.getTarget() == &s2);
 }
 
-void unit_Flow_destructor(void) { }
+void unit_Flow_destructor(void) {}
 
 void unit_Flow_getName(void) {
     System_Impl s1("Source", 100);

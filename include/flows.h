@@ -4,11 +4,18 @@
 #include "flow_impl.h"
 
 /**
-    * @brief Classe responsável pelo fluxo exponencial.
-    *
-    * Implementa um fluxo baseado em crescimento exponencial
-    * entre sistemas.
-    */
+ * @file flows.h
+ * @brief Declaração das classes de fluxo concretas: exponencial, logístico e complexo.
+ */
+
+ /**
+  * @brief Fluxo baseado em crescimento exponencial.
+  *
+  * Implementa uma equação de fluxo exponencial entre dois sistemas,
+  * onde a taxa de transferência é proporcional ao valor atual do
+  * sistema de origem. Tipicamente usada para modelar crescimento
+  * ou decaimento exponencial em populações e recursos.
+  */
 class FlowExponencial : public Flow_Impl {
 public:
 
@@ -21,8 +28,8 @@ public:
      * @brief Construtor parametrizado da classe FlowExponencial.
      *
      * @param name Nome do fluxo.
-     * @param source Sistema de origem.
-     * @param target Sistema de destino.
+     * @param source Ponteiro para o sistema de origem.
+     * @param target Ponteiro para o sistema de destino.
      */
     FlowExponencial(
         const string& name,
@@ -33,7 +40,7 @@ public:
     /**
      * @brief Construtor de cópia da classe FlowExponencial.
      *
-     * @param other Outro objeto FlowExponencial.
+     * @param other Objeto FlowExponencial a ser copiado.
      */
     FlowExponencial(
         const FlowExponencial& other
@@ -47,7 +54,7 @@ public:
     /**
      * @brief Operador de atribuição da classe FlowExponencial.
      *
-     * @param other Outro objeto FlowExponencial.
+     * @param other Objeto FlowExponencial a ser atribuído.
      * @return Referência para o objeto atual.
      */
     FlowExponencial& operator=(
@@ -57,16 +64,22 @@ public:
     /**
      * @brief Executa o cálculo do fluxo exponencial.
      *
-     * @return Valor calculado pelo fluxo.
+     * Calcula a quantidade transferida do sistema de origem para o
+     * sistema de destino com base em uma equação de crescimento
+     * exponencial aplicada ao valor atual do sistema de origem.
+     *
+     * @return Valor calculado pelo fluxo exponencial.
      */
     double execute() override;
 };
 
 /**
- * @brief Classe responsável pelo fluxo logístico.
+ * @brief Fluxo baseado em crescimento logístico.
  *
- * Implementa um fluxo baseado em crescimento logístico
- * entre sistemas.
+ * Implementa uma equação de fluxo logístico entre dois sistemas,
+ * onde a taxa de transferência desacelera conforme o sistema de
+ * origem se aproxima de uma capacidade limite. Usada para modelar
+ * crescimento populacional com capacidade de suporte.
  */
 class FlowLogistico : public Flow_Impl {
 public:
@@ -80,8 +93,8 @@ public:
      * @brief Construtor parametrizado da classe FlowLogistico.
      *
      * @param name Nome do fluxo.
-     * @param source Sistema de origem.
-     * @param target Sistema de destino.
+     * @param source Ponteiro para o sistema de origem.
+     * @param target Ponteiro para o sistema de destino.
      */
     FlowLogistico(
         const string& name,
@@ -92,7 +105,7 @@ public:
     /**
      * @brief Construtor de cópia da classe FlowLogistico.
      *
-     * @param other Outro objeto FlowLogistico.
+     * @param other Objeto FlowLogistico a ser copiado.
      */
     FlowLogistico(
         const FlowLogistico& other
@@ -106,7 +119,7 @@ public:
     /**
      * @brief Operador de atribuição da classe FlowLogistico.
      *
-     * @param other Outro objeto FlowLogistico.
+     * @param other Objeto FlowLogistico a ser atribuído.
      * @return Referência para o objeto atual.
      */
     FlowLogistico& operator=(
@@ -116,16 +129,22 @@ public:
     /**
      * @brief Executa o cálculo do fluxo logístico.
      *
-     * @return Valor calculado pelo fluxo.
+     * Calcula a quantidade transferida do sistema de origem para o
+     * sistema de destino com base em uma equação de crescimento
+     * logístico, levando em conta os valores atuais de ambos os sistemas.
+     *
+     * @return Valor calculado pelo fluxo logístico.
      */
     double execute() override;
 };
 
 /**
- * @brief Classe responsável pelo fluxo complexo.
+ * @brief Fluxo com equação de múltiplas interações entre sistemas.
  *
- * Implementa um fluxo com múltiplas interações
- * entre sistemas.
+ * Implementa um fluxo mais elaborado que combina interações entre
+ * o sistema de origem e o sistema de destino, permitindo modelar
+ * dinâmicas com dependências cruzadas entre compartimentos, como
+ * modelos predador-presa ou transferências bidirecionalmente influenciadas.
  */
 class FlowComplexo : public Flow_Impl {
 public:
@@ -139,8 +158,8 @@ public:
      * @brief Construtor parametrizado da classe FlowComplexo.
      *
      * @param name Nome do fluxo.
-     * @param source Sistema de origem.
-     * @param target Sistema de destino.
+     * @param source Ponteiro para o sistema de origem.
+     * @param target Ponteiro para o sistema de destino.
      */
     FlowComplexo(
         const string& name,
@@ -151,7 +170,7 @@ public:
     /**
      * @brief Construtor de cópia da classe FlowComplexo.
      *
-     * @param other Outro objeto FlowComplexo.
+     * @param other Objeto FlowComplexo a ser copiado.
      */
     FlowComplexo(
         const FlowComplexo& other
@@ -165,7 +184,7 @@ public:
     /**
      * @brief Operador de atribuição da classe FlowComplexo.
      *
-     * @param other Outro objeto FlowComplexo.
+     * @param other Objeto FlowComplexo a ser atribuído.
      * @return Referência para o objeto atual.
      */
     FlowComplexo& operator=(
@@ -175,8 +194,14 @@ public:
     /**
      * @brief Executa o cálculo do fluxo complexo.
      *
-     * @return Valor calculado pelo fluxo.
+     * Calcula a quantidade transferida entre os sistemas com base em
+     * uma equação que combina os valores do sistema de origem e do
+     * sistema de destino, modelando interações mais elaboradas entre
+     * os compartimentos do modelo.
+     *
+     * @return Valor calculado pelo fluxo complexo.
      */
     double execute() override;
 };
+
 #endif

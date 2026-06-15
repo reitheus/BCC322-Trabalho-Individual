@@ -1,14 +1,15 @@
-<<<<<<< HEAD:src/model.cpp
 /**
- * @file model.cpp
- * @brief Implementação da classe Model.
+ * @file model_impl.cpp
+ * @brief Implementação da classe Model_Impl.
  *
- * Este arquivo contém os métodos responsáveis
- * pela manipulação e execução dos modelos
- * de simulação do sistema dinâmico.
+ * Este arquivo contém os métodos responsáveis pela manipulação
+ * e execução dos modelos de simulação de sistemas dinâmicos,
+ * incluindo construtores, destrutor, operador de atribuição,
+ * adição de sistemas e fluxos, execução da simulação e exibição
+ * do estado do modelo.
  */
 
-#include "../include/model.h"
+#include "../include/model_impl.h"
 #include "../include/system.h"
 #include "../include/flow.h"
 
@@ -17,58 +18,46 @@
 
 using namespace std;
 
-
-// =====================
-// Construtores
-// =====================
-
-/*
- * @brief Construtor padrão da classe Model.
- */
-Model::Model() {}
-
-
-/*
- * @brief Construtor de cópia da classe Model.
+/**
+ * @brief Construtor padrão da classe Model_Impl.
  *
- * @param other Outro objeto Model.
+ * Inicializa o modelo com vetores de sistemas e fluxos vazios.
  */
-Model::Model(const Model& other) {
+Model_Impl::Model_Impl() {}
+
+/**
+ * @brief Construtor de cópia da classe Model_Impl.
+ *
+ * Copia os vetores de sistemas e fluxos de outro modelo.
+ *
+ * @param other Objeto Model_Impl a ser copiado.
+ */
+Model_Impl::Model_Impl(const Model_Impl& other) {
     systems = other.systems;
     flows = other.flows;
 }
 
-
-// =====================
-// Destrutor
-// =====================
-
-/*
- * @brief Destrutor da classe Model.
+/**
+ * @brief Destrutor da classe Model_Impl.
  *
- * Remove os elementos armazenados
- * nos vetores de sistemas e fluxos.
+ * Limpa os vetores de sistemas e fluxos.
+ * Os objetos apontados pelos ponteiros não são destruídos
+ * (responsabilidade do código cliente).
  */
-Model::~Model() {
+Model_Impl::~Model_Impl() {
     systems.clear();
     flows.clear();
 }
 
-
-// =====================
-// Operador de atribuição
-// =====================
-
-/*
- * @brief Operador de atribuição da classe Model.
+/**
+ * @brief Operador de atribuição da classe Model_Impl.
  *
- * Copia os sistemas e fluxos de outro modelo.
+ * Copia os vetores de sistemas e fluxos de outro modelo.
  *
- * @param other Outro objeto Model.
+ * @param other Objeto Model_Impl a ser atribuído.
  * @return Referência para o objeto atual.
  */
-Model& Model::operator=(const Model& other) {
-
+Model_Impl& Model_Impl::operator=(const Model_Impl& other) {
     if (this == &other)
         return *this;
 
@@ -78,104 +67,72 @@ Model& Model::operator=(const Model& other) {
     return *this;
 }
 
-
-// =====================
-// Métodos de adição
-// =====================
-
-/*
+/**
  * @brief Adiciona um sistema ao modelo.
  *
- * @param s Ponteiro para o sistema.
+ * @param s Ponteiro para o sistema a ser adicionado.
  */
-void Model::add(System* s) {
+void Model_Impl::add(System* s) {
     systems.push_back(s);
 }
 
-
-/*
+/**
  * @brief Adiciona um fluxo ao modelo.
  *
- * @param f Ponteiro para o fluxo.
+ * @param f Ponteiro para o fluxo a ser adicionado.
  */
-void Model::add(Flow* f) {
+void Model_Impl::add(Flow* f) {
     flows.push_back(f);
 }
 
-
-// =====================
-// Simulação
-// =====================
-
-/*
- * @brief Executa a simulação do modelo.
+/**
+ * @brief Executa a simulação do modelo no intervalo de tempo especificado.
  *
- * Percorre o intervalo de tempo especificado,
- * executando os fluxos e atualizando os valores
- * dos sistemas envolvidos.
+ * A cada passo de tempo, todos os fluxos são calculados com base nos
+ * valores atuais dos sistemas (passo síncrono), e em seguida os sistemas
+ * de origem e destino de cada fluxo são atualizados simultaneamente.
  *
- * @param t_init Tempo inicial da simulação.
- * @param t_final Tempo final da simulação.
- *
- * @return true caso a execução ocorra corretamente.
+ * @param t_init Tempo inicial da simulação (inclusive).
+ * @param t_final Tempo final da simulação (exclusive).
+ * @return true se a execução foi concluída com sucesso.
  */
-bool Model::run(int t_init, int t_final) {
+bool Model_Impl::run(int t_init, int t_final) {
+    for (int tempo = t_init; tempo < t_final; tempo++) {
 
-    for (int tempo = t_init;
-        tempo < t_final;
-        tempo++)
-    {
         vector<double> values;
 
-        // executa todos os fluxos
+        // Calcula todos os fluxos com base nos valores atuais
         for (Flow* flow : flows) {
             values.push_back(flow->execute());
         }
 
-        // atualiza sistemas
-        for (unsigned int i = 0;
-            i < flows.size();
-            i++)
-        {
+        // Atualiza os sistemas com os valores calculados
+        for (unsigned int i = 0; i < flows.size(); i++) {
             System* source = flows[i]->getSource();
             System* target = flows[i]->getTarget();
 
-            if (source != nullptr) {
-                source->setValue(
-                    source->getValue() - values[i]
-                );
-            }
+            if (source != nullptr)
+                source->setValue(source->getValue() - values[i]);
 
-            if (target != nullptr) {
-                target->setValue(
-                    target->getValue() + values[i]
-                );
-            }
+            if (target != nullptr)
+                target->setValue(target->getValue() + values[i]);
         }
     }
 
     return true;
 }
 
-
-// =====================
-// Exibição
-// =====================
-
-/*
- * @brief Exibe os sistemas e fluxos do modelo.
+/**
+ * @brief Exibe no console os sistemas e fluxos do modelo.
  *
- * Mostra no terminal:
- * - sistemas cadastrados
- * - valores atuais
- * - conexões entre fluxos
+ * Para cada sistema, imprime seu nome e valor atual.
+ * Para cada fluxo, imprime a conexão entre sistema de origem
+ * e sistema de destino no formato "origem -> destino".
  */
-void Model::showModel() const {
-
+void Model_Impl::showModel() const {
     cout << "SYSTEMS" << endl;
 
     for (System* s : systems) {
-
         cout << s->getName()
             << " = "
             << s->getValue()
@@ -186,129 +143,9 @@ void Model::showModel() const {
     cout << "FLOWS" << endl;
 
     for (Flow* f : flows) {
-
         cout << f->getSource()->getName()
             << " -> "
             << f->getTarget()->getName()
             << endl;
     }
 }
-=======
-#include "../include/model_impl.h"
-#include "../include/system.h"
-#include "../include/flow.h"
-
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
-
-/// Construtor padrão
-Model_Impl::Model_Impl() {}
-
-
-/// Construtor de cópia
-Model_Impl::Model_Impl(const Model_Impl& other) {
-    systems = other.systems;
-    flows = other.flows;
-}
-
-
-/// Destrutor
-Model_Impl::~Model_Impl() {
-    systems.clear();
-    flows.clear();
-}
-
-
-/// Operador de atribuição
-Model_Impl& Model_Impl::operator=(const Model_Impl& other) {
-
-    if(this == &other)
-        return *this;
-
-    systems = other.systems;
-    flows = other.flows;
-
-    return *this;
-}
-
-
-/// Adiciona sistema
-void Model_Impl::add(System* s) {
-    systems.push_back(s);
-}
-
-
-/// Adiciona fluxo
-void Model_Impl::add(Flow* f) {
-    flows.push_back(f);
-}
-
-
-/// Executa simulação
-bool Model_Impl::run(int t_init, int t_final) {
-
-    for(int tempo = t_init;
-        tempo < t_final;
-        tempo++)
-    {
-        vector<double> values;
-
-        // executa todos os fluxos
-        for(Flow* flow : flows) {
-            values.push_back(flow->execute());
-        }
-
-        // atualiza sistemas
-        for(unsigned int i = 0;
-            i < flows.size();
-            i++)
-        {
-            System* source = flows[i]->getSource();
-            System* target = flows[i]->getTarget();
-
-            if(source != nullptr) {
-                source->setValue(
-                    source->getValue() - values[i]
-                );
-            }
-
-            if(target != nullptr) {
-                target->setValue(
-                    target->getValue() + values[i]
-                );
-            }
-        }
-    }
-
-    return true;
-}
-
-
-/// Mostra modelo
-void Model_Impl::showModel() const {
-
-    cout << "SYSTEMS" << endl;
-
-    for(System* s : systems) {
-
-        cout << s->getName()
-             << " = "
-             << s->getValue()
-             << endl;
-    }
-
-    cout << endl;
-    cout << "FLOWS" << endl;
-
-    for(Flow* f : flows) {
-
-        cout << f->getSource()->getName()
-             << " -> "
-             << f->getTarget()->getName()
-             << endl;
-    }
-}
->>>>>>> develop:src/model_impl.cpp

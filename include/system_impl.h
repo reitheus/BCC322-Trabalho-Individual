@@ -12,7 +12,7 @@ using namespace std;
  * Um sistema armazena um valor que pode ser alterado
  * durante a execução da simulação.
  */
-class System_Impl : public System{
+class System_Impl : public System {
 private:
 
     /**

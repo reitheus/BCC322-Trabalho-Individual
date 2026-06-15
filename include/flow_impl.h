@@ -27,8 +27,8 @@ public:
      * @param target Sistema de destino.
      */
     Flow_Impl(const string& name,
-              System* source,
-              System* target);
+        System* source,
+        System* target);
 
     /**
      * @brief Construtor de cópia da classe Flow.
@@ -106,5 +106,5 @@ public:
      */
     virtual double execute() = 0;
 
-    };
+};
 #endif
