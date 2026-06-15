@@ -59,7 +59,7 @@ public:
      */
     FlowExponencial& operator=(
         const FlowExponencial& other
-        );
+    );
 
     /**
      * @brief Executa o cálculo do fluxo exponencial.
@@ -124,7 +124,7 @@ public:
      */
     FlowLogistico& operator=(
         const FlowLogistico& other
-        );
+    );
 
     /**
      * @brief Executa o cálculo do fluxo logístico.
@@ -189,7 +189,7 @@ public:
      */
     FlowComplexo& operator=(
         const FlowComplexo& other
-        );
+    );
 
     /**
      * @brief Executa o cálculo do fluxo complexo.

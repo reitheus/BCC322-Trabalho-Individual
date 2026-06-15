@@ -70,6 +70,7 @@ public:
      */
     virtual void setTarget(System* target) = 0;
 
+    // Método abstrato
     /**
      * @brief Executa o cálculo do fluxo para um instante de tempo.
      *
