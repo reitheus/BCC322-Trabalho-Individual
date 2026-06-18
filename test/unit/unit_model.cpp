@@ -7,7 +7,7 @@
  * de teste unitário declarada em unit_Model.h.
  */
 
-#include "unit_Model.h"
+#include "unit_model.h"
 
 #include <assert.h>
 

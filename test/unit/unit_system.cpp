@@ -8,7 +8,7 @@
  * manipulação de valores.
  */
 
-#include "unit_System.h"
+#include "unit_system.h"
 #include <assert.h>
 #include "..\..\src\system_impl.h"
 
