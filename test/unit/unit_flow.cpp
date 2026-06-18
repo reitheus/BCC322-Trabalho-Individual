@@ -7,11 +7,11 @@
  * de teste unitário declarada em unit_Flow.h.
  */
 
-#include "unit_Flow.h"
+#include "unit_flow.h"
 
 #include <assert.h>
-#include "../../include/system_impl.h"
-#include "../../include/flow_impl.h"
+#include "../../src/system_impl.h"
+#include "../../src/flow_impl.h"
 
  /**
   * @brief Implementação concreta de Flow_Impl utilizada nos testes unitários.
@@ -35,9 +35,7 @@ public:
      * @param source Ponteiro para o sistema de origem.
      * @param target Ponteiro para o sistema de destino.
      */
-    Flow_Test(string name, System* source, System* target)
-        : Flow_Impl(name, source, target) {
-    }
+    Flow_Test(string name, System* source, System* target) : Flow_Impl(name, source, target) {}
 
     /**
      * @brief Implementação trivial de execute() para fins de teste.

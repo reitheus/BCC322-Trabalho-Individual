@@ -7,7 +7,7 @@
  * operador de atribuição e getters/setters.
  */
 
-#include "../include/flow_impl.h"
+#include "flow_impl.h"
 #include "../include/system.h"
 
 using namespace std;
@@ -19,10 +19,9 @@ using namespace std;
  */
 Flow_Impl::Flow_Impl()
     : name(""),
-    source(nullptr),
-    target(nullptr)
-{
-}
+      source(nullptr),
+      target(nullptr)
+{}
 
 /**
  * @brief Construtor parametrizado da classe Flow_Impl.
@@ -35,10 +34,9 @@ Flow_Impl::Flow_Impl(const string& name,
     System* source,
     System* target)
     : name(name),
-    source(source),
-    target(target)
-{
-}
+      source(source),
+      target(target)
+{}
 
 /**
  * @brief Construtor de cópia da classe Flow_Impl.
@@ -47,10 +45,9 @@ Flow_Impl::Flow_Impl(const string& name,
  */
 Flow_Impl::Flow_Impl(const Flow_Impl& other)
     : name(other.name),
-    source(other.source),
-    target(other.target)
-{
-}
+      source(other.source),
+      target(other.target)
+{}
 
 /**
  * @brief Destrutor da classe Flow_Impl.

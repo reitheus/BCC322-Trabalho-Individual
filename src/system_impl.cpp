@@ -8,7 +8,7 @@
  * getters/setters de nome e valor.
  */
 
-#include "../include/system_impl.h"
+#include "system_impl.h"
 
 using namespace std;
 
@@ -25,18 +25,14 @@ System_Impl::System_Impl() : value(0.0), name("") {}
  * @param name Nome do sistema.
  * @param value Valor inicial do sistema.
  */
-System_Impl::System_Impl(const string& name, double value)
-    : value(value), name(name) {
-}
+System_Impl::System_Impl(const string& name, double value) : value(value), name(name) {}
 
 /**
  * @brief Construtor de cópia da classe System_Impl.
  *
  * @param other Objeto System_Impl a ser copiado.
  */
-System_Impl::System_Impl(const System_Impl& other)
-    : value(other.value), name(other.name) {
-}
+System_Impl::System_Impl(const System_Impl& other) : value(other.value), name(other.name) {}
 
 /**
  * @brief Destrutor da classe System_Impl.

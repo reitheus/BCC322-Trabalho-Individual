@@ -7,13 +7,13 @@
  * de teste unitário declarada em unit_Model.h.
  */
 
-#include "unit_Model.h"
+#include "unit_model.h"
 
 #include <assert.h>
 
-#include "../../include/model_impl.h"
-#include "../../include/system_impl.h"
-#include "../../include/flow_impl.h"
+#include "../../src/model_impl.h"
+#include "../../src/system_impl.h"
+#include "../../src/flow_impl.h"
 
  /**
   * @brief Implementação concreta de Flow_Impl utilizada nos testes do Model.
@@ -28,9 +28,7 @@ public:
     /**
      * @brief Construtor padrão de FlowTest.
      */
-    FlowTest()
-        : Flow_Impl() {
-    }
+    FlowTest() : Flow_Impl() {}
 
     /**
      * @brief Construtor parametrizado de FlowTest.
@@ -39,9 +37,7 @@ public:
      * @param source Ponteiro para o sistema de origem.
      * @param target Ponteiro para o sistema de destino.
      */
-    FlowTest(string name, System* source, System* target)
-        : Flow_Impl(name, source, target) {
-    }
+    FlowTest(string name, System* source, System* target) : Flow_Impl(name, source, target) {}
 
     /**
      * @brief Implementação trivial de execute() para fins de teste.
@@ -61,6 +57,7 @@ void unit_Model_constructor(void) {
 
     FlowTest f1("F1", &s1, &s2);
 
+    model.createModel("M1");
     model.add(&s1);
     model.add(&s2);
     model.add(&f1);
@@ -71,7 +68,9 @@ void unit_Model_constructor(void) {
     assert(s2.getValue() == 1.0);
 }
 
+
 void unit_Model_destructor(void) {}
+
 
 void unit_Model_addSystem(void) {
     Model_Impl model;
@@ -80,6 +79,7 @@ void unit_Model_addSystem(void) {
     System_Impl s2("S2", 0.0);
 
     FlowTest f1("F1", &s1, &s2);
+    model.createModel("M1");
 
     model.add(&s1);
     model.add(&s2);
@@ -91,6 +91,7 @@ void unit_Model_addSystem(void) {
     assert(s2.getValue() == 1.0);
 }
 
+
 void unit_Model_addFlow(void) {
     Model_Impl model;
 
@@ -98,7 +99,7 @@ void unit_Model_addFlow(void) {
     System_Impl s2("S2", 0.0);
 
     FlowTest f1("F1", &s1, &s2);
-
+    model.createModel("M1");
     model.add(&s1);
     model.add(&s2);
 
@@ -115,6 +116,7 @@ void unit_Model_addFlow(void) {
     assert(s2.getValue() == 1.0);
 }
 
+
 void unit_Model_run(void) {
     Model_Impl model;
 
@@ -122,7 +124,7 @@ void unit_Model_run(void) {
     System_Impl s2("S2", 0.0);
 
     FlowTest f1("F1", &s1, &s2);
-
+    model.createModel("M1");
     model.add(&s1);
     model.add(&s2);
     model.add(&f1);
@@ -133,6 +135,7 @@ void unit_Model_run(void) {
     assert(s2.getValue() == 10.0);
 }
 
+
 void unit_Model_showModel(void) {
     Model_Impl model;
 
@@ -140,7 +143,7 @@ void unit_Model_showModel(void) {
     System_Impl s2("S2", 0.0);
 
     FlowTest f1("F1", &s1, &s2);
-
+    model.createModel("M1");
     model.add(&s1);
     model.add(&s2);
     model.add(&f1);
@@ -149,6 +152,7 @@ void unit_Model_showModel(void) {
 
     assert(true);
 }
+
 
 void run_unit_tests_Model(void) {
     unit_Model_constructor();

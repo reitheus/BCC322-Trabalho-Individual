@@ -8,9 +8,9 @@
  * manipulação de valores.
  */
 
-#include "unit_System.h"
+#include "unit_system.h"
 #include <assert.h>
-#include "..\..\include\system_impl.h"
+#include "..\..\src\system_impl.h"
 
 void unit_System_constructor(void) {
     System_Impl s1("System1", 0);

@@ -9,8 +9,8 @@
 #ifndef MAIN
 #define MAIN
 
-#include "../include/model_impl.h"
-#include "../include/system_impl.h"
+#include "../include/model.h"
+#include "../include/system.h"
 #include "../include/flow.h"
 
  /**

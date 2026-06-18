@@ -30,5 +30,5 @@ int main() {
     //run_unit_tests_Flow();
     //run_unit_tests_Model();
 
-    return 0;
+    return true;
 }
