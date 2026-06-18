@@ -11,9 +11,9 @@
 
 #include <assert.h>
 
-#include "../../include/model_impl.h"
-#include "../../include/system_impl.h"
-#include "../../include/flow_impl.h"
+#include "../../src/model_impl.h"
+#include "../../src/system_impl.h"
+#include "../../src/flow_impl.h"
 
  /**
   * @brief Implementação concreta de Flow_Impl utilizada nos testes do Model.

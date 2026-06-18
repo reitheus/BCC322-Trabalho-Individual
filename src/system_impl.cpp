@@ -8,7 +8,7 @@
  * getters/setters de nome e valor.
  */
 
-#include "../include/system_impl.h"
+#include "system_impl.h"
 
 using namespace std;
 

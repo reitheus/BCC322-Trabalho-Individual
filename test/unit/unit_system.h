@@ -10,7 +10,7 @@
  * System e sua implementação concreta System_Impl.
  */
 
-#include "..\..\include\system_impl.h"
+#include "..\..\src\system_impl.h"
 
  /**
   * @brief Testa o construtor parametrizado da classe System.

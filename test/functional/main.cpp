@@ -12,8 +12,8 @@
 #define MAIN_FUNCIONAL_TESTS
 
 #include "../../include/functional_test.h"
-#include "../../include/model_impl.h"
-#include "../../include/system_impl.h"
+#include "../../include/model.h"
+#include "../../include/system.h"
 #include "../../include/flow.h"
 
  /**

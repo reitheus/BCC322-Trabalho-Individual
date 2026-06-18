@@ -10,8 +10,8 @@
 #include "unit_Flow.h"
 
 #include <assert.h>
-#include "../../include/system_impl.h"
-#include "../../include/flow_impl.h"
+#include "../../src/system_impl.h"
+#include "../../src/flow_impl.h"
 
  /**
   * @brief Implementação concreta de Flow_Impl utilizada nos testes unitários.

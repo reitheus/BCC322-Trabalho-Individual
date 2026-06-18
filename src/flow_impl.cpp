@@ -7,7 +7,7 @@
  * operador de atribuição e getters/setters.
  */
 
-#include "../include/flow_impl.h"
+#include "flow_impl.h"
 #include "../include/system.h"
 
 using namespace std;
