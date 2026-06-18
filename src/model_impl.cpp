@@ -10,13 +10,12 @@
  */
 
 #include "model_impl.h"
-#include "../include/model.h"
 #include "../include/system.h"
+#include "../include/model.h"
 #include "../include/flow.h"
 
 #include <iostream>
 #include <vector>
-
 using namespace std;
 
 /**
@@ -48,7 +47,6 @@ Model& Model::createModel(string id) {
  * @return Referência para o modelo recém-criado.
  */
 Model& Model_Impl::createModel(string id) {
-
     Model* model = new Model_Impl(id);
     models.push_back(model);
     return *model;
@@ -151,6 +149,7 @@ Model_Impl::~Model_Impl(void) {
  * @return Referência para o objeto atual.
  */
 Model_Impl& Model_Impl::operator=(const Model_Impl& other) {
+
     if (this == &other)
         return *this;
 
@@ -274,8 +273,6 @@ void Model_Impl::setTarget(Flow& f, System& s) {
     Flow_Impl* fi = (Flow_Impl*)&f;
     fi->setTarget(&s);
 }
-
-
 
 /**
  * @brief Remove o sistema de origem de um fluxo, definindo-o como nulo.
