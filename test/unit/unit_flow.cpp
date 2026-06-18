@@ -7,7 +7,7 @@
  * de teste unitário declarada em unit_Flow.h.
  */
 
-#include "unit_Flow.h"
+#include "unit_flow.h"
 
 #include <assert.h>
 #include "../../src/system_impl.h"

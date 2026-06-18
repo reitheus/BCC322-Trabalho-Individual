@@ -7,7 +7,7 @@
  * de teste unitário declarada em unit_Model.h.
  */
 
-#include "unit_Model.h"
+#include "unit_model.h"
 
 #include <assert.h>
 
@@ -67,7 +67,9 @@ void unit_Model_constructor(void) {
     assert(s2.getValue() == 1.0);
 }
 
+
 void unit_Model_destructor(void) {}
+
 
 void unit_Model_addSystem(void) {
     Model_Impl model;
@@ -86,6 +88,7 @@ void unit_Model_addSystem(void) {
     assert(s1.getValue() == 99.0);
     assert(s2.getValue() == 1.0);
 }
+
 
 void unit_Model_addFlow(void) {
     Model_Impl model;
@@ -111,6 +114,7 @@ void unit_Model_addFlow(void) {
     assert(s2.getValue() == 1.0);
 }
 
+
 void unit_Model_run(void) {
     Model_Impl model;
 
@@ -129,6 +133,7 @@ void unit_Model_run(void) {
     assert(s2.getValue() == 10.0);
 }
 
+
 void unit_Model_showModel(void) {
     Model_Impl model;
 
@@ -145,6 +150,7 @@ void unit_Model_showModel(void) {
 
     assert(true);
 }
+
 
 void run_unit_tests_Model(void) {
     unit_Model_constructor();
