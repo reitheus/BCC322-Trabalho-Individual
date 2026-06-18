@@ -8,27 +8,27 @@
  * manipulação de valores.
  */
 
-#include "unit_System.h"
+#include "unit_system.h"
 #include <assert.h>
-#include "..\..\include\system_impl.h"
+
 
 void unit_System_constructor(void) {
-    System_Impl s1("System1", 0);
+    System_Handle s1("System1", 0);
     assert(s1.getValue() == 0);
 
-    System_Impl s2("System2", 10);
+    System_Handle s2("System2", 10);
     assert(s2.getValue() == 10);
 }
 
 void unit_System_destructor(void) {}
 
 void unit_System_getValue(void) {
-    System_Impl s("System", 10);
+    System_Handle s("System", 10);
     assert(s.getValue() == 10);
 }
 
 void unit_System_setValue(void) {
-    System_Impl s("System", 0);
+    System_Handle s("System", 0);
     s.setValue(100);
     assert(s.getValue() == 100);
 }

@@ -1,36 +1,42 @@
 #ifndef SYSTEM_IMPL_H
 #define SYSTEM_IMPL_H
 
+/**
+ * @file system_impl.h
+ * @brief Declaração do Body (System_Impl) e do Handle (System) do padrão Handle-Body.
+ *
+ * Ambas as classes residem neste arquivo:
+ *  - System_Impl  →  Body concreto; armazena nome e valor do estoque.
+ *  - System       →  Handle público; delega todas as operações a System_Impl via pImpl_.
+ */
+
 #include <string>
+#include "handleBodySemDebug.h"
 #include "system.h"
 
 using namespace std;
 
+///Classe System_body
 /**
- * @brief Classe responsável por representar um sistema.
+ * @brief Body concreto que representa um sistema (estoque) no simulador.
  *
- * Um sistema armazena um valor que pode ser alterado
- * durante a execução da simulação.
+ * Herda de Body para participar do gerenciamento de referências do
+ * padrão Handle-Body. É instanciado e destruído exclusivamente pelo
+ * Handle (System).
  */
-class System_Impl : public System {
+class System_Body : public Body {
 private:
-
-    /**
-     * @brief Valor armazenado pelo sistema.
-     */
-    double value;
-
-    /**
-     * @brief Nome do sistema.
-     */
-    string name;
+    
+    double value; ///< Valor numérico armazenado pelo sistema.
+    string name; ///< Nome do sistema.
 
 public:
+
     // Forma canônica
     /**
      * @brief Construtor padrão da classe System.
      */
-    System_Impl();
+    System_Body();
 
     /**
      * @brief Construtor da classe System.
@@ -38,7 +44,7 @@ public:
      * @param name Nome do sistema.
      * @param value Valor inicial do sistema.
      */
-    System_Impl(const string& name, double value);
+    System_Body(const string& name, double value);
 
     /**
      * @brief Construtor de cópia privado.
@@ -47,51 +53,128 @@ public:
      *
      * @param other Outro objeto System.
      */
-    System_Impl(const System_Impl& other);
+    System_Body(const System_Body& other);
 
     /**
      * @brief Destrutor virtual da classe System.
      */
-    virtual ~System_Impl();
+    virtual ~System_Body();
 
     /**
-     * @brief Operador de atribuição privado.
+     * @brief Operador de atribuição.
      *
-     * Impede atribuição entre objetos System.
-     *
-     * @param other Outro objeto System.
-     * @return Referência para o próprio objeto.
+     * @param other Objeto a ser atribuído.
+     * @return Referência para o objeto atual.
      */
-    System_Impl& operator=(const System_Impl& other);
+    System_Body& operator=(const System_Body& other);
 
-    // Métodos da UML
+    //Getters e Setters
     /**
      * @brief Retorna o nome do sistema.
      *
      * @return Nome do sistema.
      */
-    string getName() const;
+    string getName() const; /// Retorna o nome do sistema.
 
     /**
      * @brief Define o nome do sistema.
      *
      * @param name Novo nome do sistema.
      */
-    void setName(const string& name);
+    void setName(const string& name); /// Define o nome do sistema.
 
     /**
      * @brief Retorna o valor atual do sistema.
      *
      * @return Valor armazenado no sistema.
      */
-    double getValue() const;
+    double getValue() const; /// Retorna o valor do sistema.
 
     /**
      * @brief Define o valor do sistema.
      *
      * @param value Novo valor do sistema.
      */
-    void setValue(double value);
+    void setValue(double value); /// Define o valor do sistema.
+
+public:
+    /**
+    * @breif Indentificador único
+    */
+    string id_;
+
+};
+
+//===============================================================================================
+/// Classe System_Handle
+/**
+ * @brief Handle público que representa um sistema (estoque) no simulador.
+ *
+ * Mantém um ponteiro (pImpl_) para um System_Impl e delega todas as
+ * operações a ele. O ciclo de vida do Body é gerenciado automaticamente
+ * pela contagem de referências herdada de Handle<System_Impl>.
+ */
+class System_Handle : public System, public Handle<System_Body> {
+public:
+
+    /**
+     * @brief Construtor padrão da classe System.
+     */
+    System_Handle();
+
+    /**
+     * @brief Construtor da classe System.
+     *
+     * @param name Nome do sistema.
+     * @param value Valor inicial do sistema.
+     */
+    System_Handle(const string& name, double value);
+
+    /**
+     * @brief Construtor a partir de um Body já existente.
+     *
+     * Usado por Model_Impl::createSystem para encapsular um Body
+     * pré-alocado sem criar um Body extra. Incrementa a referência
+     * do Body recebido e descarta o Body padrão criado por Handle<T>().
+     *
+     * @param impl Ponteiro para o Body concreto pré-alocado.
+     */
+    explicit System_Handle(System_Body* impl);
+
+    /**
+     * @brief Destrutor virtual da classe System.
+     */
+    virtual ~System_Handle();
+
+
+    // Getters e Setters
+    /**
+     * @brief Retorna o valor atual do sistema.
+     *
+     * @return Valor armazenado no sistema.
+     */
+    double getValue() const override; ///< Retorna o valor (delegado ao Body).
+
+    /**
+     * @brief Retorna o nome do sistema.
+     *
+     * @return Nome do sistema.
+     */
+    string getName() const override; /// Retorna o nome (delegado ao Body).
+
+    /**
+     * @brief Define o nome do sistema.
+     *
+     * @param name Novo nome do sistema.
+     */
+    void setName(const string& name) override; /// Define o nome (delegado ao Body).
+
+    /**
+     * @brief Define o valor do sistema.
+     *
+     * @param value Novo valor do sistema.
+     */
+    void setValue(double value) override; ///< Define o valor (delegado ao Body).
 };
 
 #endif

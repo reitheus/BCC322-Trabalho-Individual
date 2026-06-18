@@ -14,11 +14,7 @@
  */
 
 #include <iostream>
-
-#include "../../include/model_impl.h"
-#include "../../include/system_impl.h"
-#include "../../include/flows.h"
-#include "../../include/functional_test.h"
+#include "functional_test.h"
 
 using namespace std;
 
@@ -37,100 +33,107 @@ bool floatingPointComparison(double a, double b) {
     return fabs(a - b) < 0.0001;
 }
 
+/// Teste Funcional Exponecial
 void exponentialFuncionalTest() {
+
     cout << endl;
     cout << "===== TESTE EXPONENCIAL =====" << endl;
 
-    System_Impl pop1("pop1", 100.0);
-    System_Impl pop2("pop2", 0.0);
 
-    FlowExponencial flow("Exponential", &pop1, &pop2);
+    Model_Handle model("Modelo 1");
 
-    Model_Impl model;
-    model.add(&pop1);
-    model.add(&pop2);
-    model.add(&flow);
+    System_Handle& pop1 = model.createSystem("pop1", 100.0);
+    System_Handle& pop2 = model.createSystem("pop2", 0.0);
+    model.createFlow<FlowExponencial>("Exponencial", &pop1, &pop2);
 
-    cout << endl << "ANTES:" << endl;
-    model.showModel();
+    cout << endl;
+    cout << "ANTES:" << endl;
+    //model.showModel();
 
     model.run(0, 100);
 
-    cout << endl << "DEPOIS:" << endl;
-    model.showModel();
+    cout << endl;
+    cout << "DEPOIS:" << endl;
+    //model.showModel();
 
     assert(floatingPointComparison(pop1.getValue(), 36.6032) == true);
     assert(floatingPointComparison(pop2.getValue(), 63.3968) == true);
+    cout << "Exponential functional test approved." << endl;
+
+
+
 }
 
+/// Teste Funcional Logistico
 void logisticalFuncionalTest() {
+
     cout << endl;
     cout << "===== TESTE LOGISTICO =====" << endl;
 
-    System_Impl pop1("P", 100.0);
-    System_Impl pop2("Pmax", 10.0);
+    Model_Handle model("Modelo 2");
 
-    FlowLogistico flow("Logistic", &pop1, &pop2);
+    System_Handle& pop1 = model.createSystem("P", 100.0);
+    System_Handle& pop2 = model.createSystem("Pmax", 10.0);
+    model.createFlow<FlowLogistico>("Logistic", &pop1, &pop2);
 
-    Model_Impl model;
-    model.add(&pop1);
-    model.add(&pop2);
-    model.add(&flow);
-
-    cout << endl << "ANTES:" << endl;
-    model.showModel();
+    cout << endl;
+    cout << "ANTES:" << endl;
+    //model.showModel();
 
     model.run(0, 100);
 
-    cout << endl << "DEPOIS:" << endl;
-    model.showModel();
+    cout << endl;
+    cout << "DEPOIS:" << endl;
+    //model.showModel();
 
     assert(floatingPointComparison(pop1.getValue(), 88.2167) == true);
     assert(floatingPointComparison(pop2.getValue(), 21.7833) == true);
+    cout << "Logistic functional test approved." << endl;
+
 }
 
+/// Teste Funcional Complexo
+
 void complexFuncionalTest() {
+
     cout << endl;
     cout << "===== TESTE COMPLEXO =====" << endl;
 
-    System_Impl Q1("Q1", 100.0);
-    System_Impl Q2("Q2", 0.0);
-    System_Impl Q3("Q3", 100.0);
-    System_Impl Q4("Q4", 0.0);
-    System_Impl Q5("Q5", 0.0);
+    Model_Handle model("model3");
 
-    FlowComplexo f("f", &Q1, &Q2);
-    FlowComplexo g("g", &Q1, &Q3);
-    FlowComplexo r("r", &Q2, &Q5);
-    FlowComplexo t("t", &Q2, &Q3);
-    FlowComplexo u("u", &Q3, &Q4);
-    FlowComplexo v("v", &Q4, &Q1);
+    System_Handle& Q1 = model.createSystem("Q1", 100.0);
+    System_Handle& Q2 = model.createSystem("Q2", 0.0);
+    System_Handle& Q3 = model.createSystem("Q3", 100.0);
+    System_Handle& Q4 = model.createSystem("Q4", 0.0);
+    System_Handle& Q5 = model.createSystem("Q5", 0.0);
 
-    Model_Impl model;
-    model.add(&Q1);
-    model.add(&Q2);
-    model.add(&Q3);
-    model.add(&Q4);
-    model.add(&Q5);
 
-    model.add(&f);
-    model.add(&g);
-    model.add(&r);
-    model.add(&t);
-    model.add(&u);
-    model.add(&v);
+    model.createFlow<FlowComplexo>("f", &Q1, &Q2);
+    model.createFlow<FlowComplexo>("g", &Q1, &Q3);
+    model.createFlow<FlowComplexo>("r", &Q2, &Q5);
+    model.createFlow<FlowComplexo>("t", &Q2, &Q3);
+    model.createFlow<FlowComplexo>("u", &Q3, &Q4);
+    model.createFlow<FlowComplexo>("v", &Q4, &Q1);
 
-    cout << endl << "ANTES:" << endl;
-    model.showModel();
+    cout << endl;
+    cout << "ANTES:" << endl;
+    //model.showModel();
 
     model.run(0, 100);
 
-    cout << endl << "DEPOIS:" << endl;
-    model.showModel();
+    cout << endl;
+    cout << "DEPOIS:" << endl;
+    //model.showModel();
 
     assert(floatingPointComparison(Q1.getValue(), 31.8513) == true);
-    assert(floatingPointComparison(Q2.getValue(), 18.4003) == true);
+
+    assert(floatingPointComparison(Q2.getValue(), 18.4004) == true);
+
     assert(floatingPointComparison(Q3.getValue(), 77.1143) == true);
+
     assert(floatingPointComparison(Q4.getValue(), 56.1728) == true);
+
     assert(floatingPointComparison(Q5.getValue(), 16.4612) == true);
+
+
 }

@@ -11,10 +11,8 @@
 #ifndef MAIN_FUNCIONAL_TESTS
 #define MAIN_FUNCIONAL_TESTS
 
-#include "../../include/functional_test.h"
-#include "../../include/model_impl.h"
-#include "../../include/system_impl.h"
-#include "../../include/flow.h"
+#include "functional_test.h"
+
 
  /**
   * @brief Função principal dos testes funcionais.
@@ -27,11 +25,12 @@
   * @return 0 caso todos os testes sejam executados com sucesso.
   */
 int main() {
-    exponentialFuncionalTest();
-    logisticalFuncionalTest();
-    complexFuncionalTest();
 
-    return 0;
+    exponentialFuncionalTest();
+    complexFuncionalTest();
+    logisticalFuncionalTest();
+
+    return true;
 }
 
 #endif

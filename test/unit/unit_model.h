@@ -9,7 +9,9 @@
  * responsáveis por verificar individualmente cada método da classe
  * Model e sua implementação concreta Model_Impl.
  */
-
+#include "../../include/model_impl.h"
+#include "../../include/system_impl.h"
+#include "../../include/flow_impl.h"
  /**
   * @brief Testa o construtor da classe Model.
   *

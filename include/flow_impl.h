@@ -1,56 +1,84 @@
 #ifndef FLOW_IMPL_H
 #define FLOW_IMPL_H
 
+/**
+ * @file flow_impl.h
+ * @brief Declaração do Body (Flow_Impl) e do Handle (Flow) do padrão Handle-Body.
+ *
+ * Ambas as classes residem neste arquivo:
+ *  - Flow_Impl  →  Body abstrato; armazena nome, source e target do fluxo.
+ *  - Flow       →  Handle público; delega todas as operações a Flow_Impl via pImpl_.
+ *
+ * @note Flow_Impl::execute() é puramente virtual. Para criar um fluxo concreto,
+ *       derive uma subclasse de Flow_Impl implementando execute().
+ *       O método template Model::createFlow<T>() instancia esse Body automaticamente.
+ *
+ * @note Flow herda de Handle<Flow_Impl>, mas como Flow_Impl é abstrato o
+ *       construtor padrão de Handle<T> (que faz new T) não pode ser usado.
+ *       Por isso Flow NÃO usa Handle<Flow_Impl> como base — em vez disso
+ *       expõe pImpl_ diretamente e gerencia o ciclo de vida manualmente,
+ *       igual ao que Handle faria, mas sem instanciar o Body no construtor.
+ */
+
 #include <string>
+#include "handleBodySemDebug.h"
 #include "flow.h"
-#include "../include/system_impl.h"
+#include "system_impl.h"
 using namespace std;
 
-class System;
-
-class Flow_Impl : public Flow {
+class System_Handle;
+///Classe Flow_Body
+/**
+ * @brief Body abstrato que representa um fluxo entre dois sistemas.
+ *
+ * Herda de Body para participar do gerenciamento de referências do
+ * padrão Handle-Body. O método execute() é puramente virtual e deve
+ * ser implementado pelas subclasses concretas de fluxo.
+ */
+class Flow_Body : public Body {
 protected:
-    string name;
-    System* source;
-    System* target;
+    string  name;   /// Nome do fluxo.
+    System_Handle* source; /// Ponteiro para o sistema de origem.
+    System_Handle* target; /// Ponteiro para o sistema de destino.
 
 public:
 
     // Forma canônica
-    Flow_Impl();
+    /**
+     * @brief Construtor padrão.
+     *
+     * Inicializa com nome vazio e ponteiros nulos.
+     */
+    Flow_Body();
 
     /**
-     * @brief Construtor parametrizado da classe Flow.
+     * @brief Construtor parametrizado.
      *
-     * @param name Nome do fluxo.
-     * @param source Sistema de origem.
-     * @param target Sistema de destino.
+     * @param name   Nome do fluxo.
+     * @param source Ponteiro para o sistema de origem.
+     * @param target Ponteiro para o sistema de destino.
      */
-    Flow_Impl(const string& name,
-        System* source,
-        System* target);
+    Flow_Body(const string& name, System_Handle* source, System_Handle* target);
 
     /**
-     * @brief Construtor de cópia da classe Flow.
+     * @brief Construtor de cópia.
      *
-     * @param other Outro objeto Flow.
+     * @param other Objeto a ser copiado.
      */
-    Flow_Impl(const Flow_Impl& other);
+    Flow_Body(const Flow_Body& other);
 
     /**
      * @brief Destrutor da classe Flow.
      */
-    virtual ~Flow_Impl();
+    virtual ~Flow_Body();
 
     /**
-     * @brief Operador de atribuição da classe Flow.
+     * @brief Operador de atribuição.
      *
-     * Copia os atributos de outro fluxo.
-     *
-     * @param other Outro objeto Flow.
+     * @param other Objeto a ser atribuído.
      * @return Referência para o objeto atual.
      */
-    Flow_Impl& operator=(const Flow_Impl& other);
+    Flow_Body& operator=(const Flow_Body& other);
 
     // Getters e setters
     /**
@@ -58,53 +86,156 @@ public:
      *
      * @return Nome do fluxo.
      */
-    string getName() const;
+    string getName() const; /// Retorna o nome do fluxo.
 
     /**
      * @brief Define o nome do fluxo.
      *
      * @param name Novo nome do fluxo.
      */
-    void setName(const string& name);
+    void setName(const string& name); /// Define o nome do fluxo.
 
     /**
      * @brief Retorna o sistema de origem.
      *
      * @return Ponteiro para o sistema de origem.
      */
-    System* getSource() const;
+    System_Handle* getSource() const; /// Retorna o sistema de origem.
 
     /**
      * @brief Define o sistema de origem.
      *
      * @param source Novo sistema de origem.
      */
-    void setSource(System* source);
+    void setSource(System_Handle* source); /// Define o sistema de origem.
 
     /**
      * @brief Retorna o sistema de destino.
      *
      * @return Ponteiro para o sistema de destino.
      */
-    System* getTarget() const;
+    System_Handle* getTarget() const; /// Retorna o sistema de destino.
 
     /**
      * @brief Define o sistema de destino.
      *
      * @param target Novo sistema de destino.
      */
-    void setTarget(System* target);
+    void setTarget(System_Handle* target); /// Define o sistema de destino.
 
-
-    // Método abstrato
     /**
-     * @brief Executa o cálculo do fluxo.
+     * @brief Executa o cálculo do fluxo para um passo de tempo.
      *
-     * Método abstrato implementado pelas subclasses.
+     * Puramente virtual: implementado pelas subclasses concretas de fluxo.
      *
-     * @return Valor calculado pelo fluxo.
+     * @return Valor a ser transferido entre os sistemas neste passo.
      */
     virtual double execute() = 0;
 
 };
+
+//====================================================================================
+///Classe FLow_Handle
+/**
+ * @brief Handle público que representa um fluxo entre dois sistemas.
+ *
+ * Segue a semântica do padrão Handle-Body: mantém um ponteiro (pImpl_)
+ * para um Flow_Impl concreto e gerencia seu ciclo de vida via contagem
+ * de referências. Como Flow_Impl é abstrato, o Body nunca é instanciado
+ * pelo construtor do Handle — ele é sempre fornecido de fora (via
+ * Model::createFlow<T>()) e atribuído diretamente a pImpl_.
+ *
+ * O método execute() é puramente virtual aqui também: a subclasse
+ * concreta de Flow_Impl é quem o implementa de fato.
+ */
+class Flow_Handle : public Flow{
+public:
+    /**
+     * @brief Construtor a partir de um Body concreto já existente.
+     *
+     * Recebe ownership do Flow_Impl apontado e incrementa sua referência.
+     *
+     * @param impl Ponteiro para o Body concreto (nunca nullptr).
+     */
+    explicit Flow_Handle(Flow_Body* impl);
+
+    /**
+     * @brief Construtor de cópia.
+     *
+     * Compartilha o mesmo Body, incrementando sua referência.
+     *
+     * @param other Fluxo a ser copiado.
+     */
+    Flow_Handle(const Flow_Handle& other);
+
+    /**
+     * @brief Destrutor virtual.
+     *
+     * Decrementa a referência do Body; Body se auto-destrói quando chega a zero.
+     */
+    virtual ~Flow_Handle();
+
+    /**
+     * @brief Operador de atribuição.
+     *
+     * @param other Fluxo a ser atribuído.
+     * @return Referência para o objeto atual.
+     */
+    Flow_Handle& operator=(const Flow_Handle& other);
+
+    //Getters e Setteres
+    /**
+     * @brief Retorna o nome do fluxo.
+     *
+     * @return Nome do fluxo.
+     */
+    string getName() const override; /// Retorna o nome (delegado ao Body).
+
+    /**
+     * @brief Define o nome do fluxo.
+     *
+     * @param name Novo nome do fluxo.
+     */
+    void setName(const string& name) override;  /// Define o nome (delegado ao Body).
+
+    /**
+    * @brief Retorna o sistema de origem.
+    *
+    * @return Ponteiro para o sistema de origem.
+    */
+    System_Handle* getSource() const override; /// Retorna o source (delegado ao Body).
+
+    /**
+     * @brief Define o sistema de origem.
+     *
+     * @param source Novo sistema de origem.
+     */
+    void setSource(System_Handle* source) override;    /// Define o source (delegado ao Body).
+
+    /**
+     * @brief Retorna o sistema de destino.
+     *
+     * @return Ponteiro para o sistema de destino.
+     */
+    System_Handle* getTarget() const override; /// Retorna o target (delegado ao Body).
+
+    /**
+     * @brief Define o sistema de destino.
+     *
+     * @param target Novo sistema de destino.
+     */
+    void setTarget(System_Handle* target) override;    /// Define o target (delegado ao Body).
+
+    /**
+     * @brief Executa o cálculo do fluxo (delegado ao Body).
+     *
+     * @return Valor calculado pelo fluxo.
+     */
+    virtual double execute();
+
+protected:
+    Flow_Body* pImpl_; /// Ponteiro para o Body concreto.
+
+};
+
 #endif

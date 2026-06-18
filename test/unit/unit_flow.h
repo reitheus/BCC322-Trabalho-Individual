@@ -9,7 +9,8 @@
  * responsáveis por verificar individualmente cada método da classe
  * Flow e sua implementação concreta Flow_Impl.
  */
-
+#include "../../include/system_impl.h"
+#include "../../include/flow_impl.h"
  /**
   * @brief Testa o construtor parametrizado da classe Flow.
   *
