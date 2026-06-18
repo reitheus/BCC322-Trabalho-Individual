@@ -16,7 +16,7 @@ protected:
 
 public:
 
-    // Forma canônica
+    /// Forma canônica
     Flow_Impl();
 
     /**
@@ -52,7 +52,7 @@ public:
      */
     Flow_Impl& operator=(const Flow_Impl& other);
 
-    // Getters e setters
+    /// Getters e setters
     /**
      * @brief Retorna o nome do fluxo.
      *
@@ -96,7 +96,7 @@ public:
     void setTarget(System* target);
 
 
-    // Método abstrato
+    /// Método abstrato
     /**
      * @brief Executa o cálculo do fluxo.
      *

@@ -57,6 +57,7 @@ void unit_Model_constructor(void) {
 
     FlowTest f1("F1", &s1, &s2);
 
+    model.createModel("M1");
     model.add(&s1);
     model.add(&s2);
     model.add(&f1);
@@ -78,6 +79,7 @@ void unit_Model_addSystem(void) {
     System_Impl s2("S2", 0.0);
 
     FlowTest f1("F1", &s1, &s2);
+    model.createModel("M1");
 
     model.add(&s1);
     model.add(&s2);
@@ -97,7 +99,7 @@ void unit_Model_addFlow(void) {
     System_Impl s2("S2", 0.0);
 
     FlowTest f1("F1", &s1, &s2);
-
+    model.createModel("M1");
     model.add(&s1);
     model.add(&s2);
 
@@ -122,7 +124,7 @@ void unit_Model_run(void) {
     System_Impl s2("S2", 0.0);
 
     FlowTest f1("F1", &s1, &s2);
-
+    model.createModel("M1");
     model.add(&s1);
     model.add(&s2);
     model.add(&f1);
@@ -141,7 +143,7 @@ void unit_Model_showModel(void) {
     System_Impl s2("S2", 0.0);
 
     FlowTest f1("F1", &s1, &s2);
-
+    model.createModel("M1");
     model.add(&s1);
     model.add(&s2);
     model.add(&f1);

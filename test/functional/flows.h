@@ -1,7 +1,7 @@
 #ifndef FLOWS_H
 #define FLOWS_H
 
-#include "../src/flow_impl.h"
+#include "../../src/flow_impl.h"
 
 /**
  * @file flows.h

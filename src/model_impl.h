@@ -39,7 +39,7 @@ protected:
 
 public:
 
-    // Forma canônica
+    /// Forma canônica
     /**
      * @brief Construtor padrão da classe Model.
      */

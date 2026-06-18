@@ -18,7 +18,7 @@
 #include "../../src/model_impl.h"
 #include "../../src/system_impl.h"
 #include "../../include/flows.h"
-#include "../../include/functional_test.h"
+#include "functional_test.h"
 
 using namespace std;
 
@@ -37,6 +37,7 @@ bool floatingPointComparison(double a, double b) {
     return fabs(a - b) < 0.0001;
 }
 
+/// Teste Funcional Exponecial
 void exponentialFuncionalTest() {
 
     cout << endl;
@@ -68,6 +69,7 @@ void exponentialFuncionalTest() {
 
 }
 
+/// Teste Funcional Logistico
 void logisticalFuncionalTest() {
 
     cout << endl;
@@ -95,6 +97,8 @@ void logisticalFuncionalTest() {
     cout << "Logistic functional test approved." << endl;
     delete& model; 
 }
+
+/// Teste Funcional Complexo
 
 void complexFuncionalTest() {
 

@@ -26,7 +26,7 @@ private:
     string name;
 
 public:
-    // Forma canônica
+    /// Forma canônica
     /**
      * @brief Construtor padrão da classe System.
      */
@@ -64,7 +64,7 @@ public:
      */
     System_Impl& operator=(const System_Impl& other);
 
-    // Métodos da UML
+    /// Métodos da UML
     /**
      * @brief Retorna o nome do sistema.
      *
