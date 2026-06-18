@@ -17,7 +17,7 @@ class Flow;
  * pela execução da simulação.
  */
 class Model_Impl : public Model {
-private:
+protected:
 
     /**
      * @brief Vetor contendo os sistemas do modelo.
@@ -93,18 +93,12 @@ public:
     System& createSystem(string id, double);
 
     /**
-     * @brief Adiciona um sistema ao modelo.
+     * @brief Remove um sistema do modelo.
      *
-     * @param s Ponteiro para o sistema a ser adicionado.
+     * @param s Referência para o sistema a ser removido.
+     * @return true se o sistema foi removido com sucesso; false caso contrário.
      */
-    void add(System* s);
-
-    /**
-     * @brief Adiciona um fluxo ao modelo.
-     *
-     * @param f Ponteiro para o fluxo a ser adicionado.
-     */
-    void add(Flow* f);
+    bool deleteSystem(System&);
 
     /**
      * @brief Remove um fluxo do modelo.
@@ -113,14 +107,6 @@ public:
      * @return true se o fluxo foi removido com sucesso; false caso contrário.
      */
     bool deleteFlow(Flow&);
-
-    /**
-     * @brief Remove um sistema do modelo.
-     *
-     * @param s Referência para o sistema a ser removido.
-     * @return true se o sistema foi removido com sucesso; false caso contrário.
-     */
-    bool deleteSystem(System&);
 
     /**
      * @brief Define o sistema de origem de um fluxo.
