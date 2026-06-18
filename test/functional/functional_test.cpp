@@ -17,7 +17,7 @@
 
 #include "../../src/model_impl.h"
 #include "../../src/system_impl.h"
-#include "../../include/flows.h"
+#include "flows.h"
 #include "functional_test.h"
 
 using namespace std;
