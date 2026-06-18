@@ -24,15 +24,6 @@ using namespace std;
  */
 vector<Model*> Model_Impl::models;
 
-/**
- * @brief Construtor parametrizado da classe Model_Impl.
- *
- * Inicializa o modelo com o identificador fornecido e
- * vetores de sistemas e fluxos vazios.
- *
- * @param id Identificador único do modelo.
- */
-Model_Impl::Model_Impl(string id) : id_(id) {}
 
 /**
  * @brief Delega a criação de um modelo para Model_Impl::createModel.
@@ -57,27 +48,57 @@ Model& Model::createModel(string id) {
  * @return Referência para o modelo recém-criado.
  */
 Model& Model_Impl::createModel(string id) {
+
     Model* model = new Model_Impl(id);
     models.push_back(model);
     return *model;
 }
 
 /**
- * @brief Operador de atribuição da classe Model_Impl.
+ * @brief Registra um modelo no vetor estático interno.
  *
- * Copia os vetores de sistemas e fluxos de outro modelo.
- *
- * @param other Objeto Model_Impl a ser atribuído.
- * @return Referência para o objeto atual.
+ * @param m Ponteiro para o modelo a ser registrado.
  */
-Model_Impl& Model_Impl::operator=(const Model_Impl& other) {
-    if (this == &other)
-        return *this;
+void Model_Impl::add(Model* m) {
+    models.push_back(m);
+}
 
-    systems = other.systems;
-    flows = other.flows;
+/**
+ * @brief Construtor parametrizado da classe Model_Impl.
+ *
+ * Inicializa o modelo com o identificador fornecido e
+ * vetores de sistemas e fluxos vazios.
+ *
+ * @param id Identificador único do modelo.
+ */
+Model_Impl::Model_Impl(string id) : id_(id) {}
 
-    return *this;
+/**
+ * @brief Adiciona um fluxo ao modelo.
+ *
+ * @param f Ponteiro para o fluxo a ser adicionado.
+ */
+void Model_Impl::add(Flow* f) {
+    flows.push_back(f);
+}
+
+/**
+ * @brief Insere um fluxo em posição específica do vetor de fluxos.
+ *
+ * @param f Ponteiro para o fluxo a ser inserido.
+ * @param i Posição de inserção (1-indexada).
+ */
+void Model_Impl::add(Flow* f, int i) {
+    flows.insert(flows.begin() + (i - 1), f);
+}
+
+/**
+ * @brief Adiciona um sistema ao modelo.
+ *
+ * @param s Ponteiro para o sistema a ser adicionado.
+ */
+void Model_Impl::add(System* s) {
+    systems.push_back(s);
 }
 
 /**
@@ -121,33 +142,71 @@ Model_Impl::~Model_Impl(void) {
 
 }
 
-
-
 /**
- * @brief Registra um modelo no vetor estático interno.
+ * @brief Operador de atribuição da classe Model_Impl.
  *
- * @param m Ponteiro para o modelo a ser registrado.
+ * Copia os vetores de sistemas e fluxos de outro modelo.
+ *
+ * @param other Objeto Model_Impl a ser atribuído.
+ * @return Referência para o objeto atual.
  */
-void Model_Impl::add(Model* m) {
-    models.push_back(m);
+Model_Impl& Model_Impl::operator=(const Model_Impl& other) {
+    if (this == &other)
+        return *this;
+
+    systems = other.systems;
+    flows = other.flows;
+
+    return *this;
 }
 
 /**
- * @brief Adiciona um sistema ao modelo.
+ * @brief Executa a simulação do modelo no intervalo de tempo especificado.
  *
- * @param s Ponteiro para o sistema a ser adicionado.
+ * A cada passo de tempo, todos os fluxos são calculados com base nos
+ * valores atuais dos sistemas (passo síncrono), e em seguida os sistemas
+ * de origem e destino de cada fluxo são atualizados simultaneamente.
+ *
+ * @param t_init Tempo inicial da simulação (inclusive).
+ * @param t_final Tempo final da simulação (exclusive).
+ * @return true se a execução foi concluída com sucesso.
  */
-void Model_Impl::add(System* s) {
-    systems.push_back(s);
-}
+bool Model_Impl::run(int t_init, int t_final) {
 
-/**
- * @brief Adiciona um fluxo ao modelo.
- *
- * @param f Ponteiro para o fluxo a ser adicionado.
- */
-void Model_Impl::add(Flow* f) {
-    flows.push_back(f);
+    for (int tempo = t_init;
+        tempo < t_final;
+        tempo++)
+    {
+        vector<double> values;
+
+        // executa todos os fluxos
+        for (Flow* flow : flows) {
+            values.push_back(flow->execute());
+        }
+
+        // atualiza sistemas
+        for (unsigned int i = 0;
+            i < flows.size();
+            i++)
+        {
+            System* source = flows[i]->getSource();
+            System* target = flows[i]->getTarget();
+
+            if (source != nullptr) {
+                source->setValue(
+                    source->getValue() - values[i]
+                );
+            }
+
+            if (target != nullptr) {
+                target->setValue(
+                    target->getValue() + values[i]
+                );
+            }
+        }
+    }
+
+    return true;
 }
 
 /**
@@ -216,15 +275,7 @@ void Model_Impl::setTarget(Flow& f, System& s) {
     fi->setTarget(&s);
 }
 
-/**
- * @brief Insere um fluxo em posição específica do vetor de fluxos.
- *
- * @param f Ponteiro para o fluxo a ser inserido.
- * @param i Posição de inserção (1-indexada).
- */
-void Model_Impl::add(Flow* f, int i) {
-    flows.insert(flows.begin() + (i - 1), f);
-}
+
 
 /**
  * @brief Remove o sistema de origem de um fluxo, definindo-o como nulo.
@@ -246,54 +297,6 @@ void Model_Impl::clearTarget(Flow& f) {
     fi->setTarget(nullptr);
 }
 
-/**
- * @brief Executa a simulação do modelo no intervalo de tempo especificado.
- *
- * A cada passo de tempo, todos os fluxos são calculados com base nos
- * valores atuais dos sistemas (passo síncrono), e em seguida os sistemas
- * de origem e destino de cada fluxo são atualizados simultaneamente.
- *
- * @param t_init Tempo inicial da simulação (inclusive).
- * @param t_final Tempo final da simulação (exclusive).
- * @return true se a execução foi concluída com sucesso.
- */
-bool Model_Impl::run(int t_init, int t_final) {
-
-    for (int tempo = t_init;
-        tempo < t_final;
-        tempo++)
-    {
-        vector<double> values;
-
-        // executa todos os fluxos
-        for (Flow* flow : flows) {
-            values.push_back(flow->execute());
-        }
-
-        // atualiza sistemas
-        for (unsigned int i = 0;
-            i < flows.size();
-            i++)
-        {
-            System* source = flows[i]->getSource();
-            System* target = flows[i]->getTarget();
-
-            if (source != nullptr) {
-                source->setValue(
-                    source->getValue() - values[i]
-                );
-            }
-
-            if (target != nullptr) {
-                target->setValue(
-                    target->getValue() + values[i]
-                );
-            }
-        }
-    }
-
-    return true;
-}
 
 /**
  * @brief Exibe no console os sistemas e fluxos do modelo.
