@@ -22,7 +22,7 @@
   * @return 0 caso o programa execute corretamente.
   */
 int main() {
-    return 0;
+    return true;
 }
 
 #endif

@@ -21,6 +21,7 @@
   * @return 0 em caso de sucesso (todos os asserts aprovados).
   */
 int main() {
+
     run_unit_tests_globals();
 
     return true;

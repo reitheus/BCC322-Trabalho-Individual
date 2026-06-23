@@ -42,8 +42,8 @@ void exponentialFuncionalTest() {
 
     Model_Handle model("Modelo 1");
 
-    System_Handle& pop1 = model.createSystem("pop1", 100.0);
-    System_Handle& pop2 = model.createSystem("pop2", 0.0);
+    System& pop1 = model.createSystem("pop1", 100.0);
+    System& pop2 = model.createSystem("pop2", 0.0);
     model.createFlow<FlowExponencial>("Exponencial", &pop1, &pop2);
 
     cout << endl;
@@ -72,8 +72,8 @@ void logisticalFuncionalTest() {
 
     Model_Handle model("Modelo 2");
 
-    System_Handle& pop1 = model.createSystem("P", 100.0);
-    System_Handle& pop2 = model.createSystem("Pmax", 10.0);
+    System& pop1 = model.createSystem("P", 100.0);
+    System& pop2 = model.createSystem("Pmax", 10.0);
     model.createFlow<FlowLogistico>("Logistic", &pop1, &pop2);
 
     cout << endl;
@@ -101,11 +101,11 @@ void complexFuncionalTest() {
 
     Model_Handle model("model3");
 
-    System_Handle& Q1 = model.createSystem("Q1", 100.0);
-    System_Handle& Q2 = model.createSystem("Q2", 0.0);
-    System_Handle& Q3 = model.createSystem("Q3", 100.0);
-    System_Handle& Q4 = model.createSystem("Q4", 0.0);
-    System_Handle& Q5 = model.createSystem("Q5", 0.0);
+    System& Q1 = model.createSystem("Q1", 100.0);
+    System& Q2 = model.createSystem("Q2", 0.0);
+    System& Q3 = model.createSystem("Q3", 100.0);
+    System& Q4 = model.createSystem("Q4", 0.0);
+    System& Q5 = model.createSystem("Q5", 0.0);
 
 
     model.createFlow<FlowComplexo>("f", &Q1, &Q2);

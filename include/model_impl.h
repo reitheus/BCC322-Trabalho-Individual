@@ -56,6 +56,8 @@ public:
      */
     Model_Body(const Model_Body& other);
 
+    Model_Body& operator=(const Model_Body& other);
+
     /**
      * @brief Destrutor virtual.
      *
@@ -219,7 +221,7 @@ public:
         System* source = nullptr,
         System* target = nullptr) {
         T_FLOW_IMPL* body = new T_FLOW_IMPL(id, source, target);
-        Flow_Handle* handle = new Flow_Handle(body); // Flow gerencia a referência via attach/detach
+        Flow_Handle* handle = new Flow_Handle(body); 
         pImpl_->add(handle);
         return *handle;
     }

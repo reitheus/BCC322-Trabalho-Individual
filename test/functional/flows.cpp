@@ -22,7 +22,7 @@ FlowExponencial::FlowExponencial() {}
  * @param source Sistema de origem.
  * @param target Sistema de destino.
  */
-FlowExponencial::FlowExponencial(const string& name, System_Handle* source, System_Handle* target) : Flow_Body(name, source, target) {}
+FlowExponencial::FlowExponencial(const string& name, System* source, System* target) : Flow_Body(name, source, target) {}
 
 /**
  * @brief Construtor de cópia da classe FlowExponencial.
@@ -77,7 +77,7 @@ FlowLogistico::FlowLogistico() : Flow_Body() {}
  * @param source Sistema de origem.
  * @param target Sistema de destino.
  */
-FlowLogistico::FlowLogistico(const string& name, System_Handle* source, System_Handle* target) : Flow_Body(name, source, target) {}
+FlowLogistico::FlowLogistico(const string& name, System* source, System* target) : Flow_Body(name, source, target) {}
 
 /**
  * @brief Construtor de cópia da classe FlowLogistico.
@@ -136,7 +136,7 @@ FlowComplexo::FlowComplexo() : Flow_Body() {}
  * @param source Sistema de origem.
  * @param target Sistema de destino.
  */
-FlowComplexo::FlowComplexo(const string& name, System_Handle* source, System_Handle* target) : Flow_Body(name, source, target) {}
+FlowComplexo::FlowComplexo(const string& name, System* source, System* target) : Flow_Body(name, source, target) {}
 
 /**
  * @brief Construtor de cópia da classe FlowComplexo.

@@ -34,7 +34,11 @@ public:
      * @param source Ponteiro para o sistema de origem.
      * @param target Ponteiro para o sistema de destino.
      */
-    Flow_Test(const string& name, System_Handle* source, System_Handle* target) : Flow_Body(name, source, target) {}
+    Flow_Test(const string& name,
+        System* source,
+        System* target)
+        : Flow_Body(name, source, target) {
+    }
 
     /**
      * @brief Implementação trivial de execute() para fins de teste.
@@ -50,7 +54,7 @@ void unit_Flow_constructor(void) {
     System_Handle s1("Source", 100);
     System_Handle s2("Target", 0);
 
-    Flow_Handle f1(new Flow_Test("flow1", &s1, &s2));
+    Flow_Handle f1(new Flow_Test("Flow1", &s1, &s2));
 
     assert(f1.getName() == "Flow1");
     assert(f1.getSource() == &s1);

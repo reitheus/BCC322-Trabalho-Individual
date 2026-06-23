@@ -52,8 +52,6 @@ System_Handle::System_Handle(const string& name, double value) : Handle<System_B
     pImpl_->setValue(value);
 }
 
-System_Handle::System_Handle(const System_Handle& other) : Handle<System_Body>(other){}
-
 /**
  * @brief Construtor a partir de um Body pré-alocado.
  *
@@ -67,12 +65,6 @@ System_Handle::System_Handle(System_Body* impl) : Handle<System_Body>() {
 }
 
 System_Handle::~System_Handle() { pImpl_->detach(); }
-
-System_Handle& System_Handle::operator=(const System_Handle& other) {
-    Handle<System_Body>::operator=(other);
-    return *this;
-}
-
 
 string System_Handle::getName() const {
     return pImpl_->getName();

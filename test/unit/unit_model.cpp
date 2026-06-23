@@ -34,7 +34,7 @@ public:
      * @param source Ponteiro para o sistema de origem.
      * @param target Ponteiro para o sistema de destino.
      */
-    FlowTest(string name, System_Handle* source, System_Handle* target) : Flow_Body(name, source, target) {}
+    FlowTest(string name, System* source, System* target) : Flow_Body(name, source, target) {}
 
     /**
      * @brief Implementação trivial de execute() para fins de teste.
@@ -70,8 +70,8 @@ void unit_Model_addSystem(void) {
     System_Handle& s1 = model.createSystem("S1", 100.0);
     System_Handle& s2 = model.createSystem("S2", 0.0);
 
-    assert(s1.getValue() == 99.0);
-    assert(s2.getValue() == 1.0);
+    assert(s1.getValue() == 100.0);
+    assert(s2.getValue() == 0.0);
 }
 
 

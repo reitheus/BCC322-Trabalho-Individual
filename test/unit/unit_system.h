@@ -44,6 +44,9 @@ void unit_System_getValue(void);
  */
 void unit_System_setValue(void);
 
+void unit_System_getName();
+void unit_System_setName();
+
 /**
  * @brief Executa todos os testes unitários da classe System em sequência.
  *

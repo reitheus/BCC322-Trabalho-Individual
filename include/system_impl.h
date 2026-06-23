@@ -123,6 +123,8 @@ public:
      */
     System_Handle();
 
+    System_Handle(System_Body* impl);
+
     /**
      * @brief Construtor da classe System.
      *

@@ -13,6 +13,7 @@
 #include "unit_System.h"
 #include "unit_Flow.h"
 #include "unit_Model.h"
+#include "unit_handle.h"
 
  /**
   * @brief Executa todos os testes unitários do projeto em sequência.

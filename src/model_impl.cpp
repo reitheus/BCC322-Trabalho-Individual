@@ -58,9 +58,8 @@ void Model_Body::add(System* s) {
 }
 
 System_Handle& Model_Body::createSystem(const string& id, double value) {
-    System* body = new System(id, value);
-    add(body);
-    System_Handle* handle = new System_Handle(body);
+    System_Handle* handle = new System_Handle(id, value);
+    add(handle);
     return *handle;
 }
 
@@ -150,7 +149,7 @@ Model_Handle& Model_Handle::operator=(const Model_Handle& other) {
     return *this;
 }
 
-System& Model_Handle::createSystem(const string& id, double value) {
+System_Handle& Model_Handle::createSystem(const string& id, double value) {
     return pImpl_->createSystem(id, value);
 }
 
