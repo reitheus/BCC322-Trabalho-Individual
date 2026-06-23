@@ -31,7 +31,7 @@ public:
      * @param source Ponteiro para o sistema de origem.
      * @param target Ponteiro para o sistema de destino.
      */
-    FlowExponencial(const string& name,System_Handle* source, System_Handle* target);
+    FlowExponencial(const string& name,System* source, System* target);
 
     /**
      * @brief Construtor de cópia da classe FlowExponencial.
@@ -88,7 +88,7 @@ public:
      * @param source Ponteiro para o sistema de origem.
      * @param target Ponteiro para o sistema de destino.
      */
-    FlowLogistico(const string& name, System_Handle* source, System_Handle* target);
+    FlowLogistico(const string& name, System* source, System* target);
 
     /**
      * @brief Construtor de cópia da classe FlowLogistico.
@@ -145,7 +145,7 @@ public:
      * @param source Ponteiro para o sistema de origem.
      * @param target Ponteiro para o sistema de destino.
      */
-    FlowComplexo(const string& name, System_Handle* source, System_Handle* target);
+    FlowComplexo(const string& name, System* source, System* target);
 
     /**
      * @brief Construtor de cópia da classe FlowComplexo.

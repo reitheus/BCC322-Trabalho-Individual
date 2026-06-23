@@ -45,7 +45,7 @@ public:
      * @param value Valor inicial do sistema.
      */
     System_Body(const string& name, double value);
-
+private:
     /**
      * @brief Construtor de cópia privado.
      *
@@ -56,17 +56,18 @@ public:
     System_Body(const System_Body& other);
 
     /**
-     * @brief Destrutor virtual da classe System.
-     */
-    virtual ~System_Body();
-
-    /**
      * @brief Operador de atribuição.
      *
      * @param other Objeto a ser atribuído.
      * @return Referência para o objeto atual.
      */
     System_Body& operator=(const System_Body& other);
+
+public:
+    /**
+     * @brief Destrutor virtual da classe System.
+     */
+    virtual ~System_Body();
 
     //Getters e Setters
     /**
@@ -129,17 +130,6 @@ public:
      * @param value Valor inicial do sistema.
      */
     System_Handle(const string& name, double value);
-
-    /**
-     * @brief Construtor a partir de um Body já existente.
-     *
-     * Usado por Model_Impl::createSystem para encapsular um Body
-     * pré-alocado sem criar um Body extra. Incrementa a referência
-     * do Body recebido e descarta o Body padrão criado por Handle<T>().
-     *
-     * @param impl Ponteiro para o Body concreto pré-alocado.
-     */
-    explicit System_Handle(System_Body* impl);
 
     /**
      * @brief Destrutor virtual da classe System.

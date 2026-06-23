@@ -1,10 +1,3 @@
-#ifndef FLOW_H
-#define FLOW_H
-
-#include <string>
-
-using namespace std;
-
 class System;
 
 class Flow {
@@ -22,5 +15,3 @@ public:
 
     virtual double execute() = 0;
 };
-
-#endif

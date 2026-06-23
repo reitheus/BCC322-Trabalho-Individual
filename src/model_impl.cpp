@@ -24,8 +24,8 @@ Model_Body::Model_Body(const string& id) : id_(id){}
 Model_Body::Model_Body(const Model_Body& other) : Body(), systems(other.systems), flows(other.flows), id_(other.id_){}
 
 Model_Body::~Model_Body() {
-    for (System_Body* s : systems) delete s;
-    for (Flow_Body* f : flows) delete f;
+    for (System* s : systems) delete s;
+    for (Flow* f : flows) delete f;
     systems.clear();
     flows.clear();
 
@@ -45,46 +45,46 @@ Model_Body& Model_Body::operator=(const Model_Body& other) {
     return *this;
 }
 
-void Model_Body::add(Flow_Body* f) {
+void Model_Body::add(Flow* f) {
     flows.push_back(f);
 }
 
-void Model_Body::add(Flow_Body* f, int i) {
+void Model_Body::add(Flow* f, int i) {
     flows.insert(flows.begin() + (i - 1), f);
 }
 
-void Model_Body::add(System_Body* s) {
+void Model_Body::add(System* s) {
     systems.push_back(s);
 }
 
 System_Handle& Model_Body::createSystem(const string& id, double value) {
-    System_Body* body = new System_Body(id, value);
+    System* body = new System(id, value);
     add(body);
     System_Handle* handle = new System_Handle(body);
     return *handle;
 }
 
-bool Model_Body::deleteFlow(Flow_Handle&) {
+bool Model_Body::deleteFlow(Flow&) {
     return true;
 }
 
-bool Model_Body::deleteSystem(System_Handle&) {
+bool Model_Body::deleteSystem(System&) {
     return true;
 }
 
-void Model_Body::setSource(Flow_Handle& f, System_Handle& s) {
+void Model_Body::setSource(Flow& f, System& s) {
     f.setSource(&s);
 }
 
-void Model_Body::setTarget(Flow_Handle& f, System_Handle& s) {
+void Model_Body::setTarget(Flow& f, System& s) {
     f.setTarget(&s);
 }
 
-void Model_Body::clearSource(Flow_Handle& f) {
+void Model_Body::clearSource(Flow& f) {
     f.setSource(nullptr);
 }
 
-void Model_Body::clearTarget(Flow_Handle& f) {
+void Model_Body::clearTarget(Flow& f) {
     f.setTarget(nullptr);
 }
 
@@ -94,14 +94,14 @@ bool Model_Body::run(int t_init, int t_final) {
         vector<double> values;
 
         // executa todos os fluxos
-        for (Flow_Body* flow : flows) {
+        for (Flow* flow : flows) {
             values.push_back(flow->execute());
         }
 
         // atualiza sistemas
         for (size_t i = 0; i < flows.size(); i++) {
-            System_Handle* src = flows[i]->getSource();
-            System_Handle* tgt = flows[i]->getTarget();
+            System* src = flows[i]->getSource();
+            System* tgt = flows[i]->getTarget();
             if (src) src->setValue(src->getValue() - values[i]);
             if (tgt) tgt->setValue(tgt->getValue() + values[i]);
         }
@@ -114,7 +114,7 @@ void Model_Body::showModel() const {
 
     cout << "SYSTEMS" << endl;
 
-    for (System_Body* s : systems) {
+    for (System* s : systems) {
 
         cout << s->getName()
             << " = "
@@ -124,7 +124,7 @@ void Model_Body::showModel() const {
 
     cout << "FLOWS" << endl;
 
-    for (Flow_Body* f : flows) {
+    for (Flow* f : flows) {
 
         cout << f->getSource()->getName()
             << " -> "
@@ -150,31 +150,40 @@ Model_Handle& Model_Handle::operator=(const Model_Handle& other) {
     return *this;
 }
 
-System_Handle& Model_Handle::createSystem(const string& id, double value) {
+System& Model_Handle::createSystem(const string& id, double value) {
     return pImpl_->createSystem(id, value);
 }
 
-bool Model_Handle::deleteFlow(Flow_Handle& f) {
+bool Model_Handle::deleteFlow(Flow& f) {
     return pImpl_->deleteFlow(f);
 }
 
-bool Model_Handle::deleteSystem(System_Handle& s) { 
+bool Model_Handle::deleteSystem(System& s) { 
     return pImpl_->deleteSystem(s);
 }
 
-void Model_Handle::setSource(Flow_Handle& f, System_Handle& s) { 
+void Model_Handle::add(System* system) {
+    pImpl_->add(system);
+}
+
+void Model_Handle::add(Flow* flow) {
+    pImpl_->add(flow);
+}
+
+
+void Model_Handle::setSource(Flow& f, System& s) { 
     pImpl_->setSource(f, s);
 }
 
-void Model_Handle::setTarget(Flow_Handle& f, System_Handle& s) { 
+void Model_Handle::setTarget(Flow& f, System& s) { 
     pImpl_->setTarget(f, s);
 }
 
-void Model_Handle::clearSource(Flow_Handle& f) { 
+void Model_Handle::clearSource(Flow& f) { 
     pImpl_->clearSource(f);
 }
 
-void Model_Handle::clearTarget(Flow_Handle& f) { 
+void Model_Handle::clearTarget(Flow& f) { 
     pImpl_->clearTarget(f); 
 }
 

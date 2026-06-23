@@ -23,10 +23,9 @@
 #include <string>
 #include "handleBodySemDebug.h"
 #include "flow.h"
-#include "system_impl.h"
+#include "system.h"
 using namespace std;
 
-class System_Handle;
 ///Classe Flow_Body
 /**
  * @brief Body abstrato que representa um fluxo entre dois sistemas.
@@ -38,8 +37,8 @@ class System_Handle;
 class Flow_Body : public Body {
 protected:
     string  name;   /// Nome do fluxo.
-    System_Handle* source; /// Ponteiro para o sistema de origem.
-    System_Handle* target; /// Ponteiro para o sistema de destino.
+    System* source; /// Ponteiro para o sistema de origem.
+    System* target; /// Ponteiro para o sistema de destino.
 
 public:
 
@@ -58,7 +57,7 @@ public:
      * @param source Ponteiro para o sistema de origem.
      * @param target Ponteiro para o sistema de destino.
      */
-    Flow_Body(const string& name, System_Handle* source, System_Handle* target);
+    Flow_Body(const string& name, System* source, System* target);
 
     /**
      * @brief Construtor de cópia.
@@ -100,28 +99,28 @@ public:
      *
      * @return Ponteiro para o sistema de origem.
      */
-    System_Handle* getSource() const; /// Retorna o sistema de origem.
+    System* getSource() const; /// Retorna o sistema de origem.
 
     /**
      * @brief Define o sistema de origem.
      *
      * @param source Novo sistema de origem.
      */
-    void setSource(System_Handle* source); /// Define o sistema de origem.
+    void setSource(System* source); /// Define o sistema de origem.
 
     /**
      * @brief Retorna o sistema de destino.
      *
      * @return Ponteiro para o sistema de destino.
      */
-    System_Handle* getTarget() const; /// Retorna o sistema de destino.
+    System* getTarget() const; /// Retorna o sistema de destino.
 
     /**
      * @brief Define o sistema de destino.
      *
      * @param target Novo sistema de destino.
      */
-    void setTarget(System_Handle* target); /// Define o sistema de destino.
+    void setTarget(System* target); /// Define o sistema de destino.
 
     /**
      * @brief Executa o cálculo do fluxo para um passo de tempo.
@@ -130,7 +129,7 @@ public:
      *
      * @return Valor a ser transferido entre os sistemas neste passo.
      */
-    virtual double execute() = 0;
+    virtual double execute();
 
 };
 
@@ -148,7 +147,7 @@ public:
  * O método execute() é puramente virtual aqui também: a subclasse
  * concreta de Flow_Impl é quem o implementa de fato.
  */
-class Flow_Handle : public Flow{
+class Flow_Handle : public Flow, public Handle<Flow_Body>{
 public:
     /**
      * @brief Construtor a partir de um Body concreto já existente.
@@ -203,38 +202,35 @@ public:
     *
     * @return Ponteiro para o sistema de origem.
     */
-    System_Handle* getSource() const override; /// Retorna o source (delegado ao Body).
+    System* getSource() const override; /// Retorna o source (delegado ao Body).
 
     /**
      * @brief Define o sistema de origem.
      *
      * @param source Novo sistema de origem.
      */
-    void setSource(System_Handle* source) override;    /// Define o source (delegado ao Body).
+    void setSource(System* source) override;    /// Define o source (delegado ao Body).
 
     /**
      * @brief Retorna o sistema de destino.
      *
      * @return Ponteiro para o sistema de destino.
      */
-    System_Handle* getTarget() const override; /// Retorna o target (delegado ao Body).
+    System* getTarget() const override; /// Retorna o target (delegado ao Body).
 
     /**
      * @brief Define o sistema de destino.
      *
      * @param target Novo sistema de destino.
      */
-    void setTarget(System_Handle* target) override;    /// Define o target (delegado ao Body).
+    void setTarget(System* target) override;    /// Define o target (delegado ao Body).
 
     /**
      * @brief Executa o cálculo do fluxo (delegado ao Body).
      *
      * @return Valor calculado pelo fluxo.
      */
-    virtual double execute();
-
-protected:
-    Flow_Body* pImpl_; /// Ponteiro para o Body concreto.
+    double execute() override;
 
 };
 

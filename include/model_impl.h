@@ -29,8 +29,8 @@ using namespace std;
 class Model_Body : public Body {
 protected:
 
-    vector<System_Body*> systems; /// Estoques do modelo.
-    vector<Flow_Body*>   flows;   /// Fluxos do modelo.
+    vector<System*> systems; /// Estoques do modelo.
+    vector<Flow*> flows;   /// Fluxos do modelo.
 
     static vector<Model_Body*> models; /// Registro global de instâncias.
 
@@ -65,19 +65,11 @@ public:
     virtual ~Model_Body();
 
     /**
-     * @brief Operador de atribuição.
-     *
-     * @param other Objeto a ser atribuído.
-     * @return Referência para o objeto atual.
-     */
-    Model_Body& operator=(const Model_Body& other);
-
-    /**
      * @brief Adiciona um fluxo ao final do vetor de fluxos.
      *
      * @param f Ponteiro para o Body do fluxo.
      */
-    void add(Flow_Body* f);
+    void add(Flow* f);
 
     /**
      * @brief Insere um fluxo em posição específica (1-indexada).
@@ -85,14 +77,14 @@ public:
      * @param f Ponteiro para o Body do fluxo.
      * @param i Posição de inserção.
      */
-    void add(Flow_Body* f, int i);
+    void add(Flow* f, int i);
 
     /**
      * @brief Adiciona um sistema ao vetor de sistemas.
      *
      * @param s Ponteiro para o Body do sistema.
      */
-    void add(System_Body* s);
+    void add(System* s);
 
     /**
      * @brief Cria e registra um sistema no modelo.
@@ -103,8 +95,8 @@ public:
      */
     System_Handle& createSystem(const string& id, double value);
 
-    bool deleteSystem(System_Handle& s); /// Remove um sistema do modelo (stub).
-    bool deleteFlow(Flow_Handle& f);     /// Remove um fluxo do modelo (stub).
+    bool deleteSystem(System& s); /// Remove um sistema do modelo (stub).
+    bool deleteFlow(Flow& f);     /// Remove um fluxo do modelo (stub).
 
     /**
      * @brief Define o sistema de origem de um fluxo.
@@ -112,7 +104,7 @@ public:
      * @param f Fluxo a configurar.
      * @param s Sistema de origem.
      */
-    void setSource(Flow_Handle&, System_Handle&);
+    void setSource(Flow&, System&);
 
     /**
      * @brief Define o sistema de destino de um fluxo.
@@ -120,10 +112,10 @@ public:
      * @param f Fluxo a configurar.
      * @param s Sistema de destino.
      */
-    void setTarget(Flow_Handle&, System_Handle&);
+    void setTarget(Flow&, System&);
 
-    void clearSource(Flow_Handle& f); /// Remove o source de um fluxo (nullptr).
-    void clearTarget(Flow_Handle& f); /// Remove o target de um fluxo (nullptr).
+    void clearSource(Flow& f); /// Remove o source de um fluxo (nullptr).
+    void clearTarget(Flow& f); /// Remove o target de um fluxo (nullptr).
 
     /**
     * @brief Executa a simulação no intervalo [t_init, t_final).
@@ -222,21 +214,23 @@ public:
      * @return Referência para o Handle Flow recém-criado.
      */
     template <typename T_FLOW_IMPL>
-    Flow_Handle& createFlow(const string& id,
-        System_Handle* source = nullptr,
-        System_Handle* target = nullptr) {
+    Flow_Handle& createFlow(
+        const string& id,
+        System* source = nullptr,
+        System* target = nullptr) {
         T_FLOW_IMPL* body = new T_FLOW_IMPL(id, source, target);
-        pImpl_->add(body);
         Flow_Handle* handle = new Flow_Handle(body); // Flow gerencia a referência via attach/detach
+        pImpl_->add(handle);
         return *handle;
     }
-
-    bool deleteFlow(Flow_Handle& f) override; /// Remove um fluxo do modelo.
-    bool deleteSystem(System_Handle& s) override; /// Remove um sistema do modelo.
-    void setSource(Flow_Handle& f, System_Handle& s) override; /// Define o source de um fluxo.
-    void setTarget(Flow_Handle& f, System_Handle& s) override; /// Define o target de um fluxo.
-    void clearSource(Flow_Handle& f) override; /// Limpa o source de um fluxo.
-    void clearTarget(Flow_Handle& f) override; /// Limpa o target de um fluxo.
+    void add(System* system) override;
+    void add(Flow* flow) override;
+    bool deleteFlow(Flow& f) override; /// Remove um fluxo do modelo.
+    bool deleteSystem(System& s) override; /// Remove um sistema do modelo.
+    void setSource(Flow& f, System& s) override; /// Define o source de um fluxo.
+    void setTarget(Flow& f, System& s) override; /// Define o target de um fluxo.
+    void clearSource(Flow& f) override; /// Limpa o source de um fluxo.
+    void clearTarget(Flow& f) override; /// Limpa o target de um fluxo.
     bool run(int t_init, int t_final); /// Executa a simulação.
     void showModel() const; /// Exibe o estado do modelo.
 };

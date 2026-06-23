@@ -11,7 +11,7 @@ using namespace std;
 
 Flow_Body::Flow_Body() : name(""), source(nullptr), target(nullptr) {}
 
-Flow_Body::Flow_Body(const string& name, System_Handle* source, System_Handle* target) : name(name), source(source), target(target) {}
+Flow_Body::Flow_Body(const string& name, System* source, System* target) : name(name), source(source), target(target) {}
 
 Flow_Body::Flow_Body(const Flow_Body& other) : Body(),name(other.name), source(other.source), target(other.target) {}
 
@@ -35,43 +35,41 @@ void Flow_Body::setName(const string& name) {
     this->name = name;
 }
 
-System_Handle* Flow_Body::getSource() const {
+System* Flow_Body::getSource() const {
     return source;
 }
 
-void Flow_Body::setSource(System_Handle* source) {
+void Flow_Body::setSource(System* source) {
     this->source = source;
 }
 
-System_Handle* Flow_Body::getTarget() const {
+System* Flow_Body::getTarget() const {
     return target;
 }
 
-void Flow_Body::setTarget(System_Handle* target) {
+void Flow_Body::setTarget(System* target) {
     this->target = target;
+}
+
+double Flow_Body::execute() {
+    return 0.0;
 }
 
 //=============================================================================================
 ///Classe Flow_Handle
 
-Flow_Handle::Flow_Handle(Flow_Body* impl) : pImpl_(impl) {
-    pImpl_->attach();
+Flow_Handle::Flow_Handle(Flow_Body* impl) : Handle<Flow_Body>(){
+    this->pImpl_->detach();
+    this->pImpl_ = impl;
+    this->pImpl_->attach();
 }
 
-Flow_Handle::Flow_Handle(const Flow_Handle& other) : pImpl_(other.pImpl_) {
-    pImpl_->attach();
-}
+Flow_Handle::Flow_Handle(const Flow_Handle& other) : Handle<Flow_Body>(other) {}
 
-Flow_Handle::~Flow_Handle() {
-    pImpl_->detach();
-}
+Flow_Handle::~Flow_Handle() {}
 
 Flow_Handle& Flow_Handle::operator=(const Flow_Handle& other) {
-    if (this != &other) {
-        other.pImpl_->attach();
-        pImpl_->detach();
-        pImpl_ = other.pImpl_;
-    }
+    Handle<Flow_Body>::operator=(other);
     return *this;
 }
 
@@ -83,22 +81,22 @@ void Flow_Handle::setName(const string& n) {
     pImpl_->setName(n); 
 }
 
-System_Handle* Flow_Handle::getSource() const {
+System* Flow_Handle::getSource() const {
     return pImpl_->getSource(); 
 }
 
-void Flow_Handle::setSource(System_Handle* s) {
+void Flow_Handle::setSource(System* s) {
     pImpl_->setSource(s);
 }
 
-System_Handle* Flow_Handle::getTarget() const { 
+System* Flow_Handle::getTarget() const { 
     return pImpl_->getTarget(); 
 }
 
-void Flow_Handle::setTarget(System_Handle* t) {
+void Flow_Handle::setTarget(System* t) {
     pImpl_->setTarget(t);
 }
 
 double Flow_Handle::execute() {
-    return pImpl_->execute(); 
+    return pImpl_->execute();
 }
