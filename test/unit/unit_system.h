@@ -10,7 +10,7 @@
  * System e sua implementação concreta System_Impl.
  */
 
-#include "..\..\src\system_impl.h"
+#include "../../include/system_impl.h"
 
  /**
   * @brief Testa o construtor parametrizado da classe System.
@@ -43,6 +43,9 @@ void unit_System_getValue(void);
  * a getValue().
  */
 void unit_System_setValue(void);
+
+void unit_System_getName();
+void unit_System_setName();
 
 /**
  * @brief Executa todos os testes unitários da classe System em sequência.

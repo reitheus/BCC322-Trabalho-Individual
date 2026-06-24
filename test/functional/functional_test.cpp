@@ -14,10 +14,6 @@
  */
 
 #include <iostream>
-
-#include "../../src/model_impl.h"
-#include "../../src/system_impl.h"
-#include "flows.h"
 #include "functional_test.h"
 
 using namespace std;
@@ -44,12 +40,11 @@ void exponentialFuncionalTest() {
     cout << "===== TESTE EXPONENCIAL =====" << endl;
 
 
-    Model& model = Model::createModel("model1");
+    Model_Handle model("Modelo 1");
 
     System& pop1 = model.createSystem("pop1", 100.0);
     System& pop2 = model.createSystem("pop2", 0.0);
-
-    model.createFlow<FlowExponencial>("Exponential", &pop1, &pop2);
+    model.createFlow<FlowExponencial>("Exponencial", &pop1, &pop2);
 
     cout << endl;
     cout << "ANTES:" << endl;
@@ -65,7 +60,7 @@ void exponentialFuncionalTest() {
     assert(floatingPointComparison(pop2.getValue(), 63.3968) == true);
     cout << "Exponential functional test approved." << endl;
 
-    delete& model;
+
 
 }
 
@@ -75,11 +70,10 @@ void logisticalFuncionalTest() {
     cout << endl;
     cout << "===== TESTE LOGISTICO =====" << endl;
 
-    Model& model = Model::createModel("model2");
+    Model_Handle model("Modelo 2");
 
     System& pop1 = model.createSystem("P", 100.0);
     System& pop2 = model.createSystem("Pmax", 10.0);
-
     model.createFlow<FlowLogistico>("Logistic", &pop1, &pop2);
 
     cout << endl;
@@ -95,7 +89,7 @@ void logisticalFuncionalTest() {
     assert(floatingPointComparison(pop1.getValue(), 88.2167) == true);
     assert(floatingPointComparison(pop2.getValue(), 21.7833) == true);
     cout << "Logistic functional test approved." << endl;
-    delete& model; 
+
 }
 
 /// Teste Funcional Complexo
@@ -105,7 +99,7 @@ void complexFuncionalTest() {
     cout << endl;
     cout << "===== TESTE COMPLEXO =====" << endl;
 
-    Model& model = Model::createModel("model3");
+    Model_Handle model("model3");
 
     System& Q1 = model.createSystem("Q1", 100.0);
     System& Q2 = model.createSystem("Q2", 0.0);
@@ -141,5 +135,5 @@ void complexFuncionalTest() {
 
     assert(floatingPointComparison(Q5.getValue(), 16.4612) == true);
 
-    delete& model;
+
 }

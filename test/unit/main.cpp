@@ -10,9 +10,6 @@
  */
 
 #include "unit_tests.h"
-#include "unit_System.h"
-#include "unit_Flow.h"
-#include "unit_Model.h"
 
  /**
   * @brief Função principal do executável de testes unitários.
@@ -24,11 +21,8 @@
   * @return 0 em caso de sucesso (todos os asserts aprovados).
   */
 int main() {
-    run_unit_tests_globals();
 
-    //run_unit_tests_System();
-    //run_unit_tests_Flow();
-    //run_unit_tests_Model();
+    run_unit_tests_globals();
 
     return true;
 }

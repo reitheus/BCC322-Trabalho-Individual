@@ -10,8 +10,7 @@
 #include "unit_flow.h"
 
 #include <assert.h>
-#include "../../src/system_impl.h"
-#include "../../src/flow_impl.h"
+
 
  /**
   * @brief Implementação concreta de Flow_Impl utilizada nos testes unitários.
@@ -21,12 +20,12 @@
   * Permite testar os métodos de Flow_Impl sem depender de uma
   * equação de fluxo real.
   */
-class Flow_Test : public Flow_Impl {
+class Flow_Test : public Flow_Body {
 public:
     /**
      * @brief Construtor padrão de Flow_Test.
      */
-    Flow_Test() : Flow_Impl() {}
+    Flow_Test() : Flow_Body() {}
 
     /**
      * @brief Construtor parametrizado de Flow_Test.
@@ -35,7 +34,11 @@ public:
      * @param source Ponteiro para o sistema de origem.
      * @param target Ponteiro para o sistema de destino.
      */
-    Flow_Test(string name, System* source, System* target) : Flow_Impl(name, source, target) {}
+    Flow_Test(const string& name,
+        System* source,
+        System* target)
+        : Flow_Body(name, source, target) {
+    }
 
     /**
      * @brief Implementação trivial de execute() para fins de teste.
@@ -48,10 +51,10 @@ public:
 };
 
 void unit_Flow_constructor(void) {
-    System_Impl s1("Source", 100);
-    System_Impl s2("Target", 0);
+    System_Handle s1("Source", 100);
+    System_Handle s2("Target", 0);
 
-    Flow_Test f1("Flow1", &s1, &s2);
+    Flow_Handle f1(new Flow_Test("Flow1", &s1, &s2));
 
     assert(f1.getName() == "Flow1");
     assert(f1.getSource() == &s1);
@@ -61,19 +64,19 @@ void unit_Flow_constructor(void) {
 void unit_Flow_destructor(void) {}
 
 void unit_Flow_getName(void) {
-    System_Impl s1("Source", 100);
-    System_Impl s2("Target", 0);
+    System_Handle s1("Source", 100);
+    System_Handle s2("Target", 0);
 
-    Flow_Test f("Flow", &s1, &s2);
+    Flow_Handle f(new Flow_Test("Flow", &s1, &s2));
 
     assert(f.getName() == "Flow");
 }
 
 void unit_Flow_setName(void) {
-    System_Impl s1("Source", 100);
-    System_Impl s2("Target", 0);
+    System_Handle s1("Source", 100);
+    System_Handle s2("Target", 0);
 
-    Flow_Test f("Flow", &s1, &s2);
+    Flow_Handle f(new Flow_Test("Flow", &s1, &s2));
 
     f.setName("NewFlow");
 
@@ -81,20 +84,20 @@ void unit_Flow_setName(void) {
 }
 
 void unit_Flow_getSource(void) {
-    System_Impl s1("Source", 100);
-    System_Impl s2("Target", 0);
+    System_Handle s1("Source", 100);
+    System_Handle s2("Target", 0);
 
-    Flow_Test f("Flow", &s1, &s2);
+    Flow_Handle f(new Flow_Test("Flow", &s1, &s2));
 
     assert(f.getSource() == &s1);
 }
 
 void unit_Flow_setSource(void) {
-    System_Impl s1("Source1", 100);
-    System_Impl s2("Source2", 50);
-    System_Impl target("Target", 0);
+    System_Handle s1("Source1", 100);
+    System_Handle s2("Source2", 50);
+    System_Handle target("Target", 0);
 
-    Flow_Test f("Flow", &s1, &target);
+    Flow_Handle f(new Flow_Test("Flow", &s1, &target));
 
     f.setSource(&s2);
 
@@ -102,20 +105,20 @@ void unit_Flow_setSource(void) {
 }
 
 void unit_Flow_getTarget(void) {
-    System_Impl s1("Source", 100);
-    System_Impl s2("Target", 0);
+    System_Handle s1("Source", 100);
+    System_Handle s2("Target", 0);
 
-    Flow_Test f("Flow", &s1, &s2);
+    Flow_Handle f(new Flow_Test("Flow", &s1, &s2));
 
     assert(f.getTarget() == &s2);
 }
 
 void unit_Flow_setTarget(void) {
-    System_Impl source("Source", 100);
-    System_Impl t1("Target1", 0);
-    System_Impl t2("Target2", 50);
+    System_Handle source("Source", 100);
+    System_Handle t1("Target1", 0);
+    System_Handle t2("Target2", 50);
 
-    Flow_Test f("Flow", &source, &t1);
+    Flow_Handle f(new Flow_Test("Flow", &source, &t1));
 
     f.setTarget(&t2);
 
@@ -123,10 +126,10 @@ void unit_Flow_setTarget(void) {
 }
 
 void unit_Flow_execute(void) {
-    System_Impl source("Source", 100);
-    System_Impl target("Target", 0);
+    System_Handle source("Source", 100);
+    System_Handle target("Target", 0);
 
-    Flow_Test f("Flow", &source, &target);
+    Flow_Handle f(new Flow_Test("Flow", &source, &target));
 
     assert(f.execute() == 1.0);
 }

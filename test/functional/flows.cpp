@@ -9,13 +9,11 @@
  */
 
 #include "flows.h"
-#include "../../include/system.h"
-
 
  /**
   * @brief Construtor padrão da classe FlowExponencial.
   */
-FlowExponencial::FlowExponencial() : Flow_Impl() {}
+FlowExponencial::FlowExponencial() {}
 
 /**
  * @brief Construtor parametrizado da classe FlowExponencial.
@@ -24,14 +22,14 @@ FlowExponencial::FlowExponencial() : Flow_Impl() {}
  * @param source Sistema de origem.
  * @param target Sistema de destino.
  */
-FlowExponencial::FlowExponencial(const string& name, System* source, System* target) : Flow_Impl(name, source, target) {}
+FlowExponencial::FlowExponencial(const string& name, System* source, System* target) : Flow_Body(name, source, target) {}
 
 /**
  * @brief Construtor de cópia da classe FlowExponencial.
  *
  * @param other Outro objeto FlowExponencial.
  */
-FlowExponencial::FlowExponencial(const FlowExponencial& other) : Flow_Impl(other) {}
+FlowExponencial::FlowExponencial(const FlowExponencial& other) : Flow_Body(other) {}
 
 /**
  * @brief Destrutor da classe FlowExponencial.
@@ -49,7 +47,7 @@ FlowExponencial& FlowExponencial::operator=(const FlowExponencial& other) {
         return *this;
     }
 
-    Flow_Impl::operator=(other);
+    Flow_Body::operator=(other);
     return *this;
 }
 
@@ -70,7 +68,7 @@ double FlowExponencial::execute() {
 /**
  * @brief Construtor padrão da classe FlowLogistico.
  */
-FlowLogistico::FlowLogistico() : Flow_Impl() {}
+FlowLogistico::FlowLogistico() : Flow_Body() {}
 
 /**
  * @brief Construtor parametrizado da classe FlowLogistico.
@@ -79,14 +77,14 @@ FlowLogistico::FlowLogistico() : Flow_Impl() {}
  * @param source Sistema de origem.
  * @param target Sistema de destino.
  */
-FlowLogistico::FlowLogistico(const string& name, System* source, System* target) : Flow_Impl(name, source, target) {}
+FlowLogistico::FlowLogistico(const string& name, System* source, System* target) : Flow_Body(name, source, target) {}
 
 /**
  * @brief Construtor de cópia da classe FlowLogistico.
  *
  * @param other Outro objeto FlowLogistico.
  */
-FlowLogistico::FlowLogistico(const FlowLogistico& other) : Flow_Impl(other) {}
+FlowLogistico::FlowLogistico(const FlowLogistico& other) : Flow_Body(other) {}
 
 /**
  * @brief Destrutor da classe FlowLogistico.
@@ -106,7 +104,7 @@ FlowLogistico& FlowLogistico::operator=(
         return *this;
     }
 
-    Flow_Impl::operator=(other);
+    Flow_Body::operator=(other);
     return *this;
 }
 
@@ -129,7 +127,7 @@ double FlowLogistico::execute() {
 /**
  * @brief Construtor padrão da classe FlowComplexo.
  */
-FlowComplexo::FlowComplexo() : Flow_Impl() {}
+FlowComplexo::FlowComplexo() : Flow_Body() {}
 
 /**
  * @brief Construtor parametrizado da classe FlowComplexo.
@@ -138,14 +136,14 @@ FlowComplexo::FlowComplexo() : Flow_Impl() {}
  * @param source Sistema de origem.
  * @param target Sistema de destino.
  */
-FlowComplexo::FlowComplexo(const string& name, System* source, System* target) : Flow_Impl(name, source, target) {}
+FlowComplexo::FlowComplexo(const string& name, System* source, System* target) : Flow_Body(name, source, target) {}
 
 /**
  * @brief Construtor de cópia da classe FlowComplexo.
  *
  * @param other Outro objeto FlowComplexo.
  */
-FlowComplexo::FlowComplexo(const FlowComplexo& other) : Flow_Impl(other) {}
+FlowComplexo::FlowComplexo(const FlowComplexo& other) : Flow_Body(other) {}
 
 /**
  * @brief Destrutor da classe FlowComplexo.
@@ -163,7 +161,7 @@ FlowComplexo& FlowComplexo::operator=(const FlowComplexo& other) {
         return *this;
     }
 
-    Flow_Impl::operator=(other);
+    Flow_Body::operator=(other);
     return *this;
 }
 

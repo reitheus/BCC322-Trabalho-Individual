@@ -1,7 +1,7 @@
 #ifndef FLOWS_H
 #define FLOWS_H
 
-#include "../../src/flow_impl.h"
+#include "../../include/flow_impl.h"
 
 /**
  * @file flows.h
@@ -16,7 +16,7 @@
   * sistema de origem. Tipicamente usada para modelar crescimento
   * ou decaimento exponencial em populações e recursos.
   */
-class FlowExponencial : public Flow_Impl {
+class FlowExponencial : public Flow_Body {
 public:
 
     /**
@@ -31,20 +31,14 @@ public:
      * @param source Ponteiro para o sistema de origem.
      * @param target Ponteiro para o sistema de destino.
      */
-    FlowExponencial(
-        const string& name,
-        System* source,
-        System* target
-    );
+    FlowExponencial(const string& name,System* source, System* target);
 
     /**
      * @brief Construtor de cópia da classe FlowExponencial.
      *
      * @param other Objeto FlowExponencial a ser copiado.
      */
-    FlowExponencial(
-        const FlowExponencial& other
-    );
+    FlowExponencial(const FlowExponencial& other);
 
     /**
      * @brief Destrutor virtual da classe FlowExponencial.
@@ -57,9 +51,7 @@ public:
      * @param other Objeto FlowExponencial a ser atribuído.
      * @return Referência para o objeto atual.
      */
-    FlowExponencial& operator=(
-        const FlowExponencial& other
-    );
+    FlowExponencial& operator=(const FlowExponencial& other);
 
     /**
      * @brief Executa o cálculo do fluxo exponencial.
@@ -81,7 +73,7 @@ public:
  * origem se aproxima de uma capacidade limite. Usada para modelar
  * crescimento populacional com capacidade de suporte.
  */
-class FlowLogistico : public Flow_Impl {
+class FlowLogistico : public Flow_Body {
 public:
 
     /**
@@ -96,20 +88,14 @@ public:
      * @param source Ponteiro para o sistema de origem.
      * @param target Ponteiro para o sistema de destino.
      */
-    FlowLogistico(
-        const string& name,
-        System* source,
-        System* target
-    );
+    FlowLogistico(const string& name, System* source, System* target);
 
     /**
      * @brief Construtor de cópia da classe FlowLogistico.
      *
      * @param other Objeto FlowLogistico a ser copiado.
      */
-    FlowLogistico(
-        const FlowLogistico& other
-    );
+    FlowLogistico(const FlowLogistico& other);
 
     /**
      * @brief Destrutor virtual da classe FlowLogistico.
@@ -122,9 +108,7 @@ public:
      * @param other Objeto FlowLogistico a ser atribuído.
      * @return Referência para o objeto atual.
      */
-    FlowLogistico& operator=(
-        const FlowLogistico& other
-    );
+    FlowLogistico& operator=(const FlowLogistico& other);
 
     /**
      * @brief Executa o cálculo do fluxo logístico.
@@ -146,7 +130,7 @@ public:
  * dinâmicas com dependências cruzadas entre compartimentos, como
  * modelos predador-presa ou transferências bidirecionalmente influenciadas.
  */
-class FlowComplexo : public Flow_Impl {
+class FlowComplexo : public Flow_Body {
 public:
 
     /**
@@ -161,20 +145,14 @@ public:
      * @param source Ponteiro para o sistema de origem.
      * @param target Ponteiro para o sistema de destino.
      */
-    FlowComplexo(
-        const string& name,
-        System* source,
-        System* target
-    );
+    FlowComplexo(const string& name, System* source, System* target);
 
     /**
      * @brief Construtor de cópia da classe FlowComplexo.
      *
      * @param other Objeto FlowComplexo a ser copiado.
      */
-    FlowComplexo(
-        const FlowComplexo& other
-    );
+    FlowComplexo(const FlowComplexo& other);
 
     /**
      * @brief Destrutor virtual da classe FlowComplexo.
@@ -187,9 +165,7 @@ public:
      * @param other Objeto FlowComplexo a ser atribuído.
      * @return Referência para o objeto atual.
      */
-    FlowComplexo& operator=(
-        const FlowComplexo& other
-    );
+    FlowComplexo& operator=(const FlowComplexo& other);
 
     /**
      * @brief Executa o cálculo do fluxo complexo.

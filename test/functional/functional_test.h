@@ -3,6 +3,9 @@
 
 #include <assert.h>
 #include <math.h>
+#include "flows.h"
+#include "../../include/model_impl.h"
+#include "../../include/system_impl.h"
 
 /**
  * @file functional_test.h
